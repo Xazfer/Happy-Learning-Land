@@ -4,7 +4,8 @@
 
     <item android:drawable="@color/orange"/>
 
-    <item>
-        <bitmap android:src="@drawable/loro"/>
+    <item android:left="20dp" android:right="20dp">
+        <bitmap android:src="@drawable/loro"
+            android:gravity="center"/>
     </item>
 </layer-list>
