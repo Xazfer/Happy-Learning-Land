@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "114555254837",
+    "firebase_url": "https://happy-learning-land-611fd-default-rtdb.firebaseio.com",
+    "project_id": "happy-learning-land-611fd",
+    "storage_bucket": "happy-learning-land-611fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114555254837:android:b33a9e55034696eec8997c",
+        "android_client_info": {
+          "package_name": "com.example.happylearningland"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "114555254837-fp4l71bf19kp6n1g0j7qvu3appgba4r2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAR7dv4MkRB7ClMQC8k-ePFs5SIBJrRDNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "114555254837-fp4l71bf19kp6n1g0j7qvu3appgba4r2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
