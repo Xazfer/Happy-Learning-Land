@@ -3,4 +3,10 @@
     <string name="sign_In">Iniciar Sesión</string>
     <string name="sign_up">Registrarse</string>
     <string name="webclient_id">114555254837-fp4l71bf19kp6n1g0j7qvu3appgba4r2.apps.googleusercontent.com</string>
+    <string name="game_robot">Robot</string>
+    <string name="game_recicle">Reciclaje</string>
+    <string name="game_shop">Tienda</string>
+    <string name="game_letters">Letras</string>
+    <string name="game_alimentacion">Alimentacion</string>
+    <string name="task">Tareas</string>
 </resources>

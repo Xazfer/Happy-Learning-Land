@@ -105,9 +105,9 @@ class Login : AppCompatActivity() {
                 val account = task.getResult(ApiException::class.java)
                 firebaseAuthWithGoogleAccount(account)
                 val intent = Intent(this, MainActivity::class.java).apply {
-                    putExtra("full name", account.displayName)
-                    putExtra("email", account.email)
-                    putExtra("photoUrl", account.photoUrl.toString())
+                    putExtra("full name", account?.displayName)
+                    putExtra("email", account?.email)
+                    putExtra("photoUrl", account?.photoUrl.toString())
                 }
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
