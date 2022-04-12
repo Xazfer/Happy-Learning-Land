@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Happy Learning Land</string>
     <string name="sign_In">Iniciar Sesión</string>
     <string name="sign_up">Registrarse</string>
 </resources>

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "114555254837-lc63imfb7doufbrnlvr2bia2bnncvq8f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.happylearningland",
+            "certificate_hash": "5f83d5e39950dae067392a8a78a617daae3f2a18"
+          }
+        },
+        {
           "client_id": "114555254837-fp4l71bf19kp6n1g0j7qvu3appgba4r2.apps.googleusercontent.com",
           "client_type": 3
         }
