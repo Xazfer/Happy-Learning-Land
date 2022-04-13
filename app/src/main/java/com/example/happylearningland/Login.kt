@@ -1,5 +1,6 @@
 package com.example.happylearningland
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -9,11 +10,14 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.DatabaseReference
@@ -27,6 +31,9 @@ class Login : AppCompatActivity() {
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var auth: FirebaseAuth
 
+    // Firebase Analytics
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
+
     // constants
     private companion object {
         private const val RC_SIGN_IN = 9001
@@ -34,37 +41,27 @@ class Login : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Conexción con la BD
-        //val firebase : DatabaseReference = FirebaseDatabase.getInstance().getReference()
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
         // Conexión con la BD
         auth = FirebaseAuth.getInstance()
 
+        // Revisión de si el usuario existe o no
         checkUser()
 
-        signUp.setOnClickListener {
-            signUp.background = resources.getDrawable(R.drawable.switch_trcks,null)
-            signUp.setTextColor(resources.getColor(R.color.textColor,null))
-            signIn.background = null
-            signUpLayout.visibility = View.VISIBLE
-            signInLayout.visibility = View.GONE
-            signIn.setTextColor(resources.getColor(R.color.pink,null))
-        }
-        signIn.setOnClickListener {
-            signUp.background = null
-            signUp.setTextColor(resources.getColor(R.color.pink, null))
-            signIn.background = resources.getDrawable(R.drawable.switch_trcks,null)
-            signUpLayout.visibility = View.GONE
-            signInLayout.visibility = View.VISIBLE
-            signIn.setTextColor(resources.getColor(R.color.textColor, null))
-        }
+        // Google Analytics
+        // Obtain the FirebaseAnalytics instance.
+        val analytics = FirebaseAnalytics.getInstance(this)
+        val bundle = Bundle()
+        bundle.putString("message", "Integración de Firebase completa")
+        analytics.logEvent("MainActibity", bundle)
+
         btnSignIn.setOnClickListener{
             startActivity(Intent(this@Login, MainActivity::class.java))
         }
 
-        //Conexión de Gmail
+        // Conexión de Gmail
         // [START config_signin]
         // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -78,6 +75,13 @@ class Login : AppCompatActivity() {
         btnGoogle.setOnClickListener{
             signIn()
         }
+
+        // Configuración de validación de email y contraseña
+        // Setup
+        setUp()
+        // Session
+        session()
+
     }
 
     private fun checkUser() {
@@ -92,6 +96,96 @@ class Login : AppCompatActivity() {
 
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        loginLayout.visibility = View.VISIBLE
+    }
+
+    // Session
+    // Función para recuperar si se tiene guardado un email y provider
+    private fun session() {
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
+        val email = prefs.getString("email", null)
+        val provider = prefs.getString("provider", null)
+
+        if (email != null && provider != null) {
+            loginLayout.visibility = View.INVISIBLE
+            showMain(email, ProviderType.valueOf(provider))
+        }
+    }
+
+    // Setup
+    // Función de autenticación de correo y contraseña
+    private fun setUp() {
+        // Inicio de sesión
+        signIn.setOnClickListener {
+            // Configuración del switch de botones del login apartado del SignIn
+            signUp.background = null
+            signUp.setTextColor(resources.getColor(R.color.pink, null))
+            signIn.background = resources.getDrawable(R.drawable.switch_trcks,null)
+            signUpLayout.visibility = View.GONE
+            signInLayout.visibility = View.VISIBLE
+            signIn.setTextColor(resources.getColor(R.color.textColor, null))
+
+            btnSignIn.setOnClickListener {
+                if (email.text!!.isNotEmpty() && password.text!!.isNotEmpty()) {
+                    auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString()).addOnCompleteListener{
+                        if (it.isSuccessful) {
+                            showMain(it.result?.user?.email ?: "", ProviderType.BASIC)
+                        } else {
+                            showAlert()
+                        }
+                    }
+                }
+            }
+        }
+
+        // Registro
+        signUp.setOnClickListener {
+            // Configuración del switch de botones del login apartado del SignUp
+            signUp.background = resources.getDrawable(R.drawable.switch_trcks,null)
+            signUp.setTextColor(resources.getColor(R.color.textColor,null))
+            signIn.background = null
+            signUpLayout.visibility = View.VISIBLE
+            signInLayout.visibility = View.GONE
+            signIn.setTextColor(resources.getColor(R.color.pink,null))
+
+            btnSignIn.setOnClickListener {
+                if (email.text!!.isNotEmpty() && password.text!!.isNotEmpty()) {
+                    auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString()).addOnCompleteListener{
+                        if (it.isSuccessful) {
+                            showMain(it.result?.user?.email ?: "", ProviderType.BASIC)
+                        } else {
+                            showAlert()
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // showAlert
+    // Alerta de autenticación del usuario
+    private fun showAlert() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Se ha producido un error al autenticar al usuario")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    // showMain
+    // Función para pasarle el email y contraseña autenticado
+    private fun showMain(email: String, provider: ProviderType) {
+        val mainIntent = Intent(this, MainActivity::class.java).apply {
+            putExtra("email", email)
+            putExtra("provider", provider.name)
+        }
+        startActivity(mainIntent)
+    }
+
     // [START onactivityresult]
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -101,17 +195,34 @@ class Login : AppCompatActivity() {
             Log.d(TAG, "onActivityResult: Google SignIn intent result")
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try {
-                // Google Sign In was successful, authenticate with Firebase
                 val account = task.getResult(ApiException::class.java)
+                // Google Sign In was successful, authenticate with Firebase
                 firebaseAuthWithGoogleAccount(account)
                 val intent = Intent(this, MainActivity::class.java).apply {
                     putExtra("full name", account?.displayName)
                     putExtra("email", account?.email)
-                    putExtra("photoUrl", account?.photoUrl.toString())
                 }
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
                 Log.w("Error", "Google sign in failed", e)
+            }
+            try {
+                val account = task.getResult(ApiException::class.java)
+
+                if (account != null) {
+                    val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+
+                    auth.signInWithCredential(credential).addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            showMain(account.email ?: "", ProviderType.GOOGLE)
+                        } else {
+                            showAlert()
+                        }
+                    }
+                }
+            } catch (e: ApiException) {
+                // Google Sign In failed, update UI appropriately
+                showAlert()
             }
         }
     }
