@@ -11,5 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/game_robot" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="stop singing"
+        android:id="@+id/btnPause"/>
 
 </FrameLayout>

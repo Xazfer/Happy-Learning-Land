@@ -21,5 +21,9 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
             nombre = it.getString("texto")
             binding.text.text = nombre
         }
+        binding.btnPause.setOnClickListener {
+            mediaPlayer?.release()
+            mediaPlayer = null
+        }
     }
 }
