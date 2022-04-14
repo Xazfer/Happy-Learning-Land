@@ -13,9 +13,9 @@ class ShopFragment : Fragment(R.layout.fragment_shop) {
         //bindeo de elementos del fragment
         binding = FragmentShopBinding.bind(view)
         //obtencion de argumentos
-        arguments?.let {
+        /*arguments?.let {
             nombre = it.getString("texto")
             binding.text.text = nombre
-        }
+        }*/
     }
 }
