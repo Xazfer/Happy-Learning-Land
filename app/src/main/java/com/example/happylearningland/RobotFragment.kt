@@ -17,10 +17,10 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
         //bindeo de elementos del fragment
         binding = FragmentRobotBinding.bind(view)
         //obtencion de argumentos
-        arguments?.let {
+        /*arguments?.let {
             nombre = it.getString("texto")
             binding.text.text = nombre
-        }
+        }*/
         binding.btnPause.setOnClickListener {
             mediaPlayer?.release()
             mediaPlayer = null

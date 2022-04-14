@@ -17,7 +17,7 @@
             android:id="@+id/topView"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="#6EB5C0"
+            android:background="@color/blue_topaz"
             android:gravity="center"
             android:text="Happy Learning Land"
             android:textColor="@color/white"
@@ -87,7 +87,7 @@
                         android:paddingRight="15dp"
                         android:paddingLeft="15dp"
                         android:textAlignment="center"
-                        android:textColor="@color/pink"
+                        android:textColor="@color/cerulean"
                         android:textSize="16sp"
                         android:textStyle="bold|normal"/>
 
@@ -266,7 +266,7 @@
 
                 <Button
                     app:shapeAppearanceOverlay="@style/ButtonSignIn"
-                    app:backgroundTint="@color/pink"
+                    app:backgroundTint="@color/cerulean"
                     android:id="@+id/btnSignIn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -300,13 +300,6 @@
                     android:gravity="center"
                     android:layout_gravity="center"
                     android:layout_marginBottom="20dp">
-
-                    <ImageView
-                        android:id="@+id/facebook_btn"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_margin="10dp"
-                        android:src="@drawable/ic_facebook"/>
 
                     <ImageView
                         android:id="@+id/google_btn"

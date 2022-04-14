@@ -28,20 +28,57 @@
     </style>
 
     <style name="LoginTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
         <!-- Customize window -->
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="CharacterTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize window -->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="HomeTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize window -->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="LettersTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize window -->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="RobotTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize window -->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="RecycleTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize window -->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="AlimentacionTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize window -->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="ShopTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize window -->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="TaskTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize window -->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
 </resources>
