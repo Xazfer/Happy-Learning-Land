@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_mainScreenFragment"
+        android:state_pressed="true"
+        android:title="Inicio"
+        android:icon="@drawable/ic_home_2"/>
+
+    <item
+        android:id="@+id/nav_lettersFragment"
+        android:state_pressed="true"
+        android:title="Letras"
+        android:icon="@drawable/ic_letras"/>
+
+    <item
+        android:id="@+id/nav_robotFragment"
+        android:state_pressed="true"
+        android:title="Robot"
+        android:icon="@drawable/ic_robot"/>
+
+    <item
+        android:id="@+id/nav_reciclerFragment"
+        android:state_pressed="true"
+        android:title="Reciclaje"
+        android:icon="@drawable/ic_reciclaje"/>
+
+    <item
+        android:id="@+id/nav_alimentacionFragment"
+        android:state_pressed="true"
+        android:title="Alimentación"
+        android:icon="@drawable/ic_alimentacion"/>
+
+    <item
+        android:id="@+id/nav_shopFragment"
+        android:state_pressed="true"
+        android:title="Tienda"
+        android:icon="@drawable/ic_tienda"/>
+
+    <item
+        android:id="@+id/nav_taskFragment"
+        android:state_pressed="true"
+        android:title="Tareas"
+        android:icon="@drawable/ic_tareas"/>
+
+</menu>

@@ -1,55 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@drawable/back_Home"
     tools:context=".MainScreenFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <LinearLayout
-        android:id="@+id/letters_Container"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/recycle_Container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/texto"
+            android:id="@+id/text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Inicio" />
-        <Button
-            android:id="@+id/btnRobot"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/game_robot"/>
-        <Button
-            android:id="@+id/btnShop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/game_shop"/>
-        <Button
-            android:id="@+id/btnRecicler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/game_recicle"/>
-        <Button
-            android:id="@+id/btnLetter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/game_letters"/>
-        <Button
-            android:id="@+id/btnAlimentacion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/game_alimentacion"/>
-        <Button
-            android:id="@+id/btnTask"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/task"/>
+            android:layout_height="match_parent"
+            android:text="Inicio"
+            android:gravity="center"/>
     </LinearLayout>
+    <!--EN NAVHOSTFRAGMENT SI APARECE UN ERROR HACER ALT+ENTER E IMPORTAR LIBRERIA -->
+    <!--
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/main_graf" />
+
+    -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,12 +11,12 @@ import android.view.View
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.happylearningland.databinding.FragmentMainScreenBinding
-
 import kotlinx.android.synthetic.main.fragment_main_screen.*
 
 
 //variable para sonido de fondo
 var mediaPlayer: MediaPlayer? = null
+
 class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
     private lateinit var binding: FragmentMainScreenBinding
     //variable para recuperacion de datos
@@ -31,10 +31,10 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
         binding = FragmentMainScreenBinding.bind(view)
 
         //obtencion de argumentos
-        arguments?.let {
+        /*arguments?.let {
             nombre = it.getString("texto")
             binding.texto.text = nombre
-        }
+        }*/
 
         //Reproducion de sonido en loop
         if(mediaPlayer?.isPlaying == true){
@@ -49,6 +49,7 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
             mediaPlayer?.isLooping = true
         }
 
+        /*
         //botones de navegacion
         btnRobot.setOnClickListener {
             val bundle = bundleOf("texto" to "Pagina robot")
@@ -73,7 +74,7 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
         btnTask.setOnClickListener {
             val bundle = bundleOf("texto" to "Pagina tareas")
             findNavController().navigate(R.id.action_mainScreenFragment_to_taskFragment, bundle)
-        }
+        }*/
     }
 
     override fun onPause() {

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_mainScreenFragment">
+
+    <fragment
+        android:id="@+id/nav_mainScreenFragment"
+        android:name="com.example.happylearningland.MainScreenFragment"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" />
+    <fragment
+        android:id="@+id/nav_lettersFragment"
+        android:name="com.example.happylearningland.LettersFragment"
+        android:label="fragment_letters"
+        tools:layout="@layout/fragment_letters" />
+    <fragment
+        android:id="@+id/nav_robotFragment"
+        android:name="com.example.happylearningland.RobotFragment"
+        android:label="fragment_robot"
+        tools:layout="@layout/fragment_robot" />
+    <fragment
+        android:id="@+id/nav_reciclerFragment"
+        android:name="com.example.happylearningland.ReciclerFragment"
+        android:label="fragment_recicler"
+        tools:layout="@layout/fragment_recicler" />
+    <fragment
+        android:id="@+id/nav_alimentacionFragment"
+        android:name="com.example.happylearningland.AlimentacionFragment"
+        android:label="fragment_alimentacion"
+        tools:layout="@layout/fragment_alimentacion" />
+    <fragment
+        android:id="@+id/nav_shopFragment"
+        android:name="com.example.happylearningland.ShopFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_shop" />
+    <fragment
+        android:id="@+id/nav_taskFragment"
+        android:name="com.example.happylearningland.TaskFragment"
+        android:label="fragment_task"
+        tools:layout="@layout/fragment_task" />
+</navigation>

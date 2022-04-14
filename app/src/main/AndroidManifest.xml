@@ -12,7 +12,8 @@
         <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/SplashTheme">
+            android:theme="@style/SplashTheme"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,11 +24,56 @@
             android:name=".Login"
             android:exported="true"
             android:theme="@style/LoginTheme"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
+            android:theme="@style/CharacterTheme"
             android:screenOrientation="portrait" />
+        <!--
+        <activity
+            android:name=".MainScreenFragment"
+            android:exported="true"
+            android:theme="@style/HomeTheme"
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".LettersFragment"
+            android:exported="true"
+            android:theme="@style/LettersTheme"
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".RobotFragment"
+            android:exported="true"
+            android:theme="@style/RobotTheme"
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".ReciclerFragment"
+            android:exported="true"
+            android:theme="@style/RecycleTheme"
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".AlimentacionFragment"
+            android:exported="true"
+            android:theme="@style/AlimentacionTheme"
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".ShopFragment"
+            android:exported="true"
+            android:theme="@style/ShopTheme"
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".TaskFragment"
+            android:exported="true"
+            android:theme="@style/TaskTheme"
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
+            -->
     </application>
 
 </manifest>

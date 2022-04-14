@@ -40,6 +40,10 @@ class MainActivity : AppCompatActivity() {
         prefs.putString("email", email)
         prefs.putString("provider", provider)
         prefs.apply()
+
+        btnInicio.setOnClickListener {
+            startActivity(Intent(this, MainScreenFragment::class.java))
+        }
     }
 
     private fun checkUser() {

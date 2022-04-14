@@ -5,6 +5,7 @@
     android:id="@+id/main_graf"
     app:startDestination="@id/mainMenu">
 
+
     <fragment
         android:id="@+id/mainMenu"
         android:name="com.example.happylearningland.mainMenu"
