@@ -3,4 +3,19 @@
     <string name="app_name">Happy Learning Land</string>
     <string name="sign_In">Iniciar Sesión</string>
     <string name="sign_up">Registrarse</string>
+    <string name="prefs_file">com.example.happylearningland.PREFERENCE_FILE_KEY</string>
+    <string name="webclient_id">114555254837-fp4l71bf19kp6n1g0j7qvu3appgba4r2.apps.googleusercontent.com</string>
+    <string name="game_robot">Robot</string>
+    <string name="game_recicle">Reciclaje</string>
+    <string name="game_shop">Tienda</string>
+    <string name="game_letters">Letras</string>
+    <string name="game_alimentacion">Alimentacion</string>
+    <string name="task">Tareas</string>
+
+    <!-- Texto de contenedor de Coins -->
+    <string name="coins">0</string>
+    <!-- Texto de Letters -->
+    <string name="question">¿Qué es?</string>
+    <!-- Texto de Task -->
+    <string name="finishTask">¿Completaste todas las tareas?</string>
 </resources>

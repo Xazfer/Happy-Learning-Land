@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Happy Learning Land</string>
     <string name="sign_In">Iniciar Sesión</string>
@@ -10,4 +11,11 @@
     <string name="game_letters">Letras</string>
     <string name="game_alimentacion">Alimentacion</string>
     <string name="task">Tareas</string>
+
+    <!-- Texto de contenedor de Coins -->
+    <string name="coins">0</string>
+    <!-- Texto de Letters -->
+    <string name="question">¿Qué es?</string>
+    <!-- Texto de Task -->
+    <string name="finishTask">¿Completaste todas las tareas?</string>
 </resources>
