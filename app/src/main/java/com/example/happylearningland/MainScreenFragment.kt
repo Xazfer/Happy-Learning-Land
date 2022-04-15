@@ -17,11 +17,8 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
     private lateinit var binding: FragmentMainScreenBinding
     //variable para recuperacion de datos
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         //bindeo de elementos del fragment
         binding = FragmentMainScreenBinding.bind(view)
@@ -61,10 +58,10 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
                     findNavController().navigate(R.id.action_nav_mainScreenFragment_to_nav_robotFragment, bundle)
                     true
                 }
-                R.id.nav_reciclerFragment -> {
+                R.id.nav_shopFragment -> {
                     // Respond to navigation item 2 click
-                    val bundle = bundleOf("texto" to "Pagina reciclaje")
-                    findNavController().navigate(R.id.action_nav_mainScreenFragment_to_nav_reciclerFragment, bundle)
+                    val bundle = bundleOf("texto" to "Pagina tienda")
+                    findNavController().navigate(R.id.action_nav_mainScreenFragment_to_nav_shopFragment, bundle)
                     true
                 }
                 R.id.nav_alimentacionFragment -> {
@@ -73,10 +70,10 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
                     findNavController().navigate(R.id.action_nav_mainScreenFragment_to_nav_alimentacionFragment, bundle)
                     true
                 }
-                R.id.nav_shopFragment -> {
+                R.id.nav_reciclerFragment -> {
                     // Respond to navigation item 2 click
-                    val bundle = bundleOf("texto" to "Pagina tienda")
-                    findNavController().navigate(R.id.action_nav_mainScreenFragment_to_nav_shopFragment, bundle)
+                    val bundle = bundleOf("texto" to "Pagina reciclaje")
+                    findNavController().navigate(R.id.action_nav_mainScreenFragment_to_nav_reciclerFragment, bundle)
                     true
                 }
                 else -> false
@@ -96,6 +93,5 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
         mediaPlayer?.release()
         mediaPlayer = null
     }
-
 
 }

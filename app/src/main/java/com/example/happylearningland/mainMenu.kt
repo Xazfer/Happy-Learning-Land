@@ -20,11 +20,6 @@ class mainMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_main_menu)
 
-
-
-
-
-
     }
 
     //private lateinit var binding:FragmentMainMenuBinding

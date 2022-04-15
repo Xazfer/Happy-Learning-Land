@@ -17,9 +17,19 @@
     <color name="btn_green">#008000</color>
     <color name="coins">#EFB810</color>
 
-    // nav navigation
-    <color name="bottom_nav_background">#FEDBD0</color>
-    <color name="bottom_nav_item">#8C706D</color>
-    <color name="bottom_nav_selected_item">#220006</color>
+    <!-- nav navigation -->
+    <color name="bottom_nav_background">#128277</color>
+    <!-- Extra Lichen
+    <color name="bottom_nav_item">#52958B</color>
+    -->
+    <color name="bottom_nav_item">#B9C4C9</color>
+    <color name="bottom_nav_selected_item">#FFFFFF</color>
     <color name="fragment_bg_color">#FDF8F4</color>
+
+    <!-- Colores de cambio de navegacion -->
+    <color name="letras">#375E97</color>
+    <color name="robot">#FB6542</color>
+    <color name="tienda">#CB0000</color>
+    <color name="alimentacion">#FFBB00</color>
+    <color name="reciclaje">#3F681C</color>
 </resources>

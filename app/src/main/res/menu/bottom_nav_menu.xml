@@ -1,36 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-
     <item
         android:id="@+id/nav_lettersFragment"
-        android:state_pressed="false"
-        android:title="Letras"
+        android:title="@string/game_letters"
         android:icon="@drawable/ic_letras"/>
 
     <item
         android:id="@+id/nav_robotFragment"
-        android:state_pressed="true"
-        android:title="Robot"
+        android:title="@string/game_robot"
         android:icon="@drawable/ic_robot"/>
 
     <item
-        android:id="@+id/nav_reciclerFragment"
-        android:state_pressed="false"
-        android:title="Reciclaje"
-        android:icon="@drawable/ic_reciclaje"/>
+        android:id="@+id/nav_shopFragment"
+        android:title="@string/game_shop"
+        android:icon="@drawable/ic_tienda"/>
 
     <item
         android:id="@+id/nav_alimentacionFragment"
-        android:state_pressed="false"
-        android:title="Alimentación"
+        android:title="@string/game_alimentacion"
         android:icon="@drawable/ic_alimentacion"/>
 
     <item
-        android:id="@+id/nav_shopFragment"
-        android:state_pressed="false"
-        android:title="Tienda"
-        android:icon="@drawable/ic_tienda"/>
-
+        android:id="@+id/nav_reciclerFragment"
+        android:title="@string/game_recicle"
+        android:icon="@drawable/ic_reciclaje"/>
 
 </menu>
