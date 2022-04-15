@@ -14,10 +14,6 @@ class AlimentacionFragment : Fragment(R.layout.fragment_alimentacion) {
         super.onViewCreated(view, savedInstanceState)
         //bindeo de elementos del fragment
         binding = FragmentAlimentacionBinding.bind(view)
-        //recuperacion de argumentos
-        arguments?.let {
-            nombre = it.getString("texto")
-            binding.text.text = nombre
-        }
+
     }
 }

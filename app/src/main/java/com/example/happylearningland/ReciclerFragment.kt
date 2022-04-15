@@ -15,9 +15,5 @@ class ReciclerFragment : Fragment(R.layout.fragment_recicler) {
         //bindeo de elementos del fragment
         binding = FragmentReciclerBinding.bind(view)
         //obtencion de argumentos
-        arguments?.let {
-            nombre = it.getString("texto")
-            binding.text.text = nombre
-        }
     }
 }

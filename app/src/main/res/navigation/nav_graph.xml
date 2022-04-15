@@ -9,7 +9,26 @@
         android:id="@+id/nav_mainScreenFragment"
         android:name="com.example.happylearningland.MainScreenFragment"
         android:label="fragment_main_screen"
-        tools:layout="@layout/fragment_main_screen" />
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/action_nav_mainScreenFragment_to_nav_robotFragment"
+            app:destination="@id/nav_robotFragment" />
+        <action
+            android:id="@+id/action_nav_mainScreenFragment_to_nav_lettersFragment"
+            app:destination="@id/nav_lettersFragment" />
+        <action
+            android:id="@+id/action_nav_mainScreenFragment_to_nav_shopFragment"
+            app:destination="@id/nav_shopFragment" />
+        <action
+            android:id="@+id/action_nav_mainScreenFragment_to_nav_taskFragment"
+            app:destination="@id/nav_taskFragment" />
+        <action
+            android:id="@+id/action_nav_mainScreenFragment_to_nav_alimentacionFragment"
+            app:destination="@id/nav_alimentacionFragment" />
+        <action
+            android:id="@+id/action_nav_mainScreenFragment_to_nav_reciclerFragment"
+            app:destination="@id/nav_reciclerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_lettersFragment"
         android:name="com.example.happylearningland.LettersFragment"

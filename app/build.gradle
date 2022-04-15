@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+
+
     //Plugin para firebase
     id 'com.google.gms.google-services'
 }
@@ -86,4 +88,6 @@ dependencies {
     // Also declare the dependency for the Google Play services library and specify its version
     implementation 'com.google.android.gms:play-services-auth:20.1.0'
 
+    //material desing
+    implementation 'com.google.android.material:material:<version>'
 }

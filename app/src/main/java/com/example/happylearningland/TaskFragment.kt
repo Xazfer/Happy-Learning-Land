@@ -17,10 +17,7 @@ class TaskFragment : Fragment(R.layout.fragment_task) {
         //bindeo de elementos del fragment
         binding = FragmentTaskBinding.bind(view)
         //obtencion de argumentos
-        arguments?.let {
-            nombre = it.getString("texto")
-            binding.text.text = nombre
-        }
+
     }
 
 }

@@ -1,6 +1,7 @@
 package com.example.happylearningland
 
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -21,6 +22,17 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
             nombre = it.getString("texto")
             binding.text.text = nombre
         }*/
+        if(mediaPlayer?.isPlaying == true){
+            mediaPlayer?.release()
+            mediaPlayer = null
+            mediaPlayer= MediaPlayer.create(context, R.raw.gamesample)
+            mediaPlayer?.start()
+            mediaPlayer?.isLooping = true
+        }else{
+            mediaPlayer= MediaPlayer.create(context, R.raw.gamesample)
+            mediaPlayer?.start()
+            mediaPlayer?.isLooping = true
+        }
         binding.btnPause.setOnClickListener {
             mediaPlayer?.release()
             mediaPlayer = null

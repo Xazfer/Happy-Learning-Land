@@ -20,10 +20,11 @@ class mainMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_main_menu)
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.mainNavigation) as NavHostFragment
-        navController = navHostFragment.navController
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-        setupWithNavController(bottomNavigationView, navController)
+
+
+
+
+
     }
 
     //private lateinit var binding:FragmentMainMenuBinding

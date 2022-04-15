@@ -14,10 +14,7 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
         //bindeo de elementos del fragment
         binding = FragmentLettersBinding.bind(view)
         //recuperacion de argumentos
-        arguments?.let {
-            nombre = it.getString("texto")
-            binding.text.text = nombre
-        }
+
     }
 
 

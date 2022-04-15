@@ -33,7 +33,7 @@
                         <Button
                             android:id="@+id/btnInicio"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             app:backgroundTint="@color/cerulean"
                             android:text="Inicio"
                             android:textSize="30sp"
@@ -44,6 +44,8 @@
                             android:layout_marginEnd="24dp"
                             android:textColor="@color/textColor"
                             android:layout_gravity="center"/>
+
+
 
                 </LinearLayout>
 
