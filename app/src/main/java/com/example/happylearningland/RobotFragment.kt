@@ -22,7 +22,7 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
             nombre = it.getString("texto")
             binding.text.text = nombre
         }*/
-        if(mediaPlayer?.isPlaying == true){
+       /* if(mediaPlayer?.isPlaying == true){
             mediaPlayer?.release()
             mediaPlayer = null
             mediaPlayer= MediaPlayer.create(context, R.raw.gamesample)
@@ -36,6 +36,6 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
         binding.btnPause.setOnClickListener {
             mediaPlayer?.release()
             mediaPlayer = null
-        }
+        }*/
     }
 }
