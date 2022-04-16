@@ -130,31 +130,83 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_weight="2">
 
-            <!-- Contenedor de barra de salud -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="2">
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <!-- Contenedor de barra de salud -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="2">
+
+                </LinearLayout>
+
+                <!-- Contenedor de personaje -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/character_11">
+
+                    </ImageView>
+
+                </LinearLayout>
 
             </LinearLayout>
 
-            <!-- Contenedor de personaje -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="1">
+                android:orientation="horizontal"
+                android:layout_weight="5">
 
-                <ImageView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/character_11">
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
 
-                </ImageView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:text="@string/drinks" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:text="@string/food" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -195,7 +247,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/cuarto">
+                            android:src="@drawable/agua_simple">
 
                         </ImageView>
 
@@ -211,7 +263,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/dientes">
+                            android:src="@drawable/agua_limon">
 
                         </ImageView>
 
@@ -227,7 +279,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/tarea">
+                            android:src="@drawable/agua_naranja">
 
                         </ImageView>
 
@@ -252,7 +304,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/cuarto">
+                            android:src="@drawable/jugo_naranja">
 
                         </ImageView>
 
@@ -268,7 +320,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/dientes">
+                            android:src="@drawable/leche">
 
                         </ImageView>
 
@@ -284,7 +336,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/tarea">
+                            android:src="@drawable/leche_cafe">
 
                         </ImageView>
 
@@ -309,7 +361,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/cuarto">
+                            android:src="@drawable/refresco">
 
                         </ImageView>
 
@@ -325,7 +377,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/dientes">
+                            android:src="@drawable/refresco_cola">
 
                         </ImageView>
 
@@ -371,7 +423,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/cuarto">
+                            android:src="@drawable/verduras">
 
                         </ImageView>
 
@@ -387,7 +439,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/dientes">
+                            android:src="@drawable/frutas">
 
                         </ImageView>
 
@@ -403,7 +455,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/tarea">
+                            android:src="@drawable/huevos">
 
                         </ImageView>
 
@@ -428,7 +480,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/cuarto">
+                            android:src="@drawable/pescado">
 
                         </ImageView>
 
@@ -444,7 +496,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/dientes">
+                            android:src="@drawable/pasta">
 
                         </ImageView>
 
@@ -460,7 +512,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/tarea">
+                            android:src="@drawable/sandwich">
 
                         </ImageView>
 
@@ -485,7 +537,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/cuarto">
+                            android:src="@drawable/pizza">
 
                         </ImageView>
 
@@ -501,7 +553,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/dientes">
+                            android:src="@drawable/pastel">
 
                         </ImageView>
 
@@ -517,7 +569,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/tarea">
+                            android:src="@drawable/galletas">
 
                         </ImageView>
 

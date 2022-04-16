@@ -16,7 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:background="@color/pink"
             android:layout_weight="4">
 
             <LinearLayout
@@ -130,16 +129,111 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:background="@color/sunrise"
-            android:layout_weight="3">
+            android:orientation="vertical"
+            android:layout_weight="2">
 
-            <Button
+            <!--Contenedor de robot construido -->
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Stop singing"
-                android:id="@+id/btnPause"/>
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <!-- Espacio en blanco -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3">
+
+                </LinearLayout>
+
+                <!-- Contenedor de ensable de robot -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/lichen"
+                    android:layout_weight="1">
+
+                </LinearLayout>
+
+                <!-- Espacio en blanco -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--Contenedor de botones -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="4">
+
+                <!-- Espacio en blanco -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                </LinearLayout>
+
+                <!-- Contenedor de botones -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/cerulean"
+                    android:layout_weight="1">
+
+                    <!-- Contenedor de botón de probar -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+
+                        <!-- Botón de probar -->
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_play">
+
+                        </ImageView>
+
+                    </LinearLayout>
+
+                    <!-- Contenedor de botón de reiniciar piezas -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+
+                        <!-- Botón de resetear piezas de robot -->
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_reset">
+
+                        </ImageView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Espacio en blanco -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
@@ -147,8 +241,102 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:background="@color/icicle"
-            android:layout_weight="2">
+            android:layout_weight="3">
+
+            <!-- Contendor de flecha izquierda -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="3">
+
+                <!-- Espacio en blanco -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                </LinearLayout>
+
+                <!-- Contenedor de botón de flecha izquierda -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/sunrise"
+                    android:layout_weight="2">
+
+                    <!-- Botón de flecha izquierda -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_left">
+
+                    </ImageView>
+
+
+                </LinearLayout>
+
+                <!-- Espacio en blanco -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Contenedor de piezas -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/lichen"
+                android:layout_weight="1">
+
+
+            </LinearLayout>
+
+            <!-- Contendor de flecha derecha -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="3">
+
+                <!-- Espacio en blanco -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                </LinearLayout>
+
+                <!-- Contenedor de botón de flecha derecha -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/sunrise"
+                    android:layout_weight="2">
+
+                    <!-- Botón de flecha derecha -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_right">
+
+                    </ImageView>
+
+                </LinearLayout>
+
+                <!-- Espacio en blanco -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 

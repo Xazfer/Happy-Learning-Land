@@ -43,14 +43,12 @@
         <!-- Customize window -->
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
-
     </style>
 
     <style name="LettersTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize window -->
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
-
     </style>
 
     <style name="RobotTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -82,5 +80,4 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>
-
 </resources>

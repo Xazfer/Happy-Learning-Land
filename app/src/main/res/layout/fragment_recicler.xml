@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ReciclerFragment">
@@ -16,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:background="@color/pink"
             android:layout_weight="4">
 
             <LinearLayout
@@ -127,12 +127,20 @@
 
         </LinearLayout>
 
+        <!-- Contenendor de imagen -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:background="@color/sunrise"
             android:layout_weight="3">
+
+            <!-- Contenedor de Recidis -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/recidis">
+
+            </ImageView>
 
         </LinearLayout>
 
@@ -140,8 +148,98 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:background="@color/icicle"
             android:layout_weight="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="100dp">
+
+                <!-- Contenedor de tutorial -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/btnTutorial"
+                        android:background="@drawable/btn_menu_reciclaje"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/tutorial"
+                        android:textSize="25sp"
+                        android:textAllCaps="false"
+                        android:elevation="15dp"
+                        android:gravity="center"
+                        android:textColor="@color/textColor"
+                        android:layout_gravity="center"
+                        app:backgroundTint="@color/lichen"/>
+
+                </LinearLayout>
+
+                <!-- Contenedor de modalidad fácil -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/btnEasy"
+                        android:background="@drawable/btn_menu_reciclaje"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/easy"
+                        android:textSize="25sp"
+                        android:textAllCaps="false"
+                        android:elevation="15dp"
+                        android:gravity="center"
+                        android:textColor="@color/textColor"
+                        android:layout_gravity="center"
+                        app:backgroundTint="@color/lichen"/>
+
+                </LinearLayout>
+
+                <!-- Contenedor de modalidad difícil  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/btnHard"
+                        android:background="@drawable/btn_menu_reciclaje"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/hard"
+                        android:textSize="25sp"
+                        android:textAllCaps="false"
+                        android:elevation="15dp"
+                        android:gravity="center"
+                        android:textColor="@color/textColor"
+                        android:layout_gravity="center"
+                        app:backgroundTint="@color/lichen"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 

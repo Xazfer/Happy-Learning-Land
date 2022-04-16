@@ -20,4 +20,13 @@
     <string name="question">¿Qué es?</string>
     <!-- Texto de Task -->
     <string name="finishTask">¿Completaste todas las tareas?</string>
+
+    <!-- Texto de Menú del minijuego de Alimentación -->
+    <string name="food">Alimentos</string>
+    <string name="drinks">Bebidas</string>
+
+    <!-- Texto de Menú del minijuego de Reciclaje -->
+    <string name="tutorial">Tutorial</string>
+    <string name="easy">Fácil</string>
+    <string name="hard">Difícil</string>
 </resources>
