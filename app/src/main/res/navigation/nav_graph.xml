@@ -33,30 +33,86 @@
         android:id="@+id/nav_lettersFragment"
         android:name="com.example.happylearningland.LettersFragment"
         android:label="fragment_letters"
-        tools:layout="@layout/fragment_letters" />
+        tools:layout="@layout/fragment_letters" >
+        <action
+            android:id="@+id/action_nav_lettersFragment_to_nav_mainScreenFragment"
+            app:destination="@id/nav_mainScreenFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_robotFragment"
         android:name="com.example.happylearningland.RobotFragment"
         android:label="fragment_robot"
-        tools:layout="@layout/fragment_robot" />
+        tools:layout="@layout/fragment_robot" >
+        <action
+            android:id="@+id/action_nav_robotFragment_to_nav_mainScreenFragment"
+            app:destination="@id/nav_mainScreenFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_reciclerFragment"
         android:name="com.example.happylearningland.ReciclerFragment"
         android:label="fragment_recicler"
-        tools:layout="@layout/fragment_recicler" />
+        tools:layout="@layout/fragment_recicler" >
+        <action
+            android:id="@+id/action_nav_reciclerFragment_to_reciclerTutorialFragment"
+            app:destination="@id/reciclerTutorialFragment" />
+        <action
+            android:id="@+id/action_nav_reciclerFragment_to_reciclerHardFragment"
+            app:destination="@id/reciclerHardFragment" />
+        <action
+            android:id="@+id/action_nav_reciclerFragment_to_reciclerEasyFragment"
+            app:destination="@id/reciclerEasyFragment" />
+        <action
+            android:id="@+id/action_nav_reciclerFragment_to_nav_mainScreenFragment"
+            app:destination="@id/nav_mainScreenFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_alimentacionFragment"
         android:name="com.example.happylearningland.AlimentacionFragment"
         android:label="fragment_alimentacion"
-        tools:layout="@layout/fragment_alimentacion" />
+        tools:layout="@layout/fragment_alimentacion" >
+        <action
+            android:id="@+id/action_nav_alimentacionFragment_to_nav_mainScreenFragment"
+            app:destination="@id/nav_mainScreenFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_shopFragment"
         android:name="com.example.happylearningland.ShopFragment"
         android:label="fragment_shop"
-        tools:layout="@layout/fragment_shop" />
+        tools:layout="@layout/fragment_shop" >
+        <action
+            android:id="@+id/action_nav_shopFragment_to_shop_Products_fragment"
+            app:destination="@id/shop_Products_fragment" />
+        <action
+            android:id="@+id/action_nav_shopFragment_to_nav_mainScreenFragment"
+            app:destination="@id/nav_mainScreenFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_taskFragment"
         android:name="com.example.happylearningland.TaskFragment"
         android:label="fragment_task"
-        tools:layout="@layout/fragment_task" />
+        tools:layout="@layout/fragment_task" >
+        <action
+            android:id="@+id/action_nav_taskFragment_to_nav_mainScreenFragment"
+            app:destination="@id/nav_mainScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reciclerEasyFragment"
+        android:name="com.example.happylearningland.ReciclerEasyFragment"
+        android:label="fragment_recicler_easy"
+        tools:layout="@layout/fragment_recicler_easy" />
+    <fragment
+        android:id="@+id/reciclerHardFragment"
+        android:name="com.example.happylearningland.ReciclerHardFragment"
+        android:label="fragment_recicler_hard"
+        tools:layout="@layout/fragment_recicler_hard" />
+    <fragment
+        android:id="@+id/reciclerTutorialFragment"
+        android:name="com.example.happylearningland.ReciclerTutorialFragment"
+        android:label="fragment_recicler_tutorial"
+        tools:layout="@layout/fragment_recicler_tutorial" />
+    <fragment
+        android:id="@+id/shop_Products_fragment"
+        android:name="com.example.happylearningland.Shop_Products_fragment"
+        android:label="fragment_shop_products_fragment"
+        tools:layout="@layout/fragment_shop_products_fragment" />
 </navigation>

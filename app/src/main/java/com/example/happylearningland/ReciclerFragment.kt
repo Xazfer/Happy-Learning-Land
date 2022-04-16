@@ -3,6 +3,8 @@ package com.example.happylearningland
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import com.example.happylearningland.databinding.FragmentReciclerBinding
 
 
@@ -14,6 +16,22 @@ class ReciclerFragment : Fragment(R.layout.fragment_recicler) {
         super.onViewCreated(view, savedInstanceState)
         //bindeo de elementos del fragment
         binding = FragmentReciclerBinding.bind(view)
-        //obtencion de argumentos
+
+        binding.btnInicio.setOnClickListener {
+            val bundle = bundleOf("texto" to "Pagina letras")
+            findNavController().navigate(R.id.action_nav_reciclerFragment_to_reciclerTutorialFragment, bundle)
+        }
+        binding.btnTutorial.setOnClickListener {
+            val bundle = bundleOf("texto" to "Pagina letras")
+            findNavController().navigate(R.id.action_nav_reciclerFragment_to_reciclerTutorialFragment, bundle)
+        }
+        binding.btnEasy.setOnClickListener {
+            val bundle = bundleOf("texto" to "Pagina letras")
+            findNavController().navigate(R.id.action_nav_reciclerFragment_to_reciclerEasyFragment, bundle)
+        }
+        binding.btnHard.setOnClickListener {
+            val bundle = bundleOf("texto" to "Pagina letras")
+            findNavController().navigate(R.id.action_nav_reciclerFragment_to_reciclerHardFragment, bundle)
+        }
     }
 }
