@@ -21,7 +21,14 @@
     <!-- Texto de Task -->
     <string name="finishTask">¿Completaste todas las tareas?</string>
 
-    <!-- Texto de Menú del minijuego de Alimentación -->
+    <!-- Texto de precio de productos del minijuego de la Tienda -->
+    <string name="cuatro">4</string>
+    <string name="cinco">5</string>
+    <string name="seis">6</string>
+    <string name="siete">7</string>
+    <string name="ocho">8</string>
+
+    <!-- Texto del minijuego de Alimentación -->
     <string name="food">Alimentos</string>
     <string name="drinks">Bebidas</string>
 
@@ -29,4 +36,5 @@
     <string name="tutorial">Tutorial</string>
     <string name="easy">Fácil</string>
     <string name="hard">Difícil</string>
+    <string name="time">Tiempo:</string>
 </resources>
