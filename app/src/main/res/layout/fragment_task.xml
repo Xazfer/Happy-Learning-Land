@@ -26,6 +26,7 @@
 
                 <!-- Contenedor de Inicio -->
                 <ImageView
+                    android:id="@+id/btnInicio"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_inicio">
@@ -114,6 +115,7 @@
 
                     <!-- Contenedor de configuración -->
                     <ImageView
+                        android:id="@+id/ayuda"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_settings">
@@ -181,6 +183,7 @@
                                 android:layout_weight="1">
 
                                 <ImageView
+                                    android:id="@+id/tarea"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:src="@drawable/tarea"/>
@@ -212,6 +215,7 @@
                                 android:layout_weight="1">
 
                                 <ImageView
+                                    android:id="@+id/dientes"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:src="@drawable/dientes"/>
@@ -243,6 +247,7 @@
                                 android:layout_weight="1">
 
                                 <ImageView
+                                    android:id="@+id/cuarto"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:src="@drawable/cuarto"/>
@@ -274,6 +279,7 @@
                                 android:layout_weight="1">
 
                                 <ImageView
+                                    android:id="@+id/limpiar"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:src="@drawable/limpiar"/>
@@ -305,6 +311,7 @@
                                 android:layout_weight="1">
 
                                 <ImageView
+                                    android:id="@+id/basura"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:src="@drawable/basura"/>

@@ -41,7 +41,17 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
             mediaPlayer?.start()
             mediaPlayer?.isLooping = true
         }
+        binding.btnApagarMusic.setOnClickListener {
+            mediaPlayer?.release()
+            mediaPlayer = null
+        }
 
+        //TODO: momentaneo para acceder a tareas
+        binding.btnEncenderMusic.setOnClickListener {
+            val bundle = bundleOf("texto" to "Pagina letras")
+            findNavController().navigate(R.id.action_nav_mainScreenFragment_to_nav_taskFragment, bundle)
+
+        }
         //Navegacion a los fragments
         binding.bottomNavigation.setOnItemSelectedListener {
                 item ->
