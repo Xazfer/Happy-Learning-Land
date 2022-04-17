@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import kotlinx.android.synthetic.main.bottomshet_settings_fragment.*
+import kotlinx.android.synthetic.main.bottomsheet_settings_fragment.*
 
 class BottomSheetSettings : BottomSheetDialogFragment() {
 
