@@ -1,13 +1,19 @@
 package com.example.happylearningland
 
 
+import android.content.Context
 import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.happylearningland.databinding.FragmentMainScreenBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import kotlinx.android.synthetic.main.fragment_main_screen.*
 
 
 //variable para sonido de fondo
@@ -27,6 +33,19 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
         /*arguments?.let {
             nombre = it.getString("texto")
             binding.texto.text = nombre
+        }*/
+
+        // Bóton de configuración de audio
+        /*binding.btnSettings.setOnClickListener {
+            val view:View = layoutInflater.inflate(R.layout.bottomsheet_settings_fragment, null)
+            val dialog = BottomSheetDialog(Contex?)
+            dialog.setContentView(view)
+            dialog.show()
+        }*/
+        /*val bottomSheetSettings = BottomSheetSettings()
+
+        btnSettings.setOnClickListener {
+            bottomSheetSettings.show(supportFragmentManager, "BottomSheetDialog")
         }*/
 
         //Reproducion de sonido en loop

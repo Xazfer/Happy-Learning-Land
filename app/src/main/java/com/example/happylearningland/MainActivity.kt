@@ -50,9 +50,12 @@ class MainActivity : AppCompatActivity() {
         prefs.putString("provider", provider)
         prefs.apply()
 
+        // Botón de inicio
         btnInicio.setOnClickListener {
             startActivity(Intent(this, CapsuleFragment::class.java))
         }
+
+
     }
 
     private fun checkUser() {

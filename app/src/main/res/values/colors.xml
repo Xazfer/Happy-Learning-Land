@@ -18,6 +18,15 @@
     <color name="btn_green">#008000</color>
     <color name="coins">#EFB810</color>
 
+    <!-- bottomsheet -->
+    <color name="overcast">#F1F1F2</color>
+    <color name="warmgray">#BCBABE</color>
+    <color name="ice">#A1D6E2</color>
+    <color name="glacierblue">#1995AD</color>
+    <color name="lagoon">#5EA8A7</color>
+    <color name="fog">#D4DDE1</color>
+    <color name="cotton">#F9F9FF</color>
+
     <!-- nav navigation -->
     <color name="bottom_nav_background">#128277</color>
     <color name="bottom_nav_item">#B9C4C9</color>

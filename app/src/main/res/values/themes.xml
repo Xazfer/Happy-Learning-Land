@@ -80,4 +80,14 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>
+
+    <!-- Bottom Sheet Modal -->
+    <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <!-- Customize bottom sheet -->
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <!-- Customize bottom sheet -->
+        <item name="android:background">@android:color/transparent</item>
+    </style>
 </resources>

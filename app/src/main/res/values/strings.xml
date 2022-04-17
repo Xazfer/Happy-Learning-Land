@@ -37,4 +37,10 @@
     <string name="easy">Fácil</string>
     <string name="hard">Difícil</string>
     <string name="time">Tiempo:</string>
+
+    <!-- Texto del Settings bottom sheet modal -->
+    <string name="settings">Configuración de sonido</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="comer">Comer</string>
+    <string name="indicadorSalud">Indicador de Salud:</string>
 </resources>
