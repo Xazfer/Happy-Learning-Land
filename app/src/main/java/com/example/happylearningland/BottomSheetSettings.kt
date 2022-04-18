@@ -1,6 +1,8 @@
 package com.example.happylearningland
 
+import android.media.MediaPlayer
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +17,7 @@ class BottomSheetSettings : BottomSheetDialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.e("REVISION", "CREACION")
         return inflater.inflate(R.layout.bottomsheet_settings_fragment, container, false)
     }
 
@@ -22,13 +25,25 @@ class BottomSheetSettings : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btnVolume.setOnClickListener {
-            Toast.makeText(context, "Configuración de sonido", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Sonido activado", Toast.LENGTH_SHORT).show()
+            if(mediaPlayer?.isPlaying == true){
+                mediaPlayer?.release()
+                mediaPlayer = null
+                mediaPlayer= MediaPlayer.create(context, R.raw.gamesample)
+                mediaPlayer?.start()
+                mediaPlayer?.isLooping = true
+            }else{
+                mediaPlayer= MediaPlayer.create(context, R.raw.gamesample)
+                mediaPlayer?.start()
+                mediaPlayer?.isLooping = true
+            }
         }
 
         btnMute.setOnClickListener {
-            Toast.makeText(context, "Configuración de sonido", Toast.LENGTH_SHORT).show()
+            mediaPlayer?.release()
+            mediaPlayer = null
+            Toast.makeText(context, "Sonido desactivado", Toast.LENGTH_SHORT).show()
         }
 
     }
-
 }

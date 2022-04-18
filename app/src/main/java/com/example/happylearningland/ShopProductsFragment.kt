@@ -5,55 +5,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
+import com.example.happylearningland.databinding.FragmentMainScreenBinding
+import com.example.happylearningland.databinding.FragmentShopProductsFragmentBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class Shop_Products_fragment : Fragment(R.layout.fragment_shop_products_fragment) {
+    private lateinit var binding: FragmentShopProductsFragmentBinding
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Shop_Products_fragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class Shop_Products_fragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //bindeo de elementos del fragment
+        binding = FragmentShopProductsFragmentBinding.bind(view)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        binding.productPan.setOnClickListener {
+            val producto:String = "pam"
+            val bundle = bundleOf("Producto" to "Pan")
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
         }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shop_products_fragment, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Shop_Products_fragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Shop_Products_fragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        binding.productGalleta.setOnClickListener {
+                    val bundle = bundleOf("Producto" to "Galleta")
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+        }
     }
 }

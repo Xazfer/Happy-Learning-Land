@@ -160,6 +160,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/productPan"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/tienda_pan"/>
@@ -232,6 +233,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/productGalleta"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/tienda_galleta"/>

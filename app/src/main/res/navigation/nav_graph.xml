@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_nav_mainScreenFragment_to_nav_reciclerFragment"
             app:destination="@id/nav_reciclerFragment" />
+        <action
+            android:id="@+id/action_nav_mainScreenFragment_to_bottomSheetSettings"
+            app:destination="@id/bottomSheetSettings" />
     </fragment>
     <fragment
         android:id="@+id/nav_lettersFragment"
@@ -73,6 +76,9 @@
         <action
             android:id="@+id/action_nav_alimentacionFragment_to_nav_mainScreenFragment"
             app:destination="@id/nav_mainScreenFragment" />
+        <action
+            android:id="@+id/action_nav_alimentacionFragment_to_bottomSheetAlimentation"
+            app:destination="@id/bottomSheetAlimentation" />
     </fragment>
     <fragment
         android:id="@+id/nav_shopFragment"
@@ -114,5 +120,29 @@
         android:id="@+id/shop_Products_fragment"
         android:name="com.example.happylearningland.Shop_Products_fragment"
         android:label="fragment_shop_products_fragment"
-        tools:layout="@layout/fragment_shop_products_fragment" />
+        tools:layout="@layout/fragment_shop_products_fragment" >
+        <action
+            android:id="@+id/action_shop_Products_fragment_to_bottomSheetAlimentation"
+            app:destination="@id/bottomSheetAlimentation" />
+    </fragment>
+    <dialog
+        android:id="@+id/bottomSheetSettings"
+        android:name="com.example.happylearningland.BottomSheetSettings"
+        android:label="BottomSheetSettings" >
+        <action
+            android:id="@+id/action_bottomSheetSettings_to_nav_mainScreenFragment"
+            app:destination="@id/nav_mainScreenFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/bottomSheetAlimentation"
+        android:name="com.example.happylearningland.BottomSheetAlimentation"
+        android:label="fragment_bottom_sheet_alimentation"
+        tools:layout="@layout/fragment_bottom_sheet_alimentation" >
+        <action
+            android:id="@+id/action_bottomSheetAlimentation_to_shop_Products_fragment"
+            app:destination="@id/shop_Products_fragment" />
+        <action
+            android:id="@+id/action_bottomSheetAlimentation_to_nav_alimentacionFragment"
+            app:destination="@id/nav_alimentacionFragment" />
+    </dialog>
 </navigation>

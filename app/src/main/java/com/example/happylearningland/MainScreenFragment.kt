@@ -1,19 +1,13 @@
 package com.example.happylearningland
 
 
-import android.content.Context
 import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.happylearningland.databinding.FragmentMainScreenBinding
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import kotlinx.android.synthetic.main.fragment_main_screen.*
 
 
 //variable para sonido de fondo
@@ -29,24 +23,11 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
         //bindeo de elementos del fragment
         binding = FragmentMainScreenBinding.bind(view)
 
-        //obtencion de argumentos
-        /*arguments?.let {
-            nombre = it.getString("texto")
-            binding.texto.text = nombre
-        }*/
-
         // Bóton de configuración de audio
-        /*binding.btnSettings.setOnClickListener {
-            val view:View = layoutInflater.inflate(R.layout.bottomsheet_settings_fragment, null)
-            val dialog = BottomSheetDialog(Contex?)
-            dialog.setContentView(view)
-            dialog.show()
-        }*/
-        /*val bottomSheetSettings = BottomSheetSettings()
-
-        btnSettings.setOnClickListener {
-            bottomSheetSettings.show(supportFragmentManager, "BottomSheetDialog")
-        }*/
+        binding.btnSettings.setOnClickListener {
+            val bundle = bundleOf("texto" to "Pagina letras")
+            findNavController().navigate(R.id.action_nav_mainScreenFragment_to_bottomSheetSettings, bundle)
+        }
 
         //Reproducion de sonido en loop
         if(mediaPlayer?.isPlaying == true){
@@ -65,12 +46,14 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
             mediaPlayer = null
         }
 
-        //TODO: momentaneo para acceder a tareas
+        //TODO: momentaneo para acceder a tareas y cambiar icono a icono para tareas.
         binding.btnEncenderMusic.setOnClickListener {
             val bundle = bundleOf("texto" to "Pagina letras")
             findNavController().navigate(R.id.action_nav_mainScreenFragment_to_nav_taskFragment, bundle)
+            
 
         }
+
         //Navegacion a los fragments
         binding.bottomNavigation.setOnItemSelectedListener {
                 item ->
@@ -88,19 +71,19 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
                     true
                 }
                 R.id.nav_shopFragment -> {
-                    // Respond to navigation item 2 click
+                    // Respond to navigation item 3 click
                     val bundle = bundleOf("texto" to "Pagina tienda")
                     findNavController().navigate(R.id.action_nav_mainScreenFragment_to_nav_shopFragment, bundle)
                     true
                 }
                 R.id.nav_alimentacionFragment -> {
-                    // Respond to navigation item 2 click
+                    // Respond to navigation item 4 click
                     val bundle = bundleOf("texto" to "Pagina alimentación")
                     findNavController().navigate(R.id.action_nav_mainScreenFragment_to_nav_alimentacionFragment, bundle)
                     true
                 }
                 R.id.nav_reciclerFragment -> {
-                    // Respond to navigation item 2 click
+                    // Respond to navigation item 5 click
                     val bundle = bundleOf("texto" to "Pagina reciclaje")
                     findNavController().navigate(R.id.action_nav_mainScreenFragment_to_nav_reciclerFragment, bundle)
                     true
@@ -110,6 +93,7 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
         }
     }
 
+
     override fun onPause() {
         super.onPause()
         mediaPlayer?.release()
@@ -118,7 +102,6 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
 
     override fun onDestroy() {
         super.onDestroy()
-
         mediaPlayer?.release()
         mediaPlayer = null
     }
