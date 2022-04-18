@@ -12,27 +12,12 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+                <!-- Espacio en blanco -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:layout_weight="4">
-
-                        <!--  Boton de prueba después se elimina -->
-                        <Button
-                            android:id="@+id/btnInicio"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:backgroundTint="@color/cerulean"
-                            android:text="Inicio"
-                            android:textSize="30sp"
-                            android:textAllCaps="false"
-                            android:elevation="15dp"
-                            android:gravity="center"
-                            android:layout_marginStart="24dp"
-                            android:layout_marginEnd="24dp"
-                            android:textColor="@color/textColor"
-                            android:layout_gravity="center"/>
 
                 </LinearLayout>
 
@@ -51,25 +36,31 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:layout_marginBottom="20dp"
                                     android:layout_weight="1" >
 
                                         <ImageView
+                                            android:id="@+id/btnCharacter1"
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight="1"
                                             android:src="@drawable/character_11" />
+
                                 </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:layout_marginBottom="20dp"
                                     android:layout_weight="1" >
 
                                         <ImageView
+                                            android:id="@+id/btnCharacter2"
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight="1"
-                                            android:src="@drawable/character_12"  />
+                                            android:src="@drawable/character_12" />
+
                                 </LinearLayout>
 
                         </LinearLayout>
@@ -82,25 +73,31 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:layout_marginTop="20dp"
                                     android:layout_weight="1" >
 
                                         <ImageView
+                                            android:id="@+id/btnCharacter3"
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight="1"
-                                            android:src="@drawable/character_21"  />
+                                            android:src="@drawable/character_21" />
+
                                 </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:layout_marginTop="20dp"
                                     android:layout_weight="1" >
 
                                         <ImageView
+                                            android:id="@+id/btnCharacter4"
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight="1"
-                                            android:src="@drawable/character_22"  />
+                                            android:src="@drawable/character_22" />
+
                                 </LinearLayout>
                         </LinearLayout>
 

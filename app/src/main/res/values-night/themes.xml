@@ -33,6 +33,20 @@
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
+    <style name="CheckEmailTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize window -->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="RecoveryTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize window -->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
     <style name="CharacterTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize window -->
         <item name="android:windowFullscreen">true</item>

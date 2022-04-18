@@ -12,12 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HappyLearningLand">
         <activity
-            android:name=".AccountRecoveryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CheckEmailActivity"
-            android:exported="false" />
-        <activity
             android:name=".CapsuleFragment"
             android:exported="false" />
         <activity
@@ -41,6 +35,16 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/CharacterTheme" />
+        <activity
+            android:name=".AccountRecoveryActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/RecoveryTheme" />
+        <activity
+            android:name=".CheckEmailActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/CheckEmailTheme" />
     </application>
 
 </manifest>

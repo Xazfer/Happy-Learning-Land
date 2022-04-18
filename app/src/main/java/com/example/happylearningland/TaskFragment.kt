@@ -8,7 +8,6 @@ import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.happylearningland.databinding.FragmentTaskBinding
 
-
 class TaskFragment : Fragment(R.layout.fragment_task) {
     private lateinit var binding: FragmentTaskBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

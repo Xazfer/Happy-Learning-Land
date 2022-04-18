@@ -3,12 +3,9 @@ package com.example.happylearningland
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 enum class ProviderType {
@@ -53,6 +50,53 @@ class MainActivity : AppCompatActivity() {
         // Botón de inicio
         btnInicio.setOnClickListener {
             startActivity(Intent(this, CapsuleFragment::class.java))
+        }
+
+        // Botón de Character 1
+        btnCharacter1.setOnClickListener {
+            val intent = Intent(this, CapsuleFragment::class.java)
+
+            // send image
+            //intent.putExtra("character1", R.drawable.character_11)
+
+            // send new screen
+            startActivity(intent)
+            finish()
+        }
+
+        // Botón de Character 2
+        btnCharacter2.setOnClickListener {
+            val intent = Intent(this, CapsuleFragment::class.java)
+            // send image
+            //intent.putExtra("character2", R.drawable.character_12)
+
+            // send new screen
+            startActivity(intent)
+            finish()
+        }
+
+        // Botón de Character 3
+        btnCharacter3.setOnClickListener {
+            val intent = Intent(this, CapsuleFragment::class.java)
+
+            // send image
+            //intent.putExtra("character3", R.drawable.character_21)
+
+            // send new screen
+            startActivity(intent)
+            finish()
+        }
+
+        // Botón de Character 4
+        btnCharacter4.setOnClickListener {
+            val intent = Intent(this, CapsuleFragment::class.java)
+
+            // send image
+            //intent.putExtra("character4", R.drawable.character_22)
+
+            // send new screen
+            startActivity(intent)
+            finish()
         }
 
 

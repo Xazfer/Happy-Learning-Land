@@ -1,14 +1,13 @@
 package com.example.happylearningland
 
-
 import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.ImageView
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.happylearningland.databinding.FragmentMainScreenBinding
-
 
 //variable para sonido de fondo
 var mediaPlayer: MediaPlayer? = null
@@ -23,11 +22,18 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
         //bindeo de elementos del fragment
         binding = FragmentMainScreenBinding.bind(view)
 
-        // Bóton de configuración de audio
+        // Botón de configuración de audio
         binding.btnSettings.setOnClickListener {
-            val bundle = bundleOf("texto" to "Pagina letras")
+            val bundle = bundleOf("texto" to "Pagina de configuración")
             findNavController().navigate(R.id.action_nav_mainScreenFragment_to_bottomSheetSettings, bundle)
         }
+
+        // Recuperación de imagen del personaje que fue seleccionado
+        //val imageView: ImageView = binding.containerCharacter
+        // fetch image data
+        //val args = this.arguments
+        //val character = args?.get("character") as Int
+        //imageView.setImageResource(character)
 
         //Reproducion de sonido en loop
         if(mediaPlayer?.isPlaying == true){
@@ -41,17 +47,11 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
             mediaPlayer?.start()
             mediaPlayer?.isLooping = true
         }
-        binding.btnApagarMusic.setOnClickListener {
-            mediaPlayer?.release()
-            mediaPlayer = null
-        }
 
         //TODO: momentaneo para acceder a tareas y cambiar icono a icono para tareas.
-        binding.btnEncenderMusic.setOnClickListener {
-            val bundle = bundleOf("texto" to "Pagina letras")
+        binding.btnTask.setOnClickListener {
+            val bundle = bundleOf("texto" to "Pagina tareas")
             findNavController().navigate(R.id.action_nav_mainScreenFragment_to_nav_taskFragment, bundle)
-            
-
         }
 
         //Navegacion a los fragments
@@ -92,7 +92,6 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
             }
         }
     }
-
 
     override fun onPause() {
         super.onPause()

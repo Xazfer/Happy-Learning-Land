@@ -176,9 +176,9 @@
                             android:layout_weight="1">
 
                             <ImageView
+                                android:id="@+id/containerCharacter"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/character_11">
+                                android:layout_height="match_parent">
 
                             </ImageView>
 
@@ -199,46 +199,23 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
-                            android:layout_weight="1">
+                            android:layout_weight="6">
 
-                            <Button
-                                android:id="@+id/btnEncenderMusic"
+                            <!-- Contenedor de Tareas -->
+                            <ImageView
+                                android:id="@+id/btnTask"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginEnd="20dp"
-                                app:backgroundTint="@color/cerulean"
-                                android:text="Encender"
-                                android:textSize="17sp"
-                                android:textAllCaps="false"
-                                android:elevation="15dp"
-                                android:gravity="center"
-                                android:textColor="@color/textColor"
-                                android:layout_gravity="center"/>
+                                android:src="@drawable/homework" />
 
                         </LinearLayout>
 
-                        <!-- Botón de apagar sonido -->
+                        <!-- Espacio en blanco -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
                             android:layout_weight="1">
-
-                            <Button
-                                android:id="@+id/btnApagarMusic"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginEnd="20dp"
-                                app:backgroundTint="@color/cerulean"
-                                android:text="Apagar"
-                                android:textSize="17sp"
-                                android:textAllCaps="false"
-                                android:elevation="15dp"
-                                android:gravity="center"
-                                android:textColor="@color/textColor"
-                                android:layout_gravity="center"/>
 
                         </LinearLayout>
 

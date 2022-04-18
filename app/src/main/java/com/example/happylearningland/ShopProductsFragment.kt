@@ -2,12 +2,9 @@ package com.example.happylearningland
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
-import com.example.happylearningland.databinding.FragmentMainScreenBinding
 import com.example.happylearningland.databinding.FragmentShopProductsFragmentBinding
 
 class Shop_Products_fragment : Fragment(R.layout.fragment_shop_products_fragment) {
