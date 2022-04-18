@@ -339,6 +339,7 @@
 
                     <!-- Botón de flecha izquierda -->
                     <ImageView
+                        android:id="@+id/btnIzquierda"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_left">
@@ -457,6 +458,7 @@
 
                     <!-- Botón de flecha derecha -->
                     <ImageView
+                        android:id="@+id/btnDerecha"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_right">
