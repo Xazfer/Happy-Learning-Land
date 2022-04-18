@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     private fun checkUser() {
         // check user is logged in or not
         val firebaseUser = auth.currentUser
-        if (auth != null) {
+        if (firebaseUser != null) {
             // user not null, user is logged in, get user info
             /*val email = firebaseUser.email
             Toast.makeText(this, "Conectado como $email", Toast.LENGTH_SHORT).show()*/

@@ -100,6 +100,11 @@ class Login : AppCompatActivity() {
             startActivity(Intent(this@Login, MainActivity::class.java))
         }
 
+        binding.txtRecovery.setOnClickListener {
+            val intent = Intent(this, AccountRecoveryActivity::class.java)
+            startActivity(intent)
+        }
+
         // Conexión de Gmail
         // [START config_signin]
         // Configure Google Sign In
@@ -135,9 +140,15 @@ class Login : AppCompatActivity() {
         val email = prefs.getString("email", null)
         val provider = prefs.getString("provider", null)
 
-        if (email != null && provider != null) {
-            loginLayout.visibility = View.INVISIBLE
-            showMain(email, ProviderType.valueOf(provider))
+        // check if user is logged in or not
+        val firebaseUser = auth.currentUser
+        if (firebaseUser != null) {
+            // sign up success
+            progressDialog2.dismiss()
+            if (email != null && provider != null) {
+                loginLayout.visibility = View.INVISIBLE
+                showMain(email, ProviderType.valueOf(provider))
+            }
         }
     }
 
@@ -247,8 +258,7 @@ class Login : AppCompatActivity() {
                 val email = firebaseUser!!.email
 
                 Toast.makeText(this, "Conectando como $email", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, MainActivity::class.java))
-                finish()
+                checkEmail()
             } else {
                 // sign in failed
                 Log.w("TAG", "signInWithEmail:failure", task.exception)
@@ -267,16 +277,10 @@ class Login : AppCompatActivity() {
             progressDialog2.dismiss()
             // get current user
             if (task.isSuccessful) {
-                // sign up success
-                progressDialog2.dismiss()
                 Log.d(TAG, "createUserWithEmail:success")
-                // get current user
-                val firebaseUser = auth.currentUser
-                val email = firebaseUser!!.email
-                Toast.makeText(this, "Cuenta creada con correo $email", Toast.LENGTH_SHORT).show()
 
                 // open MainActivity
-                startActivity(Intent(this, MainActivity::class.java)) // add @Login
+                startActivity(Intent(this, CheckEmailActivity::class.java))
                 finish()
             } else {
                 // if sign up fails, display a message to the user
@@ -288,13 +292,29 @@ class Login : AppCompatActivity() {
 
     }
 
+    // Función de verificación de usuario -- Sign In
+    private fun checkEmail() {
+        super.onStart()
+        val currentUser = auth.currentUser
+
+        if (currentUser != null) {
+            if (currentUser.isEmailVerified) {
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            } else {
+                startActivity(Intent(this, CheckEmailActivity::class.java))
+                finish()
+            }
+        }
+    }
+
     private fun checkUser() {
         // check if user is logged in or not
         val firebaseUser = auth.currentUser
         if (firebaseUser != null) {
             // user is already logged in
             // start MainActivity
-            startActivity(Intent(this@Login, MainActivity::class.java)) // add @Login
+            startActivity(Intent(this@Login, MainActivity::class.java))
             finish()
         }
     }

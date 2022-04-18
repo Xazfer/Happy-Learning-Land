@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckEmailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <!-- Espacio en blanco -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/topView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/blue_topaz"
+                android:gravity="center"
+                android:text="Happy Learning Land"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold|normal|italic"
+                tools:ignore="TextContrastCheck" />
+
+            <View
+                android:id="@+id/viewWave"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/ic_wave" />
+
+        </LinearLayout>
+
+        <!-- Contenendor de verificación -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1.5">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="10dp"
+                app:cardUseCompatPadding="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="38dp"
+                android:layout_marginEnd="38dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!-- Contenendor del texto principal -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/recuperacion"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textAlignment="center"
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
+
+                    <!-- Contenendor del texto secundario -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/resumeRecuperacion"
+                            android:textSize="18sp"
+                            android:textStyle="normal"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textAlignment="center"
+                            android:textColor="#464646" />
+
+
+                    </LinearLayout>
+
+                    <!-- Contenedor de correo de recuperación -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            app:shapeAppearance="@style/ButtonSignIn"
+                            android:layout_marginTop="10dp"
+                            app:boxStrokeColor="#4E4A4A"
+                            app:boxStrokeWidth="1dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Correo electrónico"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginLeft="5dp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/emailRecovery"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:inputType="textPersonName|textEmailAddress"
+                                android:textColor="@color/black"
+                                android:textSize="13sp"
+                                android:textStyle="normal"
+                                tools:ignore="TouchTargetSizeCheck" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <!-- Contenendor del botón -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+
+                        <Button
+                            app:shapeAppearanceOverlay="@style/ButtonSignIn"
+                            app:backgroundTint="@color/cerulean"
+                            android:id="@+id/btnRecovery"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/enviar"
+                            android:textSize="18sp"
+                            android:textAllCaps="false"
+                            android:elevation="15dp"
+                            android:gravity="center"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginEnd="24dp"
+                            android:textColor="@color/textColor"
+                            android:layout_gravity="center" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <!-- Espacio en blanco -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2.5">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

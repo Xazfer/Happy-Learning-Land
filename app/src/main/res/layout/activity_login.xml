@@ -149,14 +149,47 @@
                             android:textStyle="normal"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="11sp"
-                        android:text="¿Olvidaste tu contraseña?"
-                        android:textAlignment="textEnd"
-                        android:textColor="#616161"
-                        android:textStyle="normal"/>
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <!-- Espacio en blanco-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:layout_weight="1.6">
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:layout_weight="1.2">
+
+                                <TextView
+                                    android:id="@+id/txtRecovery"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="12sp"
+                                    android:text="¿Olvidaste tu contraseña?"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="#616161"
+                                    android:textStyle="normal"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -271,7 +304,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/sign_In"
-                    android:textSize="17sp"
+                    android:textSize="18sp"
                     android:textAllCaps="false"
                     android:elevation="15dp"
                     android:gravity="center"

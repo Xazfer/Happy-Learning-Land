@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HappyLearningLand">
         <activity
+            android:name=".AccountRecoveryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckEmailActivity"
+            android:exported="false" />
+        <activity
             android:name=".CapsuleFragment"
             android:exported="false" />
         <activity

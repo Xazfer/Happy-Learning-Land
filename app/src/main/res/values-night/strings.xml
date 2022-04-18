@@ -43,6 +43,14 @@
     <string name="cancelar">Cancelar</string>
     <string name="comer">Comer</string>
     <string name="indicadorSalud">Indicador de Salud:</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Texto de recuperación -->
+    <string name="recuperacion">Recuperación de la cuenta</string>
+    <string name="resumeRecuperacion">Ingrese su correo para que se le puedan enviar los pasos para cambiar su contraseña.</string>
+    <string name="enviar">Enviar</string>
+
+    <!-- Texto de verificación -->
+    <string name="verificacion">Verificación de correo</string>
+    <string name="resumeVerificacion">Para completar su registro verifique su correo y después de clic en continuar.</string>
+    <string name="continuar">Continuar</string>
 </resources>
