@@ -166,11 +166,12 @@
                             android:layout_height="match_parent">
 
                             <ImageView
-                                android:id="@+id/imageView32"
+                                android:id="@+id/target1ImageView"
                                 android:layout_width="30dp"
                                 android:layout_height="100dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/baseuno" />
+                                android:src="@drawable/baseuno"
+                                android:tag="figure1" />
 
                         </TableRow>
 
@@ -179,23 +180,26 @@
                             android:layout_height="match_parent">
 
                             <ImageView
-                                android:id="@+id/imageView51"
+                                android:id="@+id/target3ImageView"
                                 android:layout_width="68dp"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/basetres" />
+                                android:src="@drawable/basetres"
+                                android:tag="figure3" />
 
                             <ImageView
-                                android:id="@+id/imageView52"
+                                android:id="@+id/target2ImageView"
                                 android:layout_width="110dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:src="@drawable/basedos" />
+                                android:src="@drawable/basedos"
+                                android:tag="figure2" />
 
                             <ImageView
-                                android:id="@+id/imageView53"
+                                android:id="@+id/target4ImageView"
                                 android:layout_width="68dp"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/basecuatro" />
+                                android:src="@drawable/basecuatro"
+                                android:tag="figure4" />
 
                         </TableRow>
 
@@ -204,18 +208,20 @@
                             android:layout_height="match_parent" >
 
                             <ImageView
-                                android:id="@+id/imageView63"
+                                android:id="@+id/target5ImageView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="65dp"
                                 android:layout_weight="4"
-                                android:src="@drawable/basecinco" />
+                                android:src="@drawable/basecinco"
+                                android:tag="figure5" />
 
                             <ImageView
-                                android:id="@+id/imageView64"
+                                android:id="@+id/target6ImageView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="65dp"
                                 android:layout_weight="2"
-                                android:src="@drawable/baseseis" />
+                                android:src="@drawable/baseseis"
+                                android:tag="figure6" />
 
                         </TableRow>
 
@@ -354,12 +360,77 @@
 
             <!-- Contenedor de piezas -->
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="298dp"
                 android:layout_height="match_parent"
-                android:background="@color/lichen"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:background="@color/lichen">
 
 
+                <TableLayout
+                    android:layout_width="211dp"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/drag6ImageView"
+                            android:layout_width="89dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/robotgrisc"
+                            android:tag="figure6" />
+
+                        <ImageView
+                            android:id="@+id/drag1ImageView"
+                            android:layout_width="129dp"
+                            android:layout_height="98dp"
+                            android:src="@drawable/robotgris"
+                            android:tag="figure1" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="255dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/drag4ImageView"
+                            android:layout_width="70dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/robotgrist"
+                            android:tag="figure4" />
+
+                        <ImageView
+                            android:id="@+id/drag2ImageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/robotgrisu"
+                            android:tag="figure2" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="33dp">
+
+                        <ImageView
+                            android:id="@+id/drag5ImageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/robotgriss"
+                            android:tag="figure5" />
+
+                        <ImageView
+                            android:id="@+id/drag3ImageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/robotgrisd"
+                            android:tag="figure3" />
+
+                    </TableRow>
+
+                </TableLayout>
             </LinearLayout>
 
             <!-- Contendor de flecha derecha -->
