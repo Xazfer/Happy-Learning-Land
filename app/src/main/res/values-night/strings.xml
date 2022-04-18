@@ -43,4 +43,6 @@
     <string name="cancelar">Cancelar</string>
     <string name="comer">Comer</string>
     <string name="indicadorSalud">Indicador de Salud:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

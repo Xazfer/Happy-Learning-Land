@@ -14,7 +14,6 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
-import androidx.core.util.PatternsCompat
 import com.example.happylearningland.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -22,14 +21,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.analytics.FirebaseAnalytics
-import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
-import java.util.regex.Pattern.compile
+import java.util.regex.Pattern
 
 class Login : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
@@ -63,9 +58,6 @@ class Login : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        //setContentView(R.layout.activity_login)
 
         // Ocultar barra de navegación y status bar
         window.decorView.apply {
@@ -76,6 +68,11 @@ class Login : AppCompatActivity() {
             systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
         }
 
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // Conexión con la BD
+        auth = FirebaseAuth.getInstance()
 
         // Configure progress dialog SignIn
         progressDialog = ProgressDialog(this)
@@ -89,28 +86,8 @@ class Login : AppCompatActivity() {
         progressDialog2.setMessage("Creando cuenta...")
         progressDialog2.setCanceledOnTouchOutside(false)
 
-        // Conexión con la BD
-        auth = FirebaseAuth.getInstance()
-
         // Revisión de si el usuario existe o no
         checkUser()
-
-        signUp.setOnClickListener {
-            signUp.background = resources.getDrawable(R.drawable.switch_trcks,null)
-            signUp.setTextColor(resources.getColor(R.color.textColor,null))
-            signIn.background = null
-            signUpLayout.visibility = View.VISIBLE
-            signInLayout.visibility = View.GONE
-            signIn.setTextColor(resources.getColor(R.color.pink,null))
-        }
-        signIn.setOnClickListener {
-            signUp.background = null
-            signUp.setTextColor(resources.getColor(R.color.pink, null))
-            signIn.background = resources.getDrawable(R.drawable.switch_trcks,null)
-            signUpLayout.visibility = View.GONE
-            signInLayout.visibility = View.VISIBLE
-            signIn.setTextColor(resources.getColor(R.color.textColor, null))
-        }
 
         // Google Analytics
         // Obtain the FirebaseAnalytics instance.
@@ -186,7 +163,8 @@ class Login : AppCompatActivity() {
             binding.password.error = "La contraseña debe tener al menos 6 caracteres"
         }
         else {
-            firebaseSignIn()
+            //firebaseSignIn()
+            firebaseSignIn(emailV, passwordV)
         }
     }
 
@@ -196,6 +174,15 @@ class Login : AppCompatActivity() {
         emailsV = binding.emails.text.toString().trim()
         passwordsV = binding.passwords.text.toString().trim()
         passwordsV2 = binding.passwords2.text.toString().trim()
+
+        val passwordRegex = Pattern.compile("^" +
+                "(?=.*[0-9])" + // Al menos un número
+                "(?=.*[A-Z])" + // Al menos una letra mayúscula
+                "(?=.*[a-z])" + // Al menos una letra minúscula
+                "(?=.*[@#$%^&+=])" +     // at least 1 special character
+                "(?=\\S+$)" +            // no white spaces
+                ".{6,}" +                // at least 6 characters
+                "$")
 
         // validate data
         if (TextUtils.isEmpty(nameV)) {
@@ -217,9 +204,17 @@ class Login : AppCompatActivity() {
             // password length
             binding.passwords.error = "La contraseña debe tener al menos 6 caracteres"
         }
+        else if(!passwordRegex.matcher(passwordsV).matches()) {
+            // regex password
+            binding.passwords.error = "La contraseña es débil"
+        }
         else if (TextUtils.isEmpty(passwordsV2)) {
             // no password entered
             binding.passwords2.error = "Por favor, ingrese su contraseña"
+        }
+        else if(!passwordRegex.matcher(passwordsV2).matches()) {
+            // regex password
+            binding.passwords2.error = "La contraseña es débil"
         }
         else if (passwordsV2.length < 6) {
             // password length
@@ -231,51 +226,66 @@ class Login : AppCompatActivity() {
             binding.passwords2.error = "La contraseña no coincide"
         }
         else {
-            firebaseSignUp()
+            firebaseSignUp(emailsV, passwordsV)
         }
     }
 
-    private fun firebaseSignIn() {
+    private fun firebaseSignIn(email : String, password : String) {
         // show progress
         progressDialog.show()
         // sign in
-        auth.signInWithEmailAndPassword(emailV, passwordV).addOnSuccessListener {
+        auth.signInWithEmailAndPassword(emailV, passwordV).addOnCompleteListener(this) { task ->
             // sign in success
             progressDialog.dismiss()
             // get user info
-            val firebaseUser = auth.currentUser
-            val email = firebaseUser!!.email
-            Toast.makeText(this, "Conectado como $email", Toast.LENGTH_SHORT).show()
-            // open MainActivity
-            startActivity(Intent(this, MainActivity::class.java)) // add @Login
-            finish()
-        }.addOnFailureListener { e ->
-            // sign in failed
-            progressDialog.dismiss()
-            Toast.makeText(this, "Error de inicio de sesión debido a ${e.message}", Toast.LENGTH_SHORT).show()
+            if (task.isSuccessful) {
+                // sign in success
+                progressDialog.dismiss()
+                Log.d("TAG", "signInWithEmail:success")
+                // get user info
+                val firebaseUser = auth.currentUser
+                val email = firebaseUser!!.email
+
+                Toast.makeText(this, "Conectando como $email", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            } else {
+                // sign in failed
+                Log.w("TAG", "signInWithEmail:failure", task.exception)
+                progressDialog.dismiss()
+                Toast.makeText(baseContext, "Autenticación fallida.", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
-    private fun firebaseSignUp() {
+    private fun firebaseSignUp(email : String, password: String) {
         // show progress
         progressDialog2.show()
         // sign up
-        auth.createUserWithEmailAndPassword(nameV, emailsV).addOnSuccessListener {
+        auth.createUserWithEmailAndPassword(emailsV, passwordsV).addOnCompleteListener(this) { task ->
             // sign up success
             progressDialog2.dismiss()
             // get current user
-            val firebaseUser = auth.currentUser
-            val email = firebaseUser!!.email
-            Toast.makeText(this, "Cuenta creada con correo $email", Toast.LENGTH_SHORT).show()
+            if (task.isSuccessful) {
+                // sign up success
+                progressDialog2.dismiss()
+                Log.d(TAG, "createUserWithEmail:success")
+                // get current user
+                val firebaseUser = auth.currentUser
+                val email = firebaseUser!!.email
+                Toast.makeText(this, "Cuenta creada con correo $email", Toast.LENGTH_SHORT).show()
 
-            // open MainActivity
-            startActivity(Intent(this, MainActivity::class.java)) // add @Login
-            finish()
-        }.addOnFailureListener { e ->
-            // sign up failed
-            progressDialog2.dismiss()
-            Toast.makeText(this, "El registro falló debido a ${e.message}", Toast.LENGTH_SHORT).show()
+                // open MainActivity
+                startActivity(Intent(this, MainActivity::class.java)) // add @Login
+                finish()
+            } else {
+                // if sign up fails, display a message to the user
+                Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                progressDialog2.dismiss()
+                Toast.makeText(baseContext, "Autenticación fallida.", Toast.LENGTH_SHORT).show()
+            }
         }
+
     }
 
     private fun checkUser() {
@@ -296,17 +306,6 @@ class Login : AppCompatActivity() {
         btnSignIn.setOnClickListener {
             // before loggin in, validate data
             validateDataSignIn()
-
-            /*if ((email.text!!.isNotEmpty()) && (password.text!!.isNotEmpty())) {
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(email.text.toString(), password.text.toString()).addOnCompleteListener{
-                    if (it.isSuccessful) {
-                        //signIn() // add
-                        showMain(it.result?.user?.email ?: "", ProviderType.BASIC)
-                    } else {
-                        showAlert()
-                    }
-                }
-            }*/
         }
 
         // Registro
@@ -393,18 +392,6 @@ class Login : AppCompatActivity() {
         if (requestCode == RC_SIGN_IN) {
             Log.d(TAG, "onActivityResult: Google SignIn intent result")
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            /*try {
-                val account = task.getResult(ApiException::class.java)
-                // Google Sign In was successful, authenticate with Firebase
-                firebaseAuthWithGoogleAccount(account)
-                val intent = Intent(this, MainActivity::class.java).apply {
-                    putExtra("full name", account?.displayName)
-                    putExtra("email", account?.email)
-                }
-            } catch (e: ApiException) {
-                // Google Sign In failed, update UI appropriately
-                Log.w("Error", "Google sign in failed", e)
-            }*/
             try {
                 val account = task.getResult(ApiException::class.java)
                 // Google Sign In was successful, authenticate with Firebase
@@ -413,24 +400,17 @@ class Login : AppCompatActivity() {
                 if (account != null) {
                     val credential = GoogleAuthProvider.getCredential(account.idToken, null)
 
-                    //add
-                    /*val intent = Intent(this, MainActivity::class.java).apply {
-                        putExtra("full name", account?.displayName)
-                        putExtra("email", account?.email)
-                    }*/
-
                     auth.signInWithCredential(credential).addOnCompleteListener {
                         if (it.isSuccessful) {
                             showMain(account.email ?: "", ProviderType.GOOGLE)
                             signIn() // add
                         } else {
-                            //signIn() // add
                             showAlert()
                         }
                     }
                 }
             } catch (e: ApiException) {
-                //Log.w("Error", "Google sign in failed", e) // add
+                Log.w("Error", "Google sign in failed", e)
                 // Google Sign In failed, update UI appropriately
                 showAlert()
             }
