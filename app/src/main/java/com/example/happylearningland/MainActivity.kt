@@ -47,10 +47,7 @@ class MainActivity : AppCompatActivity() {
         prefs.putString("provider", provider)
         prefs.apply()
 
-        // Botón de inicio
-        btnInicio.setOnClickListener {
-            startActivity(Intent(this, CapsuleFragment::class.java))
-        }
+
 
         // Botón de Character 1
         btnCharacter1.setOnClickListener {

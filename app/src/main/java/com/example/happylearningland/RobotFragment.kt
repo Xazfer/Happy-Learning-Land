@@ -14,12 +14,14 @@ import android.util.Log
 import android.view.DragEvent
 import android.widget.ImageView
 import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_robot.*
 
 class RobotFragment : Fragment(R.layout.fragment_robot) {
 
     private lateinit var binding: FragmentRobotBinding
     var contador = 1
+    var score = 0
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //bindeo de elementos del fragment
@@ -43,14 +45,53 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
 
         btnDerecha.setOnClickListener {
             contador += 1
+            if (contador == 5){
+                contador = 1
+            }
             Log.d("REVISION", contador.toString())
             images()
         }
         btnIzquierda.setOnClickListener {
             contador -= 1
+            if (contador == 0){
+                contador = 5
+            }
             Log.d("REVISION", contador.toString())
             images()
         }
+        btnInicio.setOnClickListener {
+            findNavController().navigate(R.id.action_nav_robotFragment_to_nav_mainScreenFragment)
+        }
+        btnPlay.setOnClickListener {
+            if (score == 6){
+                score = 0
+                Log.e("CUMPLIMIENTO","SE COMPLETARON 5 PTS")
+                mediaPlayer= MediaPlayer.create(context, R.raw.robotarmado)
+                mediaPlayer?.start()
+            }else{
+                mediaPlayer= MediaPlayer.create(context, R.raw.errorrobot)
+                mediaPlayer?.start()
+                Log.e("INCUMPLIMIENTO","NO SE COMPLETARON LOS 5 PTS")
+            }
+        }
+        btnReset.setOnClickListener {
+            target1ImageView.setImageResource(R.drawable.baseuno)
+            target2ImageView.setImageResource(R.drawable.basedos)
+            target3ImageView.setImageResource(R.drawable.basetres)
+            target4ImageView.setImageResource(R.drawable.basecuatro)
+            target5ImageView.setImageResource(R.drawable.basecinco)
+            target6ImageView.setImageResource(R.drawable.baseseis)
+
+            drag1ImageView.isVisible = true
+            drag2ImageView.isVisible = true
+            drag3ImageView.isVisible = true
+            drag4ImageView.isVisible = true
+            drag5ImageView.isVisible = true
+            drag6ImageView.isVisible = true
+        }
+    }
+    fun score(){
+        score += 1
     }
     fun images(){
         when(contador){
@@ -151,8 +192,8 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
             4->target4ImageView.setImageResource(R.drawable.robotverde4)
             5->target4ImageView.setImageResource(R.drawable.robotnegro4)
         }
-
     }
+
     private class MyDragShadowBuilder(val v: View) : View.DragShadowBuilder(v) {
         override fun onProvideShadowMetrics(size: Point, touch: Point) {
             size.set(view.width, view.height)
@@ -199,6 +240,7 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                 if(event.clipDescription.label == receiverView.tag as String) {
                     /**CABEZA*/
                     setHead()
+                    score()
                     drag1ImageView.isVisible = false
                     mediaPlayer= MediaPlayer.create(context, R.raw.cabeza)
                     mediaPlayer?.start()
@@ -240,6 +282,7 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                 if(event.clipDescription.label == receiverView.tag as String) {
                     /**MANO DERECHA*/
                     setRigthHand()
+                    score()
                     drag3ImageView.isVisible = false
                     mediaPlayer= MediaPlayer.create(context, R.raw.brazoderecho)
                     mediaPlayer?.start()
@@ -281,6 +324,7 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                 if(event.clipDescription.label == receiverView.tag as String) {
                     /**TORSO*/
                     setTorso()
+                    score()
                     drag2ImageView.isVisible = false
                     mediaPlayer= MediaPlayer.create(context, R.raw.torso)
                     mediaPlayer?.start()
@@ -322,6 +366,7 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                 if(event.clipDescription.label == receiverView.tag as String) {
                     /**MANO IZQUIERDA*/
                     setLeftHand()
+                    score()
                     drag4ImageView.isVisible = false
                     mediaPlayer= MediaPlayer.create(context, R.raw.brazoizquierdo)
                     mediaPlayer?.start()
@@ -363,6 +408,7 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                 if(event.clipDescription.label == receiverView.tag as String) {
                     /**PIERNA DERECHA*/
                     setRigthLeg()
+                    score()
                     drag5ImageView.isVisible = false
                     mediaPlayer= MediaPlayer.create(context, R.raw.piernaderecha)
                     mediaPlayer?.start()
@@ -404,6 +450,7 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                 if(event.clipDescription.label == receiverView.tag as String) {
                     /**PIERNA IZQUIERDA*/
                     setLeftLeg()
+                    score()
                     drag6ImageView.isVisible = false
                     mediaPlayer= MediaPlayer.create(context, R.raw.piernaizquierda)
                     mediaPlayer?.start()

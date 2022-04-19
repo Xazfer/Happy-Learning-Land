@@ -27,6 +27,7 @@
 
                 <!-- Contenedor de Inicio -->
                 <ImageView
+                    android:id="@+id/btnInicio"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_inicio">
@@ -269,6 +270,7 @@
 
                         <!-- Botón de probar -->
                         <ImageView
+                            android:id="@+id/btnPlay"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_play">
@@ -286,6 +288,7 @@
 
                         <!-- Botón de resetear piezas de robot -->
                         <ImageView
+                            android:id="@+id/btnReset"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_reset">
