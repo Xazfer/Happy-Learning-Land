@@ -44,9 +44,11 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
         target6ImageView.setOnDragListener(dragListener6)
 
         btnDerecha.setOnClickListener {
-            contador += 1
+
             if (contador == 5){
                 contador = 1
+            }else{
+                contador += 1
             }
             Log.d("REVISION", contador.toString())
             images()
@@ -122,20 +124,20 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                 drag3ImageView.setImageResource(R.drawable.robotoriginal2)
             }
             4->{
-                drag6ImageView.setImageResource(R.drawable.robotverde6)
-                drag1ImageView.setImageResource(R.drawable.robotverde1)
-                drag4ImageView.setImageResource(R.drawable.robotverde4)
-                drag2ImageView.setImageResource(R.drawable.robotverde3)
-                drag5ImageView.setImageResource(R.drawable.robotverde5)
-                drag3ImageView.setImageResource(R.drawable.robotverde2)
+                drag6ImageView.setImageResource(R.drawable.robotverde66)
+                drag1ImageView.setImageResource(R.drawable.robotverde11)
+                drag4ImageView.setImageResource(R.drawable.robotverde44)
+                drag2ImageView.setImageResource(R.drawable.robotverde33)
+                drag5ImageView.setImageResource(R.drawable.robotverde55)
+                drag3ImageView.setImageResource(R.drawable.robotverde22)
             }
             5->{
-                drag6ImageView.setImageResource(R.drawable.robotnegro6)
-                drag1ImageView.setImageResource(R.drawable.robotnegro1)
-                drag4ImageView.setImageResource(R.drawable.robotnegro4)
-                drag2ImageView.setImageResource(R.drawable.robotnegro3)
-                drag5ImageView.setImageResource(R.drawable.robotnegro5)
-                drag3ImageView.setImageResource(R.drawable.robotnegro2)
+                drag6ImageView.setImageResource(R.drawable.robotnegro66)
+                drag1ImageView.setImageResource(R.drawable.robotnegro11)
+                drag4ImageView.setImageResource(R.drawable.robotnegro44)
+                drag2ImageView.setImageResource(R.drawable.robotnegro33)
+                drag5ImageView.setImageResource(R.drawable.robotnegro55)
+                drag3ImageView.setImageResource(R.drawable.robotnegro22)
             }
         }
     }
@@ -144,8 +146,8 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
             1->target1ImageView.setImageResource(R.drawable.robotgris)
             2->target1ImageView.setImageResource(R.drawable.robotamarillo1)
             3->target1ImageView.setImageResource(R.drawable.robotoriginal1)
-            4->target1ImageView.setImageResource(R.drawable.robotverde1)
-            5-> target1ImageView.setImageResource(R.drawable.robotnegro1)
+            4->target1ImageView.setImageResource(R.drawable.robotverde11)
+            5-> target1ImageView.setImageResource(R.drawable.robotnegro11)
         }
     }
     fun setTorso(){
@@ -153,8 +155,8 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
             1->target2ImageView.setImageResource(R.drawable.robotgrisu)
             2->target2ImageView.setImageResource(R.drawable.robotamarillo3)
             3->target2ImageView.setImageResource(R.drawable.robotoriginal3)
-            4->target2ImageView.setImageResource(R.drawable.robotverde3)
-            5->target2ImageView.setImageResource(R.drawable.robotnegro3)
+            4->target2ImageView.setImageResource(R.drawable.robotverde33)
+            5->target2ImageView.setImageResource(R.drawable.robotnegro33)
         }
     }
     fun setRigthLeg(){
@@ -162,8 +164,8 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
             1->target5ImageView.setImageResource(R.drawable.robotgrisc)
             2->target5ImageView.setImageResource(R.drawable.robotamarillo5)
             3->target5ImageView.setImageResource(R.drawable.robotoriginal5)
-            4->target5ImageView.setImageResource(R.drawable.robotverde5)
-            5->target5ImageView.setImageResource(R.drawable.robotnegro5)
+            4->target5ImageView.setImageResource(R.drawable.robotverde55)
+            5->target5ImageView.setImageResource(R.drawable.robotnegro55)
         }
     }
     fun setLeftLeg(){
@@ -171,8 +173,8 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
             1->target6ImageView.setImageResource(R.drawable.robotgriss)
             2->target6ImageView.setImageResource(R.drawable.robotamarillo6)
             3->target6ImageView.setImageResource(R.drawable.robotoriginal6)
-            4->target6ImageView.setImageResource(R.drawable.robotverde6)
-            5->target6ImageView.setImageResource(R.drawable.robotnegro6)
+            4->target6ImageView.setImageResource(R.drawable.robotverde66)
+            5->target6ImageView.setImageResource(R.drawable.robotnegro66)
         }
     }
     fun setRigthHand(){
@@ -180,8 +182,8 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
             1->target3ImageView.setImageResource(R.drawable.robotgrisd)
             2->target3ImageView.setImageResource(R.drawable.robotamarillo2)
             3->target3ImageView.setImageResource(R.drawable.robotoriginal2)
-            4->target3ImageView.setImageResource(R.drawable.robotverde2)
-            5->target3ImageView.setImageResource(R.drawable.robotnegro2)
+            4->target3ImageView.setImageResource(R.drawable.robotverde22)
+            5->target3ImageView.setImageResource(R.drawable.robotnegro22)
         }
     }
     fun setLeftHand(){
@@ -189,8 +191,8 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
             1->target4ImageView.setImageResource(R.drawable.robotgrist)
             2->target4ImageView.setImageResource(R.drawable.robotamarillo4)
             3->target4ImageView.setImageResource(R.drawable.robotoriginal4)
-            4->target4ImageView.setImageResource(R.drawable.robotverde4)
-            5->target4ImageView.setImageResource(R.drawable.robotnegro4)
+            4->target4ImageView.setImageResource(R.drawable.robotverde44)
+            5->target4ImageView.setImageResource(R.drawable.robotnegro44)
         }
     }
 
@@ -237,6 +239,7 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                 true
             }
             DragEvent.ACTION_DROP -> {
+                receiverView.setColorFilter(Color.TRANSPARENT)
                 if(event.clipDescription.label == receiverView.tag as String) {
                     /**CABEZA*/
                     setHead()
@@ -246,6 +249,17 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                     mediaPlayer?.start()
                 } else {
                     receiverView.setColorFilter(Color.RED)
+                    mediaPlayer= MediaPlayer.create(context, R.raw.piezaerronea)
+                    mediaPlayer?.start()
+                    if(event.clipDescription.label == receiverView.tag as String) {
+                        /**CABEZA*/
+                        setHead()
+                        score()
+                        drag1ImageView.isVisible = false
+
+                        mediaPlayer= MediaPlayer.create(context, R.raw.cabeza)
+                        mediaPlayer?.start()
+                    }
                 }
                 true
             }
@@ -279,6 +293,7 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                 true
             }
             DragEvent.ACTION_DROP -> {
+                receiverView.setColorFilter(Color.TRANSPARENT)
                 if(event.clipDescription.label == receiverView.tag as String) {
                     /**MANO DERECHA*/
                     setRigthHand()
@@ -287,7 +302,17 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.brazoderecho)
                     mediaPlayer?.start()
                 } else {
+                    mediaPlayer= MediaPlayer.create(context, R.raw.piezaerronea)
+                    mediaPlayer?.start()
                     receiverView.setColorFilter(Color.RED)
+                    if(event.clipDescription.label == receiverView.tag as String) {
+                        /**MANO DERECHA*/
+                        setRigthHand()
+                        score()
+                        drag3ImageView.isVisible = false
+                        mediaPlayer= MediaPlayer.create(context, R.raw.brazoderecho)
+                        mediaPlayer?.start()
+                    }
                 }
                 true
             }
@@ -321,6 +346,7 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                 true
             }
             DragEvent.ACTION_DROP -> {
+                receiverView.setColorFilter(Color.TRANSPARENT)
                 if(event.clipDescription.label == receiverView.tag as String) {
                     /**TORSO*/
                     setTorso()
@@ -329,7 +355,17 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.torso)
                     mediaPlayer?.start()
                 } else {
+                    mediaPlayer= MediaPlayer.create(context, R.raw.piezaerronea)
+                    mediaPlayer?.start()
                     receiverView.setColorFilter(Color.RED)
+                    if(event.clipDescription.label == receiverView.tag as String) {
+                        /**TORSO*/
+                        setTorso()
+                        score()
+                        drag2ImageView.isVisible = false
+                        mediaPlayer= MediaPlayer.create(context, R.raw.torso)
+                        mediaPlayer?.start()
+                    }
                 }
                 true
             }
@@ -363,6 +399,7 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                 true
             }
             DragEvent.ACTION_DROP -> {
+                receiverView.setColorFilter(Color.TRANSPARENT)
                 if(event.clipDescription.label == receiverView.tag as String) {
                     /**MANO IZQUIERDA*/
                     setLeftHand()
@@ -371,7 +408,17 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.brazoizquierdo)
                     mediaPlayer?.start()
                 } else {
+                    mediaPlayer= MediaPlayer.create(context, R.raw.piezaerronea)
+                    mediaPlayer?.start()
                     receiverView.setColorFilter(Color.RED)
+                    if(event.clipDescription.label == receiverView.tag as String) {
+                        /**MANO IZQUIERDA*/
+                        setLeftHand()
+                        score()
+                        drag4ImageView.isVisible = false
+                        mediaPlayer= MediaPlayer.create(context, R.raw.brazoizquierdo)
+                        mediaPlayer?.start()
+                    }
                 }
                 true
             }
@@ -405,6 +452,7 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                 true
             }
             DragEvent.ACTION_DROP -> {
+                receiverView.setColorFilter(Color.TRANSPARENT)
                 if(event.clipDescription.label == receiverView.tag as String) {
                     /**PIERNA DERECHA*/
                     setRigthLeg()
@@ -413,7 +461,17 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.piernaderecha)
                     mediaPlayer?.start()
                 } else {
+                    mediaPlayer= MediaPlayer.create(context, R.raw.piezaerronea)
+                    mediaPlayer?.start()
                     receiverView.setColorFilter(Color.RED)
+                    if(event.clipDescription.label == receiverView.tag as String) {
+                        /**PIERNA DERECHA*/
+                        setRigthLeg()
+                        score()
+                        drag5ImageView.isVisible = false
+                        mediaPlayer= MediaPlayer.create(context, R.raw.piernaderecha)
+                        mediaPlayer?.start()
+                    }
                 }
                 true
             }
@@ -447,6 +505,7 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                 true
             }
             DragEvent.ACTION_DROP -> {
+                receiverView.setColorFilter(Color.TRANSPARENT)
                 if(event.clipDescription.label == receiverView.tag as String) {
                     /**PIERNA IZQUIERDA*/
                     setLeftLeg()
@@ -455,7 +514,17 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.piernaizquierda)
                     mediaPlayer?.start()
                 } else {
+                    mediaPlayer= MediaPlayer.create(context, R.raw.piezaerronea)
+                    mediaPlayer?.start()
                     receiverView.setColorFilter(Color.RED)
+                    if(event.clipDescription.label == receiverView.tag as String) {
+                        /**PIERNA IZQUIERDA*/
+                        setLeftLeg()
+                        score()
+                        drag6ImageView.isVisible = false
+                        mediaPlayer= MediaPlayer.create(context, R.raw.piernaizquierda)
+                        mediaPlayer?.start()
+                    }
                 }
                 true
             }

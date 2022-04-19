@@ -184,7 +184,7 @@
                                 android:id="@+id/target3ImageView"
                                 android:layout_width="68dp"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/basetres"
+                                android:src="@drawable/basetress"
                                 android:tag="figure3" />
 
                             <ImageView
@@ -192,14 +192,14 @@
                                 android:layout_width="110dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:src="@drawable/basedos"
+                                android:src="@drawable/basedoss"
                                 android:tag="figure2" />
 
                             <ImageView
                                 android:id="@+id/target4ImageView"
                                 android:layout_width="68dp"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/basecuatro"
+                                android:src="@drawable/basecuatroo"
                                 android:tag="figure4" />
 
                         </TableRow>
@@ -221,7 +221,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="65dp"
                                 android:layout_weight="2"
-                                android:src="@drawable/baseseis"
+                                android:src="@drawable/baseseiss"
                                 android:tag="figure6" />
 
                         </TableRow>
