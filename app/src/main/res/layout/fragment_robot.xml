@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back_home"
     tools:context=".RobotFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -149,87 +150,154 @@
 
                 </LinearLayout>
 
-                <!-- Contenedor de ensable de robot -->
-
-                <!-- Espacio en blanco -->
+                <!-- Contenedor de ensamble de robot -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@color/lichen">
+                    android:orientation="vertical"
+                    android:layout_weight="1">
 
-                    <TableLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="vertical">
 
-                        <TableRow
+                        <!-- Contenedor cabeza -->
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_weight="1">
 
                             <ImageView
-                                android:id="@+id/target1ImageView"
-                                android:layout_width="30dp"
-                                android:layout_height="100dp"
-                                android:layout_weight="1"
-                                android:src="@drawable/baseuno"
-                                android:tag="figure1" />
-
-                        </TableRow>
-
-                        <TableRow
+                            android:id="@+id/target1ImageView"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="match_parent"
+                            android:src="@drawable/baseuno"
+                            android:tag="figure1" />
 
-                            <ImageView
-                                android:id="@+id/target3ImageView"
-                                android:layout_width="68dp"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/basetress"
-                                android:tag="figure3" />
+                        </LinearLayout>
 
-                            <ImageView
-                                android:id="@+id/target2ImageView"
-                                android:layout_width="110dp"
+                        <!-- Contenedor torso -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_weight="1">
+
+                            <!-- Brazo izquierdo -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:src="@drawable/basedoss"
-                                android:tag="figure2" />
+                                android:orientation="horizontal"
+                                android:layout_weight="1.2">
 
-                            <ImageView
-                                android:id="@+id/target4ImageView"
-                                android:layout_width="68dp"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/basecuatroo"
-                                android:tag="figure4" />
+                                <ImageView
+                                    android:id="@+id/target3ImageView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:layout_marginStart="20dp"
+                                    android:src="@drawable/basetress"
+                                    android:tag="figure3" />
 
-                        </TableRow>
+                            </LinearLayout>
 
-                        <TableRow
+                            <!-- Pecho -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:id="@+id/target2ImageView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/basedoss"
+                                    android:tag="figure2" />
+
+                            </LinearLayout>
+
+                            <!-- Brazo derecho -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:layout_weight="1.2">
+
+                                <ImageView
+                                    android:id="@+id/target4ImageView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:layout_marginEnd="20dp"
+                                    android:src="@drawable/basecuatroo"
+                                    android:tag="figure4" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Contenedor piernas -->
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" >
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_weight="1">
 
-                            <ImageView
-                                android:id="@+id/target5ImageView"
-                                android:layout_width="wrap_content"
-                                android:layout_height="65dp"
-                                android:layout_weight="4"
-                                android:src="@drawable/basecinco"
-                                android:tag="figure5" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="50dp"
+                                android:layout_marginEnd="50dp"
+                                android:orientation="horizontal">
 
-                            <ImageView
-                                android:id="@+id/target6ImageView"
-                                android:layout_width="wrap_content"
-                                android:layout_height="65dp"
-                                android:layout_weight="2"
-                                android:src="@drawable/baseseiss"
-                                android:tag="figure6" />
+                                <!-- Pierna izquierda-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:layout_weight="1">
 
-                        </TableRow>
+                                    <ImageView
+                                        android:id="@+id/target5ImageView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="75dp"
+                                        android:layout_weight="4"
+                                        android:src="@drawable/basecinco"
+                                        android:tag="figure5" />
 
-                    </TableLayout>
+                                </LinearLayout>
+
+                                <!-- Pierna izquierda-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:layout_weight="1">
+
+                                    <ImageView
+                                        android:id="@+id/target6ImageView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="75dp"
+                                        android:layout_weight="2"
+                                        android:src="@drawable/baseseiss"
+                                        android:tag="figure6" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
+                <!-- Espacio en blanco -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -258,7 +326,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/cerulean"
                     android:layout_weight="1">
 
                     <!-- Contenedor de botón de probar -->
@@ -309,7 +376,6 @@
 
             </LinearLayout>
 
-
         </LinearLayout>
 
         <LinearLayout
@@ -337,7 +403,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/sunrise"
                     android:layout_weight="2">
 
                     <!-- Botón de flecha izquierda -->
@@ -348,7 +413,6 @@
                         android:src="@drawable/ic_left">
 
                     </ImageView>
-
 
                 </LinearLayout>
 
@@ -364,77 +428,121 @@
 
             <!-- Contenedor de piezas -->
             <LinearLayout
-                android:layout_width="298dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/lichen">
+                android:orientation="vertical"
+                android:layout_weight="1">
 
+                <!-- Superior -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1">
 
-                <TableLayout
-                    android:layout_width="211dp"
-                    android:layout_height="match_parent">
-
-                    <TableRow
+                    <!-- Pieza 1 -->
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
 
                         <ImageView
                             android:id="@+id/drag6ImageView"
-                            android:layout_width="89dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/robotgrisc"
                             android:tag="figure6" />
 
+                    </LinearLayout>
+
+                    <!-- Pieza 2 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
                         <ImageView
                             android:id="@+id/drag1ImageView"
-                            android:layout_width="129dp"
-                            android:layout_height="98dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:src="@drawable/robotgris"
                             android:tag="figure1" />
 
-                    </TableRow>
+                    </LinearLayout>
 
-                    <TableRow
-                        android:layout_width="255dp"
-                        android:layout_height="match_parent">
+                    <!-- Pieza 3 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
 
                         <ImageView
                             android:id="@+id/drag4ImageView"
-                            android:layout_width="70dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/robotgrist"
                             android:tag="figure4" />
 
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Inferior -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1">
+
+                    <!-- Pieza 4 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
                         <ImageView
                             android:id="@+id/drag2ImageView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:src="@drawable/robotgrisu"
                             android:tag="figure2" />
 
-                    </TableRow>
+                    </LinearLayout>
 
-                    <TableRow
+                    <!-- Pieza 5 -->
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="33dp">
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
 
                         <ImageView
                             android:id="@+id/drag5ImageView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:src="@drawable/robotgriss"
                             android:tag="figure5" />
 
+                    </LinearLayout>
+
+                    <!-- Pieza 6 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
                         <ImageView
                             android:id="@+id/drag3ImageView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:src="@drawable/robotgrisd"
                             android:tag="figure3" />
 
-                    </TableRow>
+                    </LinearLayout>
 
-                </TableLayout>
+                </LinearLayout>
+
             </LinearLayout>
 
             <!-- Contendor de flecha derecha -->
@@ -456,7 +564,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/sunrise"
                     android:layout_weight="2">
 
                     <!-- Botón de flecha derecha -->
