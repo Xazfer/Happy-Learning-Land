@@ -91,7 +91,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:background="@color/icicle"
                     android:layout_weight="1">
 
                     <!-- Contenedor de indicador de salud -->
@@ -113,7 +112,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:background="@color/icicle"
                     android:layout_weight="1">
 
                     <LinearLayout
@@ -165,7 +163,7 @@
 
                     <Button
                         app:shapeAppearanceOverlay="@style/ButtonSignIn"
-                        app:backgroundTint="@color/cerulean"
+                        app:backgroundTint="@color/btn_red"
                         android:id="@+id/btnCancelar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -189,7 +187,7 @@
 
                     <Button
                         app:shapeAppearanceOverlay="@style/ButtonSignIn"
-                        app:backgroundTint="@color/cerulean"
+                        app:backgroundTint="@color/btn_green"
                         android:id="@+id/btnComer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

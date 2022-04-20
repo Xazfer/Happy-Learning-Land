@@ -16,6 +16,7 @@
     <color name="pink">#FF003B</color>
     <color name="transparentColor">#00FFFFFF</color>
     <color name="btn_green">#008000</color>
+    <color name="btn_red">#FF0000</color>
     <color name="coins">#EFB810</color>
     <color name="verdePastel">#A9E9A4</color>
 

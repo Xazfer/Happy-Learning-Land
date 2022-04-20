@@ -166,7 +166,7 @@
                     android:gravity="center"
                     android:textSize="25sp"
                     android:textStyle="bold"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textAlignment="center"
                     android:text="@string/question"/>
 
@@ -190,16 +190,16 @@
                 android:layout_marginEnd="25dp"
                 android:layout_marginBottom="10dp">
 
+                <!-- Contenendor de palabra formada -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:layout_weight="2">
+                    android:layout_weight="3">
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:padding="10dp"
                         android:layout_weight="1"
                         android:orientation="horizontal"
                         android:paddingStart="50dp"
@@ -215,9 +215,9 @@
 
                             <ImageView
                                 android:id="@+id/target10ImageView"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:scaleType="center"
                                 android:src="@drawable/fondo1"
                                 android:tag="figure1" />
                         </LinearLayout>
@@ -232,11 +232,12 @@
 
                             <ImageView
                                 android:id="@+id/target11ImageView"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:src="@drawable/fondo2"
+                                android:scaleType="center"
                                 android:tag="figure2" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -249,11 +250,12 @@
 
                             <ImageView
                                 android:id="@+id/target12ImageView"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:scaleType="center"
                                 android:src="@drawable/fondo3"
                                 android:tag="figure3" />
+
                         </LinearLayout>
 
                     </LinearLayout>
@@ -263,163 +265,258 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_weight="2">
+                    android:orientation="vertical"
+                    android:layout_weight="1">
 
+                    <!-- Contenendor de letras superior -->
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="10dp"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:layout_weight="2">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/btn_letters"
-                            android:layout_margin="5dp"
                             android:layout_weight="1"
                             android:orientation="horizontal">
 
-                            <ImageView
-                                android:id="@+id/imageView8"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/btn_letters"
+                                android:layout_margin="5dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/abecedariob" />
-                        </LinearLayout>
+                                android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/btn_letters"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
+                                <ImageView
+                                    android:id="@+id/imageView8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="center"
+                                    android:src="@drawable/abecedariob" />
 
-                            <ImageView
-                                android:id="@+id/imageView10"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/btn_letters"
+                                android:layout_margin="5dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/abecedarioi" />
-                        </LinearLayout>
+                                android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/btn_letters"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
+                                <ImageView
+                                    android:id="@+id/imageView10"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="center"
+                                    android:src="@drawable/abecedarioi" />
 
-                            <ImageView
-                                android:id="@+id/imageView12"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/btn_letters"
+                                android:layout_margin="5dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/abecedariop" />
-                        </LinearLayout>
+                                android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/btn_letters"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
+                                <ImageView
+                                    android:id="@+id/imageView12"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="center"
+                                    android:src="@drawable/abecedariop" />
 
-                            <ImageView
-                                android:id="@+id/drag11ImageView"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/btn_letters"
+                                android:layout_margin="5dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/abecedariov"
-                                android:tag="figure2" />
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/drag11ImageView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="center"
+                                    android:src="@drawable/abecedariov"
+                                    android:tag="figure2" />
+                            </LinearLayout>
+
                         </LinearLayout>
 
                     </LinearLayout>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_weight="2">
-
+                    <!-- Contenendor de letras intermedio -->
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="10dp"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:layout_weight="2">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/btn_letters"
-                            android:layout_margin="5dp"
                             android:layout_weight="1"
                             android:orientation="horizontal">
 
-
-                            <ImageView
-                                android:id="@+id/drag10ImageView"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/btn_letters"
+                                android:layout_margin="5dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/abecedariou"
-                                android:tag="figure1" />
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/drag10ImageView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="center"
+                                    android:src="@drawable/abecedariou"
+                                    android:tag="figure1" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/btn_letters"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/imageView11"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="center"
+                                    android:src="@drawable/abecedarioe" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/btn_letters"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/drag12ImageView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="center"
+                                    android:src="@drawable/abecedarioa"
+                                    android:tag="figure3" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/btn_letters"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/imageView9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="center"
+                                    android:src="@drawable/abecedarioo" />
+                            </LinearLayout>
+
                         </LinearLayout>
 
+                    </LinearLayout>
+
+                    <!-- Contenendor de letras inferior-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="2">
+
                         <LinearLayout
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/btn_letters"
-                            android:layout_margin="5dp"
                             android:layout_weight="1"
                             android:orientation="horizontal">
 
-                            <ImageView
-                                android:id="@+id/imageView11"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/btn_letters"
+                                android:layout_margin="5dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/abecedarioe" />
-                        </LinearLayout>
+                                android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/btn_letters"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="center"
+                                    android:src="@drawable/abecedariou"
+                                    android:tag="figure1" />
 
-                            <ImageView
-                                android:id="@+id/drag12ImageView"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/btn_letters"
+                                android:layout_margin="5dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/abecedarioa"
-                                android:tag="figure3" />
-                        </LinearLayout>
+                                android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/btn_letters"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="center"
+                                    android:src="@drawable/abecedarioe" />
 
-                            <ImageView
-                                android:id="@+id/imageView9"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/btn_letters"
+                                android:layout_margin="5dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/abecedarioo" />
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="center"
+                                    android:src="@drawable/abecedarioa"
+                                    android:tag="figure3" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/btn_letters"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="center"
+                                    android:src="@drawable/abecedarioo" />
+                            </LinearLayout>
+
                         </LinearLayout>
 
                     </LinearLayout>

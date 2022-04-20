@@ -168,7 +168,7 @@
                             android:gravity="center"
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
                             android:textAlignment="center"
                             android:text="@string/time" />
 
@@ -187,7 +187,7 @@
                             android:gravity="center"
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
                             android:textAlignment="center"
                             android:text="20" />
 
@@ -209,7 +209,7 @@
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:text="0/0" />
 
                 </LinearLayout>
@@ -248,7 +248,7 @@
                     android:gravity="center"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textAlignment="center"
                     android:text="Basura" />
 

@@ -3,6 +3,7 @@ package com.example.happylearningland
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Patterns
 import android.widget.Toast
 import com.example.happylearningland.databinding.ActivityAccountRecoveryBinding
@@ -24,14 +25,7 @@ class AccountRecoveryActivity : AppCompatActivity() {
 
         binding.btnRecovery.setOnClickListener {
             validateEmail()
-            Firebase.auth.sendPasswordResetEmail(emailRecover).addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    val intent = Intent(this, Login::class.java)
-                    this.startActivity(intent)
-                } else {
-                    Toast.makeText(this, "Ingrese un email de una cuenta autenticada.", Toast.LENGTH_SHORT).show()
-                }
-            }
+
         }
 
     }
@@ -44,6 +38,21 @@ class AccountRecoveryActivity : AppCompatActivity() {
         if (!Patterns.EMAIL_ADDRESS.matcher(emailRecover).matches()) {
             // invalid email format
             binding.emailRecovery.error = "Formato de correo electrónico inválido"
+        }else if (TextUtils.isEmpty(emailRecover)) {
+            binding.emailRecovery.error = "Por favor, ingrese su correo"
+        } else {
+            sendRecovery(emailRecover)
+        }
+    }
+
+    private fun sendRecovery(email : String) {
+        Firebase.auth.sendPasswordResetEmail(emailRecover).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                val intent = Intent(this, Login::class.java)
+                this.startActivity(intent)
+            } else {
+                Toast.makeText(this, "Ingrese un email de una cuenta autenticada.", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
