@@ -3,8 +3,6 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
-
-
     //Plugin para firebase
     id 'com.google.gms.google-services'
 }
@@ -83,6 +81,11 @@ dependencies {
     // Declare the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-auth-ktx'
+
+    // Declare the dependency for the Cloud Storage library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-storage'
+
 
     // Google
     // Also declare the dependency for the Google Play services library and specify its version

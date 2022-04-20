@@ -171,7 +171,8 @@
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:textAlignment="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
+                        android:background="@drawable/btn_letters"
                         android:text="0/0" />
 
                 </LinearLayout>
