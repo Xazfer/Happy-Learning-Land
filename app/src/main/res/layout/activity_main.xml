@@ -41,10 +41,9 @@
 
                                         <ImageView
                                             android:id="@+id/btnCharacter1"
-                                            android:layout_width="0dp"
+                                            android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:layout_weight="1"
-                                            android:src="@drawable/character_11" />
+                                            android:layout_weight="1" />
 
                                 </LinearLayout>
 
@@ -56,10 +55,9 @@
 
                                         <ImageView
                                             android:id="@+id/btnCharacter2"
-                                            android:layout_width="0dp"
+                                            android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:layout_weight="1"
-                                            android:src="@drawable/character_12" />
+                                            android:layout_weight="1" />
 
                                 </LinearLayout>
 
@@ -77,44 +75,12 @@
                                     android:orientation="vertical"
                                     android:layout_weight="1" >
 
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1">
-
-                                            <EditText
-                                                android:id="@+id/getName"
-                                                android:layout_width="match_parent"
-                                                android:layout_height="match_parent"
-                                                android:textSize="18sp"
-                                                android:gravity="center"
-                                                android:textColor="@color/black"
-                                                android:textStyle="bold"/>
-                                        </LinearLayout>
-
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1">
-
-                                                <EditText
-                                                    android:id="@+id/getEmail"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="match_parent"
-                                                    android:textSize="18sp"
-                                                    android:gravity="center"
-                                                    android:textColor="@color/black"
-                                                    android:textStyle="bold"/>
-                                        </LinearLayout>
-
-                                        <!--
                                         <ImageView
                                             android:id="@+id/btnCharacter3"
-                                            android:layout_width="0dp"
+                                            android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:layout_weight="1"
-                                            android:src="@drawable/character_21" />
-                                            -->
+                                            android:layout_weight="1"/>
+
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -125,10 +91,9 @@
 
                                         <ImageView
                                             android:id="@+id/btnCharacter4"
-                                            android:layout_width="0dp"
+                                            android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:layout_weight="1"
-                                            android:src="@drawable/character_22" />
+                                            android:layout_weight="1" />
 
                                 </LinearLayout>
                         </LinearLayout>

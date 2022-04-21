@@ -10,10 +10,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.happylearningland.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
+import java.util.*
 
 enum class ProviderType {
     BASIC,
@@ -24,6 +28,9 @@ class MainActivity : AppCompatActivity() {
 
     // FirebaseAuth
     private lateinit var auth: FirebaseAuth
+    private lateinit var db: DatabaseReference
+    private lateinit var firebaseStorage: FirebaseStorage
+    private lateinit var storageReference: StorageReference
 
     lateinit var binding: ActivityMainBinding
 
@@ -43,12 +50,16 @@ class MainActivity : AppCompatActivity() {
 
         // init firebase auth
         auth = FirebaseAuth.getInstance()
+        db = Firebase.database.reference
+        firebaseStorage = FirebaseStorage.getInstance()
+        storageReference = firebaseStorage.reference
         checkUser()
 
         // Setup
         val bundle = intent.extras
         val email = bundle?.getString("email")
         val provider = bundle?.getString("provider")
+        val uid = auth.currentUser!!.uid.toString()
         setUp(email ?: "", provider ?: "")
 
         // Guardado de datos
@@ -57,58 +68,101 @@ class MainActivity : AppCompatActivity() {
         prefs.putString("provider", provider)
         prefs.apply()
 
+        uploadCharacter()
 
 
-        // Obtener imagens
-
-
+        // Obtener imágenes
         // Botón de Character 1
-        binding.btnCharacter1.setOnClickListener {
-            val storageRef = FirebaseStorage.getInstance().reference.child("characters/character_11.png")
-            val localFile = File.createTempFile("tempImage", "png")
-            storageRef.getFile(localFile).addOnSuccessListener {
-                val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
-                binding.btnCharacter1.setImageBitmap(bitmap)
-            }.addOnFailureListener {
-                Toast.makeText(this, "No se pudo recuperar la imagen", Toast.LENGTH_SHORT).show()
-            }
-
+        btnCharacter1.setOnClickListener {
+            updateDatabase("characters/character_11.png", 0, uid, "tarea1")
+            Toast.makeText(this, "Acceso permitido", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, CapsuleFragment::class.java)
-
-
             // send new screen
             startActivity(intent)
             finish()
         }
 
         // Botón de Character 2
-        binding.btnCharacter2.setOnClickListener {
+        btnCharacter2.setOnClickListener {
+            updateDatabase("characters/character_12.png", 0, uid, "tarea1")
+            Toast.makeText(this, "Acceso permitido", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, CapsuleFragment::class.java)
-
             // send new screen
             startActivity(intent)
             finish()
         }
 
         // Botón de Character 3
-        /*binding.btnCharacter3.setOnClickListener {
-            val intent = Intent(this, CapsuleFragment::class.java)
-
-
-            // send new screen
-            startActivity(intent)
-            finish()
-        }*/
-
-        // Botón de Character 4
-        binding.btnCharacter4.setOnClickListener {
+        btnCharacter3.setOnClickListener {
+            updateDatabase("characters/character_21.png", 0, uid, "tarea1")
+            Toast.makeText(this, "Acceso permitido", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, CapsuleFragment::class.java)
             // send new screen
             startActivity(intent)
             finish()
         }
 
+        // Botón de Character 4
+        btnCharacter4.setOnClickListener {
+            updateDatabase("characters/character_22.png", 0, uid, "tarea1")
+            Toast.makeText(this, "Acceso permitido", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, CapsuleFragment::class.java)
+            // send new screen
+            startActivity(intent)
+            finish()
+        }
+    }
 
+    // Función de subir datos DB
+    private fun updateDatabase(character : String, coins : Int, email : String,  tasks : String) {
+        val player = User(character, coins, tasks)
+        val id = email
+        db.child("player").child(id).setValue(player)
+            .addOnSuccessListener {
+                Toast.makeText(this, "Datos subidos correctamente", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Datos no subidos", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun uploadCharacter() {
+        var path1 = storageReference.child("characters/character_11.png")
+        var path2 = storageReference.child("characters/character_12.png")
+        var path3 = storageReference.child("characters/character_21.png")
+        var path4 = storageReference.child("characters/character_22.png")
+        var localFile1 = File.createTempFile("tempImage1", "png")
+        var localFile2 = File.createTempFile("tempImage2", "png")
+        var localFile3 = File.createTempFile("tempImage3", "png")
+        var localFile4 = File.createTempFile("tempImage4", "png")
+
+        path1.getFile(localFile1).addOnSuccessListener {
+            val bitmap = BitmapFactory.decodeFile(localFile1.absolutePath)
+            binding.btnCharacter1.setImageBitmap(bitmap)
+        }.addOnFailureListener {
+            Toast.makeText(this, "No se pudo recuperar la imagen", Toast.LENGTH_SHORT).show()
+        }
+
+        path2.getFile(localFile2).addOnSuccessListener {
+            val bitmap = BitmapFactory.decodeFile(localFile2.absolutePath)
+            binding.btnCharacter2.setImageBitmap(bitmap)
+        }.addOnFailureListener {
+            Toast.makeText(this, "No se pudo recuperar la imagen", Toast.LENGTH_SHORT).show()
+        }
+
+        path3.getFile(localFile3).addOnSuccessListener {
+            val bitmap = BitmapFactory.decodeFile(localFile3.absolutePath)
+            binding.btnCharacter3.setImageBitmap(bitmap)
+        }.addOnFailureListener {
+            Toast.makeText(this, "No se pudo recuperar la imagen", Toast.LENGTH_SHORT).show()
+        }
+
+        path4.getFile(localFile4).addOnSuccessListener {
+            val bitmap = BitmapFactory.decodeFile(localFile4.absolutePath)
+            binding.btnCharacter4.setImageBitmap(bitmap)
+        }.addOnFailureListener {
+            Toast.makeText(this, "No se pudo recuperar la imagen", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun checkUser() {
@@ -135,4 +189,5 @@ class MainActivity : AppCompatActivity() {
         prefs.apply()
         */
     }
+
 }

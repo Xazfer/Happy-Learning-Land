@@ -60,7 +60,6 @@ class CheckEmailActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 
     public override fun onStart() {
@@ -91,6 +90,5 @@ class CheckEmailActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         this.startActivity(intent)
     }
-
 
 }

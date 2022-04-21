@@ -23,7 +23,12 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.database.*
+import com.google.firebase.database.ktx.database
+import com.google.firebase.database.ktx.getValue
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
+import java.util.*
 import java.util.regex.Pattern
 
 class Login : AppCompatActivity() {
@@ -34,6 +39,7 @@ class Login : AppCompatActivity() {
 
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var auth: FirebaseAuth
+    private lateinit var db: DatabaseReference
 
     // Firebase Analytics
     private lateinit var firebaseAnalytics: FirebaseAnalytics
@@ -73,6 +79,7 @@ class Login : AppCompatActivity() {
 
         // Conexión con la BD
         auth = FirebaseAuth.getInstance()
+        db = Firebase.database.reference
 
         // Configure progress dialog SignIn
         progressDialog = ProgressDialog(this)
@@ -95,10 +102,6 @@ class Login : AppCompatActivity() {
         val bundle = Bundle()
         bundle.putString("message", "Integración de Firebase completa")
         analytics.logEvent("MainActivity", bundle)
-
-        btnSignIn.setOnClickListener{
-            startActivity(Intent(this@Login, MainActivity::class.java))
-        }
 
         binding.txtRecovery.setOnClickListener {
             val intent = Intent(this, AccountRecoveryActivity::class.java)
@@ -152,6 +155,7 @@ class Login : AppCompatActivity() {
         }
     }
 
+    // Inicio de validación
     private fun validateDataSignIn() {
         // get data
         emailV = binding.email.text.toString().trim()
@@ -240,6 +244,7 @@ class Login : AppCompatActivity() {
             firebaseSignUp(emailsV, passwordsV)
         }
     }
+    // Fin de validación
 
     private fun firebaseSignIn(email : String, password : String) {
         // show progress
@@ -289,12 +294,11 @@ class Login : AppCompatActivity() {
                 Toast.makeText(baseContext, "Autenticación fallida.", Toast.LENGTH_SHORT).show()
             }
         }
-
     }
 
     // Función de verificación de usuario -- Sign In
     private fun checkEmail() {
-        super.onStart()
+        //super.onStart() -- Verificar si afecta
         val currentUser = auth.currentUser
 
         if (currentUser != null) {
@@ -312,16 +316,18 @@ class Login : AppCompatActivity() {
         // check if user is logged in or not
         val firebaseUser = auth.currentUser
         if (firebaseUser != null) {
+            checkEmail()
             // user is already logged in
             // start MainActivity
-            startActivity(Intent(this@Login, MainActivity::class.java))
-            finish()
+            //startActivity(Intent(this@Login, MainActivity::class.java))
+            //finish()
         }
     }
 
     // Setup
     // Función de autenticación de correo y contraseña
     private fun setUp() {
+
         // Pantalla Sign In sin presionar botón
         btnSignIn.setOnClickListener {
             // before loggin in, validate data
@@ -342,10 +348,9 @@ class Login : AppCompatActivity() {
                 // before loggin in, validate data
                 validateDataSignUp()
 
-                if ((email.text!!.isNotEmpty()) && (password.text!!.isNotEmpty())) {
+                if (email.text!!.isNotEmpty() && password.text!!.isNotEmpty()) {
                     FirebaseAuth.getInstance().createUserWithEmailAndPassword(email.text.toString(), password.text.toString()).addOnCompleteListener{
                         if (it.isSuccessful) {
-                            //signIn() // add
                             showMain(it.result?.user?.email ?: "", ProviderType.BASIC)
                         } else {
                             showAlert()
@@ -372,7 +377,6 @@ class Login : AppCompatActivity() {
                 if ((email.text!!.isNotEmpty()) && (password.text!!.isNotEmpty())) {
                     auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString()).addOnCompleteListener{
                         if (it.isSuccessful) {
-                            //signIn() // add
                             showMain(it.result?.user?.email ?: "", ProviderType.BASIC)
                         } else {
                             showAlert()
@@ -438,6 +442,7 @@ class Login : AppCompatActivity() {
     }
     // [END onactivityresult]
 
+    // Autenticación mediante google
     private fun firebaseAuthWithGoogleAccount(account: GoogleSignInAccount?){
         Log.d(TAG, "firebaseAuthWithGoogleAccount: begin firebase auth google account")
 

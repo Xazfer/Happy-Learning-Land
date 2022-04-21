@@ -1,3 +1,4 @@
 package com.example.happylearningland
 
-data class User(val name : String? = null, val email : String? = null, val password : String? = null)
+data class User(var character : String = "", var coins : Int = 0, var tasks : String = "")
+
