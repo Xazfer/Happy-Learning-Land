@@ -25,10 +25,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
-import java.util.*
 import java.util.regex.Pattern
 
 class Login : AppCompatActivity() {
@@ -317,17 +315,12 @@ class Login : AppCompatActivity() {
         val firebaseUser = auth.currentUser
         if (firebaseUser != null) {
             checkEmail()
-            // user is already logged in
-            // start MainActivity
-            //startActivity(Intent(this@Login, MainActivity::class.java))
-            //finish()
         }
     }
 
     // Setup
     // Función de autenticación de correo y contraseña
     private fun setUp() {
-
         // Pantalla Sign In sin presionar botón
         btnSignIn.setOnClickListener {
             // before loggin in, validate data

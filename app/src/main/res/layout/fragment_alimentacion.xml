@@ -75,6 +75,7 @@
                         </ImageView>
 
                         <TextView
+                            android:id="@+id/coins"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -157,9 +158,9 @@
                     android:layout_weight="1">
 
                     <ImageView
+                        android:id="@+id/containerCharacter"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/character_11">
+                        android:layout_height="match_parent">
 
                     </ImageView>
 

@@ -14,11 +14,11 @@ class ShopFragment : Fragment(R.layout.fragment_shop) {
         //bindeo de elementos del fragment
         binding = FragmentShopBinding.bind(view)
         binding.btnEnter.setOnClickListener {
-            val bundle = bundleOf("texto" to "Pagina letras")
+            val bundle = bundleOf("texto" to "Pagina Inicio")
             findNavController().navigate(R.id.action_nav_shopFragment_to_shop_Products_fragment, bundle)
         }
         binding.btnBack.setOnClickListener {
-            val bundle = bundleOf("texto" to "Pagina letras")
+            val bundle = bundleOf("texto" to "Pagina Tienda")
             findNavController().navigate(R.id.action_nav_shopFragment_to_nav_mainScreenFragment, bundle)
         }
     }

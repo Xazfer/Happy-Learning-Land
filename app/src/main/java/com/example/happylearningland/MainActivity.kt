@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var db: DatabaseReference
     private lateinit var firebaseStorage: FirebaseStorage
     private lateinit var storageReference: StorageReference
+    private lateinit var listTask: List<String>
 
     lateinit var binding: ActivityMainBinding
 
@@ -60,6 +62,7 @@ class MainActivity : AppCompatActivity() {
         val email = bundle?.getString("email")
         val provider = bundle?.getString("provider")
         val uid = auth.currentUser!!.uid.toString()
+        listTask = listOf("task1", "task2", "task3", "task4", "task5")
         setUp(email ?: "", provider ?: "")
 
         // Guardado de datos
@@ -73,9 +76,8 @@ class MainActivity : AppCompatActivity() {
 
         // Obtener imágenes
         // Botón de Character 1
-        btnCharacter1.setOnClickListener {
-            updateDatabase("characters/character_11.png", 0, uid, "tarea1")
-            Toast.makeText(this, "Acceso permitido", Toast.LENGTH_SHORT).show()
+        binding.btnCharacter1.setOnClickListener {
+            updateDatabase("characters/character_11.png", 0, uid, listTask)
             val intent = Intent(this, CapsuleFragment::class.java)
             // send new screen
             startActivity(intent)
@@ -83,9 +85,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Botón de Character 2
-        btnCharacter2.setOnClickListener {
-            updateDatabase("characters/character_12.png", 0, uid, "tarea1")
-            Toast.makeText(this, "Acceso permitido", Toast.LENGTH_SHORT).show()
+        binding.btnCharacter2.setOnClickListener {
+            updateDatabase("characters/character_12.png", 0, uid, listTask)
             val intent = Intent(this, CapsuleFragment::class.java)
             // send new screen
             startActivity(intent)
@@ -93,9 +94,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Botón de Character 3
-        btnCharacter3.setOnClickListener {
-            updateDatabase("characters/character_21.png", 0, uid, "tarea1")
-            Toast.makeText(this, "Acceso permitido", Toast.LENGTH_SHORT).show()
+        binding.btnCharacter3.setOnClickListener {
+            updateDatabase("characters/character_21.png", 0, uid, listTask)
             val intent = Intent(this, CapsuleFragment::class.java)
             // send new screen
             startActivity(intent)
@@ -103,9 +103,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Botón de Character 4
-        btnCharacter4.setOnClickListener {
-            updateDatabase("characters/character_22.png", 0, uid, "tarea1")
-            Toast.makeText(this, "Acceso permitido", Toast.LENGTH_SHORT).show()
+        binding.btnCharacter4.setOnClickListener {
+            updateDatabase("characters/character_22.png", 0, uid, listTask)
             val intent = Intent(this, CapsuleFragment::class.java)
             // send new screen
             startActivity(intent)
@@ -113,19 +112,30 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Función de subir datos DB
-    private fun updateDatabase(character : String, coins : Int, email : String,  tasks : String) {
+    // Función de cargar datos DB
+    private fun updateDatabase(character : String, coins : Int, email : String,  tasks : List<String>) {
         val player = User(character, coins, tasks)
         val id = email
-        db.child("player").child(id).setValue(player)
-            .addOnSuccessListener {
-                Toast.makeText(this, "Datos subidos correctamente", Toast.LENGTH_SHORT).show()
+        db.child("player").child(id).get().addOnSuccessListener {
+            if (it.value == null) {
+                Log.w("texto inexistente", "datos no encontrados")
+                db.child("player").child(id).setValue(player)
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Datos subidos correctamente", Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(this, "Datos no subidos", Toast.LENGTH_SHORT).show()
+                    }
+            } else {
+                db.child("player").child(id).child("character").setValue(character)
+                Log.w("texto existente", "datos encontrados ${it.value}")
             }
-            .addOnFailureListener {
-                Toast.makeText(this, "Datos no subidos", Toast.LENGTH_SHORT).show()
-            }
+        }.addOnFailureListener {
+            Log.w("texto inexistente", "datos no encontrados")
+        }
     }
 
+    // Función de subir personaje a la BD
     private fun uploadCharacter() {
         var path1 = storageReference.child("characters/character_11.png")
         var path2 = storageReference.child("characters/character_12.png")
@@ -181,7 +191,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUp(email: String, provider: String) {
-
         /*
         // Borrado de datos
         val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
