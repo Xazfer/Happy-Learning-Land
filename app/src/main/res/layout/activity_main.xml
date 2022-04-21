@@ -74,15 +74,47 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_marginTop="20dp"
+                                    android:orientation="vertical"
                                     android:layout_weight="1" >
 
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1">
+
+                                            <EditText
+                                                android:id="@+id/getName"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:textSize="18sp"
+                                                android:gravity="center"
+                                                android:textColor="@color/black"
+                                                android:textStyle="bold"/>
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1">
+
+                                                <EditText
+                                                    android:id="@+id/getEmail"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:textSize="18sp"
+                                                    android:gravity="center"
+                                                    android:textColor="@color/black"
+                                                    android:textStyle="bold"/>
+                                        </LinearLayout>
+
+                                        <!--
                                         <ImageView
                                             android:id="@+id/btnCharacter3"
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight="1"
                                             android:src="@drawable/character_21" />
-
+                                            -->
                                 </LinearLayout>
 
                                 <LinearLayout

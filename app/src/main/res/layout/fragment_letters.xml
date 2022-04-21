@@ -217,7 +217,7 @@
                                 android:id="@+id/target10ImageView"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:scaleType="center"
+                                android:layout_margin="5dp"
                                 android:src="@drawable/fondo1"
                                 android:tag="figure1" />
                         </LinearLayout>
@@ -235,7 +235,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:src="@drawable/fondo2"
-                                android:scaleType="center"
+                                android:layout_margin="5dp"
                                 android:tag="figure2" />
 
                         </LinearLayout>
@@ -252,7 +252,7 @@
                                 android:id="@+id/target12ImageView"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:scaleType="center"
+                                android:layout_margin="5dp"
                                 android:src="@drawable/fondo3"
                                 android:tag="figure3" />
 
@@ -293,7 +293,7 @@
                                     android:id="@+id/drag13ImageView"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:scaleType="center"
+                                    android:layout_margin="5dp"
                                     android:src="@drawable/abecedariob"
                                     android:tag="figura4"/>
 
@@ -311,7 +311,7 @@
                                     android:id="@+id/drag14ImageView"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:scaleType="center"
+                                    android:layout_margin="5dp"
                                     android:src="@drawable/abecedarioi"
                                     android:tag="figura 5"/>
 
@@ -329,7 +329,7 @@
                                     android:id="@+id/drag15ImageView"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:scaleType="center"
+                                    android:layout_margin="5dp"
                                     android:src="@drawable/abecedariop"
                                     android:tag="figura 6"/>
 
@@ -347,7 +347,7 @@
                                     android:id="@+id/drag11ImageView"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:scaleType="center"
+                                    android:layout_margin="5dp"
                                     android:src="@drawable/abecedariov"
                                     android:tag="figure2" />
                             </LinearLayout>
@@ -381,7 +381,7 @@
                                     android:id="@+id/drag10ImageView"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:scaleType="center"
+                                    android:layout_margin="5dp"
                                     android:src="@drawable/abecedariou"
                                     android:tag="figure1" />
 
@@ -399,7 +399,7 @@
                                     android:id="@+id/drag16ImageView"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:scaleType="center"
+                                    android:layout_margin="5dp"
                                     android:src="@drawable/abecedarioe"
                                     android:tag="figura 7"/>
 
@@ -417,7 +417,7 @@
                                     android:id="@+id/drag12ImageView"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:scaleType="center"
+                                    android:layout_margin="5dp"
                                     android:src="@drawable/abecedarioa"
                                     android:tag="figure3" />
 
@@ -435,7 +435,7 @@
                                     android:id="@+id/drag17ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:scaleType="center"
+                                    android:layout_margin="5dp"
                                     android:src="@drawable/abecedarioo"
                                     android:tag="figura 8"/>
                             </LinearLayout>
@@ -457,6 +457,14 @@
                             android:layout_weight="1"
                             android:orientation="horizontal">
 
+                            <!-- Espacio en blanco -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.2"
+                                android:orientation="horizontal">
+                            </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -469,8 +477,8 @@
                                     android:id="@+id/drag18ImageView"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:scaleType="center"
-                                    android:src="@drawable/abecedariou"
+                                    android:layout_margin="5dp"
+                                    android:src="@drawable/abecedarioa"
                                     android:tag="figura 9" />
 
                             </LinearLayout>
@@ -487,8 +495,8 @@
                                     android:id="@+id/drag19ImageView"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:scaleType="center"
-                                    android:src="@drawable/abecedarioe"
+                                    android:layout_margin="5dp"
+                                    android:src="@drawable/abecedarioi"
                                     android:tag="figura 10"/>
 
                             </LinearLayout>
@@ -505,13 +513,19 @@
                                     android:id="@+id/drag20ImageView"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:scaleType="center"
-                                    android:src="@drawable/abecedarioa"
+                                    android:layout_margin="5dp"
+                                    android:src="@drawable/abecedarioe"
                                     android:tag="figura 11"  />
 
                             </LinearLayout>
 
-
+                            <!-- Espacio en blanco -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.2"
+                                android:orientation="horizontal">
+                            </LinearLayout>
 
                         </LinearLayout>
 

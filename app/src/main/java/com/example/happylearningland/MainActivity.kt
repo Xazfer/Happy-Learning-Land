@@ -2,11 +2,18 @@ package com.example.happylearningland
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.happylearningland.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.File
 
 enum class ProviderType {
     BASIC,
@@ -18,9 +25,12 @@ class MainActivity : AppCompatActivity() {
     // FirebaseAuth
     private lateinit var auth: FirebaseAuth
 
+    lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Ocultar barra de navegación y status bar
         window.decorView.apply {
@@ -49,12 +59,22 @@ class MainActivity : AppCompatActivity() {
 
 
 
+        // Obtener imagens
+
+
         // Botón de Character 1
-        btnCharacter1.setOnClickListener {
+        binding.btnCharacter1.setOnClickListener {
+            val storageRef = FirebaseStorage.getInstance().reference.child("characters/character_11.png")
+            val localFile = File.createTempFile("tempImage", "png")
+            storageRef.getFile(localFile).addOnSuccessListener {
+                val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
+                binding.btnCharacter1.setImageBitmap(bitmap)
+            }.addOnFailureListener {
+                Toast.makeText(this, "No se pudo recuperar la imagen", Toast.LENGTH_SHORT).show()
+            }
+
             val intent = Intent(this, CapsuleFragment::class.java)
 
-            // send image
-            //intent.putExtra("character1", R.drawable.character_11)
 
             // send new screen
             startActivity(intent)
@@ -62,10 +82,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Botón de Character 2
-        btnCharacter2.setOnClickListener {
+        binding.btnCharacter2.setOnClickListener {
             val intent = Intent(this, CapsuleFragment::class.java)
-            // send image
-            //intent.putExtra("character2", R.drawable.character_12)
 
             // send new screen
             startActivity(intent)
@@ -73,24 +91,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Botón de Character 3
-        btnCharacter3.setOnClickListener {
+        /*binding.btnCharacter3.setOnClickListener {
             val intent = Intent(this, CapsuleFragment::class.java)
 
-            // send image
-            //intent.putExtra("character3", R.drawable.character_21)
 
             // send new screen
             startActivity(intent)
             finish()
-        }
+        }*/
 
         // Botón de Character 4
-        btnCharacter4.setOnClickListener {
+        binding.btnCharacter4.setOnClickListener {
             val intent = Intent(this, CapsuleFragment::class.java)
-
-            // send image
-            //intent.putExtra("character4", R.drawable.character_22)
-
             // send new screen
             startActivity(intent)
             finish()
