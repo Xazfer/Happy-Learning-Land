@@ -202,19 +202,70 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/btn_letters"
+                    android:layout_marginStart="55dp"
                     android:layout_weight="1.5">
 
-                    <TextView
+                    <!-- Contenedor de respuestas correctas-->
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginStart="25dp"
-                        android:gravity="center"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:background="@drawable/btn_letters"
-                        android:text="0/0" />
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/counterCorrects"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:gravity="center"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:text="0" />
+
+                    </LinearLayout>
+
+                    <!-- Contenedor separador-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="1.4">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:text="/" />
+
+                    </LinearLayout>
+
+                    <!-- Contenedor de contador de preguntas-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/counterQuestion"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="5dp"
+                            android:gravity="center"
+                            android:textAlignment="center"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:text="0" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -233,8 +284,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="40dp"
                     android:layout_marginEnd="40dp"
-                    android:background="@drawable/btn_letters"
-                    android:src="@drawable/character_11">
+                    android:background="@drawable/btn_letters">
 
                 </ImageView>
 

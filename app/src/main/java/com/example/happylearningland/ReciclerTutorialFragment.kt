@@ -58,7 +58,7 @@ class ReciclerTutorialFragment : Fragment(R.layout.fragment_recicler_tutorial) {
                     mediaPlayer?.start()
                 }
                 3-> {
-                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
+                    Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
                     contador += 1
                     correct += 1
                     imagesTrash()
@@ -66,7 +66,7 @@ class ReciclerTutorialFragment : Fragment(R.layout.fragment_recicler_tutorial) {
                     mediaPlayer?.start()
                 }
                 4-> {
-                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
+                    Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
                     contador += 1
                     correct += 1
                     imagesTrash()
@@ -88,13 +88,16 @@ class ReciclerTutorialFragment : Fragment(R.layout.fragment_recicler_tutorial) {
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
+                    if (contador == 7) {
+                        back()
+                    }
                 }
             }
         }
         binding.btnOrganic.setOnClickListener {
             when(contador){
                 1-> {
-                    Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
+                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
                     imagesTrash()
@@ -102,7 +105,7 @@ class ReciclerTutorialFragment : Fragment(R.layout.fragment_recicler_tutorial) {
                     mediaPlayer?.start()
                 }
                 2-> {
-                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
+                    Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
                     contador += 1
                     correct += 1
                     imagesTrash()
@@ -126,7 +129,7 @@ class ReciclerTutorialFragment : Fragment(R.layout.fragment_recicler_tutorial) {
                     mediaPlayer?.start()
                 }
                 5-> {
-                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
+                    Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
                     contador += 1
                     correct += 1
                     imagesTrash()
@@ -134,21 +137,23 @@ class ReciclerTutorialFragment : Fragment(R.layout.fragment_recicler_tutorial) {
                     mediaPlayer?.start()
                 }
                 6-> {
-                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
+                    Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
                     contador += 1
                     correct += 1
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
                     mediaPlayer?.start()
+                    if (contador == 7) {
+                        back()
+                    }
                 }
             }
         }
     }
+
     //funcion de vuleta a niveles
-    fun back(){
-        if (contador == 9){
-            findNavController().navigate(R.id.action_reciclerEasyFragment_to_nav_reciclerFragment)
-        }
+    private fun back(){
+        findNavController().navigate(R.id.action_reciclerTutorialFragment_to_nav_reciclerFragment)
     }
 
     // Función de obtener datos

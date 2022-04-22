@@ -25,7 +25,6 @@ class AccountRecoveryActivity : AppCompatActivity() {
 
         binding.btnRecovery.setOnClickListener {
             validateEmail()
-
         }
 
     }
