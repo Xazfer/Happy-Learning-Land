@@ -188,6 +188,7 @@
                 android:layout_weight="1">
 
                 <ImageView
+                    android:id="@+id/trash"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="40dp"
@@ -243,6 +244,7 @@
                     android:layout_weight="1">
 
                     <ImageView
+                        android:id="@+id/btnOrganic"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/organico">
@@ -259,6 +261,7 @@
                     android:layout_weight="1">
 
                     <ImageView
+                        android:id="@+id/btnInorganic"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/inorganico">

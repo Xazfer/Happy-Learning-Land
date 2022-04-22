@@ -105,17 +105,29 @@
         android:id="@+id/reciclerEasyFragment"
         android:name="com.example.happylearningland.ReciclerEasyFragment"
         android:label="fragment_recicler_easy"
-        tools:layout="@layout/fragment_recicler_easy" />
+        tools:layout="@layout/fragment_recicler_easy" >
+        <action
+            android:id="@+id/action_reciclerEasyFragment_to_nav_reciclerFragment"
+            app:destination="@id/nav_reciclerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/reciclerHardFragment"
         android:name="com.example.happylearningland.ReciclerHardFragment"
         android:label="fragment_recicler_hard"
-        tools:layout="@layout/fragment_recicler_hard" />
+        tools:layout="@layout/fragment_recicler_hard" >
+        <action
+            android:id="@+id/action_reciclerHardFragment_to_nav_reciclerFragment"
+            app:destination="@id/nav_reciclerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/reciclerTutorialFragment"
         android:name="com.example.happylearningland.ReciclerTutorialFragment"
         android:label="fragment_recicler_tutorial"
-        tools:layout="@layout/fragment_recicler_tutorial" />
+        tools:layout="@layout/fragment_recicler_tutorial" >
+        <action
+            android:id="@+id/action_reciclerTutorialFragment_to_nav_reciclerFragment"
+            app:destination="@id/nav_reciclerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/shop_Products_fragment"
         android:name="com.example.happylearningland.Shop_Products_fragment"

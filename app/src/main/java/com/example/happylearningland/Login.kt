@@ -192,7 +192,7 @@ class Login : AppCompatActivity() {
                 "(?=.*[0-9])" + // Al menos un número
                 "(?=.*[A-Z])" + // Al menos una letra mayúscula
                 "(?=.*[a-z])" + // Al menos una letra minúscula
-                "(?=.*[@#$%^&+=])" +     // at least 1 special character
+                "(?=.*[@#$%^&+=_.])" +     // at least 1 special character
                 "(?=\\S+$)" +            // no white spaces
                 ".{6,}" +                // at least 6 characters
                 "$")

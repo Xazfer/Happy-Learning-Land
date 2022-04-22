@@ -1,9 +1,12 @@
 package com.example.happylearningland
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.TextView
+import androidx.navigation.fragment.findNavController
 import com.example.happylearningland.databinding.FragmentReciclerTutorialBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -21,7 +24,12 @@ class ReciclerTutorialFragment : Fragment(R.layout.fragment_recicler_tutorial) {
     private lateinit var auth: FirebaseAuth
     private lateinit var imageCharacter: String
     private var coins = 0
+    private var correct = 0
+    private var incorrect = 0
+
     private lateinit var tasks: List<String>
+
+    private var contador = 1
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,7 +38,117 @@ class ReciclerTutorialFragment : Fragment(R.layout.fragment_recicler_tutorial) {
         db = Firebase.database.reference
 
         getData(db)
-
+        imagesTrash()
+        binding.btnInorganic.setOnClickListener {
+            when(contador){
+                1-> {
+                    Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
+                    contador += 1
+                    correct += 1
+                    imagesTrash()
+                    mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
+                    mediaPlayer?.start()
+                }
+                2-> {
+                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
+                    contador += 1
+                    incorrect += 1
+                    imagesTrash()
+                    mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
+                    mediaPlayer?.start()
+                }
+                3-> {
+                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
+                    contador += 1
+                    correct += 1
+                    imagesTrash()
+                    mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
+                    mediaPlayer?.start()
+                }
+                4-> {
+                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
+                    contador += 1
+                    correct += 1
+                    imagesTrash()
+                    mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
+                    mediaPlayer?.start()
+                }
+                5-> {
+                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
+                    contador += 1
+                    incorrect += 1
+                    imagesTrash()
+                    mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
+                    mediaPlayer?.start()
+                }
+                6-> {
+                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
+                    contador += 1
+                    incorrect += 1
+                    imagesTrash()
+                    mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
+                    mediaPlayer?.start()
+                }
+            }
+        }
+        binding.btnOrganic.setOnClickListener {
+            when(contador){
+                1-> {
+                    Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
+                    contador += 1
+                    incorrect += 1
+                    imagesTrash()
+                    mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
+                    mediaPlayer?.start()
+                }
+                2-> {
+                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
+                    contador += 1
+                    correct += 1
+                    imagesTrash()
+                    mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
+                    mediaPlayer?.start()
+                }
+                3-> {
+                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
+                    contador += 1
+                    incorrect += 1
+                    imagesTrash()
+                    mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
+                    mediaPlayer?.start()
+                }
+                4-> {
+                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
+                    contador += 1
+                    incorrect += 1
+                    imagesTrash()
+                    mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
+                    mediaPlayer?.start()
+                }
+                5-> {
+                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
+                    contador += 1
+                    correct += 1
+                    imagesTrash()
+                    mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
+                    mediaPlayer?.start()
+                }
+                6-> {
+                    Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
+                    contador += 1
+                    correct += 1
+                    imagesTrash()
+                    mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
+                    mediaPlayer?.start()
+                }
+            }
+        }
+    }
+    //funcion de vuleta a niveles
+    fun back(){
+        if (contador == 9){
+            findNavController().navigate(R.id.action_reciclerEasyFragment_to_nav_reciclerFragment)
+        }
     }
 
     // Función de obtener datos
@@ -53,7 +171,16 @@ class ReciclerTutorialFragment : Fragment(R.layout.fragment_recicler_tutorial) {
         }
         data.addValueEventListener(listener)
     }
-
+    fun imagesTrash(){
+        when(contador){
+            1-> binding.trash.setImageResource(R.drawable.lata3)
+            2-> binding.trash.setImageResource(R.drawable.cascaradehuevo)
+            3-> binding.trash.setImageResource(R.drawable.lataatum)
+            4-> binding.trash.setImageResource(R.drawable.lataatun2)
+            5-> binding.trash.setImageResource(R.drawable.cascaradehuevo2)
+            6-> binding.trash.setImageResource(R.drawable.cascaradeplatano)
+        }
+    }
     /*
     // Actualización de coins
     // Función de subir datos DB
