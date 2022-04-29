@@ -24,6 +24,7 @@ class ReciclerHardFragment : Fragment(R.layout.fragment_recicler_hard) {
     private lateinit var auth: FirebaseAuth
     private lateinit var imageCharacter: String
     private var coins = 0
+    private var uid = ""
     private lateinit var tasks: List<String>
     private var correct = 0
     private var incorrect = 0
@@ -36,6 +37,8 @@ class ReciclerHardFragment : Fragment(R.layout.fragment_recicler_hard) {
         db = Firebase.database.reference
 
         getData(db)
+        uid = auth.currentUser!!.uid
+
         play()
         imagesTrash()
 
@@ -137,7 +140,10 @@ class ReciclerHardFragment : Fragment(R.layout.fragment_recicler_hard) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
                     if (contador == 13) {
+                        val monedas = coins +4
+                        updateCoins(monedas)
                         back()
+
                     }
                 }
             }
@@ -240,6 +246,8 @@ class ReciclerHardFragment : Fragment(R.layout.fragment_recicler_hard) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
                     if (contador == 13) {
+                        val monedas = coins +4
+                        updateCoins(monedas)
                         back()
                     }
                 }
@@ -343,6 +351,8 @@ class ReciclerHardFragment : Fragment(R.layout.fragment_recicler_hard) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
                     mediaPlayer?.start()
                     if (contador == 13) {
+                        val monedas = coins +4
+                        updateCoins(monedas)
                         back()
                     }
                 }
@@ -447,6 +457,8 @@ class ReciclerHardFragment : Fragment(R.layout.fragment_recicler_hard) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
                     if (contador == 13) {
+                        val monedas = coins +4
+                        updateCoins(monedas)
                         back()
                     }
                 }
@@ -513,11 +525,11 @@ class ReciclerHardFragment : Fragment(R.layout.fragment_recicler_hard) {
             12->binding.trash.setImageResource(R.drawable.botellacristal2)
         }
     }
-    /*
+
     // Actualización de coins
     // Función de subir datos DB
-    private fun updateCoins(coins : Int, email: String) {
-        val id = email
+    private fun updateCoins(coins : Int) {
+        val id = uid
         db.child("player").child(id).get().addOnSuccessListener {
             if (it.value == null) {
                 Log.w("texto inexistente", "datos no encontrados")
@@ -530,6 +542,5 @@ class ReciclerHardFragment : Fragment(R.layout.fragment_recicler_hard) {
         }
     }
 
-     */
 
 }

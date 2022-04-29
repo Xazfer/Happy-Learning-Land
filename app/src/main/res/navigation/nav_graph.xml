@@ -134,14 +134,14 @@
         android:label="fragment_shop_products_fragment"
         tools:layout="@layout/fragment_shop_products_fragment" >
         <action
-            android:id="@+id/action_shop_Products_fragment_to_bottomSheetAlimentation"
-            app:destination="@id/bottomSheetAlimentation" />
-        <action
             android:id="@+id/action_shop_Products_fragment_to_nav_shopFragment"
             app:destination="@id/nav_shopFragment" />
         <action
             android:id="@+id/action_shop_Products_fragment_to_nav_mainScreenFragment"
             app:destination="@id/nav_mainScreenFragment" />
+        <action
+            android:id="@+id/action_shop_Products_fragment_to_bottomSheetProducts"
+            app:destination="@id/bottomSheetProducts" />
     </fragment>
     <dialog
         android:id="@+id/bottomSheetSettings"
@@ -157,10 +157,15 @@
         android:label="fragment_bottom_sheet_alimentation"
         tools:layout="@layout/fragment_bottom_sheet_alimentation" >
         <action
-            android:id="@+id/action_bottomSheetAlimentation_to_shop_Products_fragment"
-            app:destination="@id/shop_Products_fragment" />
-        <action
             android:id="@+id/action_bottomSheetAlimentation_to_nav_alimentacionFragment"
             app:destination="@id/nav_alimentacionFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/bottomSheetProducts"
+        android:name="com.example.happylearningland.BottomSheetProducts"
+        android:label="BottomSheetProducts" >
+        <action
+            android:id="@+id/action_bottomSheetProducts_to_shop_Products_fragment"
+            app:destination="@id/shop_Products_fragment" />
     </dialog>
 </navigation>

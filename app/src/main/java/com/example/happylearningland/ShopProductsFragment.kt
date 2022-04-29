@@ -46,39 +46,39 @@ class Shop_Products_fragment : Fragment(R.layout.fragment_shop_products_fragment
         binding.productPan.setOnClickListener {
             val producto:String = "pam"
             val bundle = bundleOf("Producto" to "Pan")
-            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetProducts, bundle)
         }
         binding.productGalleta.setOnClickListener {
                     val bundle = bundleOf("Producto" to "Galletas")
-            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetProducts, bundle)
         }
         binding.productPapitas.setOnClickListener {
             val bundle = bundleOf("Producto" to "Papitas")
-            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetProducts, bundle)
         }
         binding.productLeche.setOnClickListener {
             val bundle = bundleOf("Producto" to "Leche")
-            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetProducts, bundle)
         }
         binding.productHuevo.setOnClickListener {
             val bundle = bundleOf("Producto" to "Huevos")
-            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetProducts, bundle)
         }
         binding.profuctArroz.setOnClickListener {
             val bundle = bundleOf("Producto" to "Arroz")
-            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetProducts, bundle)
         }
         binding.profuctAgua.setOnClickListener {
             val bundle = bundleOf("Producto" to "Agua")
-            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetProducts, bundle)
         }
         binding.productFruta.setOnClickListener {
             val bundle = bundleOf("Producto" to "Canasta de Frutas")
-            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetProducts, bundle)
         }
         binding.productVerdura.setOnClickListener {
             val bundle = bundleOf("Producto" to "Canasta de Verduras")
-            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetProducts, bundle)
         }
 
     }
@@ -99,6 +99,7 @@ class Shop_Products_fragment : Fragment(R.layout.fragment_shop_products_fragment
             override fun onCancelled(error: DatabaseError) {
                 Log.w("data", "datos no recuperados", error.toException())
             }
+
 
         }
         data.addValueEventListener(listener)

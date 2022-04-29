@@ -34,6 +34,7 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
     private lateinit var imageCharacter: String
     private var coins = 0
     private lateinit var tasks: List<String>
+    private var uid = ""
 
     var num = 1
     var score = 0
@@ -46,6 +47,7 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
         db = Firebase.database.reference
 
         getData(db)
+        uid = auth.currentUser!!.uid
 
         //recuperacion de argumentos
         Log.e("Revision", num.toString())
@@ -394,7 +396,8 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
                 setLetters()
                 cleanTarget()
                 if(score == 24){
-                    Log.e("REVISION", "NO ENTRO")
+                    val monedas = coins +8
+                    updateCoins(monedas)
                     back()
                 }
             }
@@ -597,11 +600,11 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
         data.addValueEventListener(listener)
     }
 
-    /*
+
     // Actualización de coins
     // Función de subir datos DB
-    private fun updateCoins(coins : Int, email: String) {
-        val id = email
+    private fun updateCoins(coins : Int) {
+        val id = uid
         db.child("player").child(id).get().addOnSuccessListener {
             if (it.value == null) {
                 Log.w("texto inexistente", "datos no encontrados")
@@ -614,6 +617,5 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
         }
     }
 
-     */
 
 }

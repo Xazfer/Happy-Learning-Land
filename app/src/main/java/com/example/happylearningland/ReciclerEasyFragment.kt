@@ -28,7 +28,7 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
     private var coins = 0
     private var correct = 0
     private var incorrect = 0
-
+    private var uid = ""
     private lateinit var tasks: List<String>
 
     private var tvCuentaAtras: TextView? = null
@@ -40,6 +40,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
         db = Firebase.database.reference
 
         getData(db)
+        uid = auth.currentUser!!.uid
+
         play()
         imagesTrash()
 
@@ -117,6 +119,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
                     mediaPlayer?.start()
                     if (contador == 10) {
+                        val monedas = coins +2
+                        updateCoins(monedas)
                         back()
                     }
                 }
@@ -196,6 +200,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
                     if (contador == 10) {
+                        val monedas = coins +2
+                        updateCoins(monedas)
                         back()
                     }
                 }
@@ -275,6 +281,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
                     if (contador == 10) {
+                        val monedas = coins +2
+                        updateCoins(monedas)
                         back()
                     }
                 }
@@ -342,11 +350,11 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
         }
     }
 
-    /*
+
     // Actualización de coins
     // Función de subir datos DB
-    private fun updateCoins(coins : Int, email: String) {
-        val id = email
+    private fun updateCoins(coins : Int) {
+        val id = uid
         db.child("player").child(id).get().addOnSuccessListener {
             if (it.value == null) {
                 Log.w("texto inexistente", "datos no encontrados")
@@ -359,7 +367,6 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
         }
     }
 
-     */
 }
 
 

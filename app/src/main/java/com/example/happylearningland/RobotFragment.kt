@@ -33,7 +33,7 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
     private lateinit var imageCharacter: String
     private var coins = 0
     private lateinit var tasks: List<String>
-
+    private var uid = ""
     var contador = 1
     var score = 0
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,6 +44,9 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
         db = Firebase.database.reference
 
         getData(db)
+
+        uid = auth.currentUser!!.uid
+
 
         super.onCreate(savedInstanceState)
 
@@ -89,6 +92,8 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
         btnPlay.setOnClickListener {
             if (score == 6){
                 score = 0
+                val moneda = coins +1
+                updateCoins(moneda)
                 Log.e("CUMPLIMIENTO","SE COMPLETARON 5 PTS")
                 mediaPlayer= MediaPlayer.create(context, R.raw.robotarmado)
                 mediaPlayer?.start()
@@ -114,6 +119,7 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
             drag6ImageView.isVisible = true
         }
     }
+
     fun score(){
         score += 1
     }
@@ -586,11 +592,10 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
         data.addValueEventListener(listener)
     }
 
-    /*
     // Actualización de coins
     // Función de subir datos DB
-    private fun updateCoins(coins : Int, email: String) {
-        val id = email
+    private fun updateCoins(coins : Int) {
+        val id = uid
         db.child("player").child(id).get().addOnSuccessListener {
             if (it.value == null) {
                 Log.w("texto inexistente", "datos no encontrados")
@@ -603,5 +608,4 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
         }
     }
 
-     */
 }
