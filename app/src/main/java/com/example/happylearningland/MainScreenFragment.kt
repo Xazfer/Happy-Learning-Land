@@ -20,6 +20,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.io.File
+import java.util.*
 
 //variable para sonido de fondo
 var mediaPlayer: MediaPlayer? = null
@@ -33,6 +34,8 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
     private lateinit var imageCharacter: String
     private var coins = 0
     private lateinit var tasks: List<String>
+    private lateinit var listTask: List<String>
+    private var uid = ""
 
     //variable para recuperacion de datos
 
@@ -48,10 +51,13 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
             findNavController().navigate(R.id.action_nav_mainScreenFragment_to_bottomSheetSettings, bundle)
         }
 
+        listTask = listOf("task1", "task2", "task3", "task4", "task5")
+
         auth = FirebaseAuth.getInstance()
         db = Firebase.database.reference
         firebaseStorage = FirebaseStorage.getInstance()
         storageReference = firebaseStorage.reference
+        uid = auth.currentUser!!.uid
 
         // Recuperación de imagen del personaje que fue seleccionado
         getData(db)
@@ -138,6 +144,11 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
                 binding.counterTasks.text = us.tasks.size.toString()
                 binding.coins.text = us.coins.toString()
                 getImage(imageCharacter)
+                if(us.date == null){
+
+                }else{
+                    reactiveTask(us.date!!)
+                }
                 Log.w("data", "datos recuperados $us")
             }
 
@@ -147,6 +158,28 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
 
         }
         data.addValueEventListener(listener)
+    }
+
+    private fun reactiveTask(date: Date) {
+        val datenow = Date()
+        val daynow = datenow.date
+        val daysave = date.date
+        if (daynow > daysave){
+            val id = uid
+            db.child("player").child(id).get().addOnSuccessListener {
+                if (it.value == null) {
+                    Log.w("texto inexistente", "datos no encontrados")
+                } else {
+                    db.child("player").child(id).child("date").setValue(null)
+                    db.child("player").child(id).child("tasks").setValue(listTask)
+                    Log.w("texto existente", "datos encontrados ${it.value}")
+                }
+            }.addOnFailureListener {
+                Log.w("texto inexistente", "datos no encontrados")
+            }
+        }else{
+
+        }
     }
 
     // Función de obtención de personaje para colocarlo en su contenedor
