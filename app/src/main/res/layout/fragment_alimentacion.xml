@@ -249,6 +249,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnAgua"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/agua_simple">
@@ -265,6 +266,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnAguaLimon"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/agua_limon">
@@ -281,6 +283,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnAguaNaranja"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/agua_naranja">
@@ -306,6 +309,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnJugoNaranja"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/jugo_naranja">
@@ -322,6 +326,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnLeche"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/leche">
@@ -338,6 +343,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnLecheChocolate"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/leche_cafe">
@@ -363,6 +369,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnRefresco"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/refresco">
@@ -379,6 +386,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnRefrescoCola"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/refresco_cola">
@@ -425,6 +433,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnVerdura"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/verduras">
@@ -441,6 +450,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnFruta"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/frutas">
@@ -457,6 +467,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnHuevo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/huevos">
@@ -482,6 +493,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnPescado"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/pescado">
@@ -498,6 +510,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnPasta"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/pasta">
@@ -514,6 +527,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnSandwich"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/sandwich">
@@ -539,6 +553,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnPizza"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/pizza">
@@ -555,6 +570,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnPastel"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/pastel">
@@ -571,6 +587,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/btnGalletas"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/galletas">
