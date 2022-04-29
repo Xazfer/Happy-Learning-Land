@@ -41,7 +41,7 @@ class Shop_Products_fragment : Fragment(R.layout.fragment_shop_products_fragment
             findNavController().navigate(R.id.action_shop_Products_fragment_to_nav_shopFragment)
         }
         binding.btnVuelta.setOnClickListener {
-            findNavController().navigate(R.id.action_shop_Products_fragment_to_nav_mainScreenFragment)
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_nav_shopFragment)
         }
         binding.productPan.setOnClickListener {
             val producto:String = "pam"
@@ -49,7 +49,7 @@ class Shop_Products_fragment : Fragment(R.layout.fragment_shop_products_fragment
             findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
         }
         binding.productGalleta.setOnClickListener {
-                    val bundle = bundleOf("Producto" to "Galleta")
+                    val bundle = bundleOf("Producto" to "Galletas")
             findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
         }
         binding.productPapitas.setOnClickListener {
@@ -61,7 +61,7 @@ class Shop_Products_fragment : Fragment(R.layout.fragment_shop_products_fragment
             findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
         }
         binding.productHuevo.setOnClickListener {
-            val bundle = bundleOf("Producto" to "Huevo")
+            val bundle = bundleOf("Producto" to "Huevos")
             findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
         }
         binding.profuctArroz.setOnClickListener {
@@ -73,11 +73,11 @@ class Shop_Products_fragment : Fragment(R.layout.fragment_shop_products_fragment
             findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
         }
         binding.productFruta.setOnClickListener {
-            val bundle = bundleOf("Producto" to "Fruta")
+            val bundle = bundleOf("Producto" to "Canasta de Frutas")
             findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
         }
         binding.productVerdura.setOnClickListener {
-            val bundle = bundleOf("Producto" to "Verdura")
+            val bundle = bundleOf("Producto" to "Canasta de Verduras")
             findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
         }
 

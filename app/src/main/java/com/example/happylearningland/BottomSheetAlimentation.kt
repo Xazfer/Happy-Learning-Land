@@ -31,7 +31,7 @@ class BottomSheetAlimentation : BottomSheetDialogFragment() {
             producto = it.getString("Producto")
         }
         when(producto){
-            "Galleta" -> {
+            "Galletas" -> {
                 binding.textoProducto.text = producto
                 binding.textoInfo.isVisible = false
                 binding.btnSalud.isVisible = false
@@ -71,7 +71,7 @@ class BottomSheetAlimentation : BottomSheetDialogFragment() {
                 mediaPlayer= MediaPlayer.create(context, R.raw.leche)
                 mediaPlayer?.start()
             }
-            "Huevo"->{
+            "Huevos"->{
                 binding.textoProducto.text = producto
                 binding.textoInfo.isVisible = false
                 binding.btnSalud.isVisible = false
@@ -87,7 +87,7 @@ class BottomSheetAlimentation : BottomSheetDialogFragment() {
                 mediaPlayer= MediaPlayer.create(context, R.raw.arroz)
                 mediaPlayer?.start()
             }
-            "Fruta"->{
+            "Canasta de Frutas"->{
                 binding.textoProducto.text = producto
                 binding.textoInfo.isVisible = false
                 binding.btnSalud.isVisible = false
@@ -95,7 +95,7 @@ class BottomSheetAlimentation : BottomSheetDialogFragment() {
                 mediaPlayer= MediaPlayer.create(context, R.raw.fruta)
                 mediaPlayer?.start()
             }
-            "Verdura"->{
+            "Canasta de Verduras"->{
                 binding.textoProducto.text = producto
                 binding.textoInfo.isVisible = false
                 binding.btnSalud.isVisible = false
@@ -110,16 +110,16 @@ class BottomSheetAlimentation : BottomSheetDialogFragment() {
                 btnSalud.setImageResource(R.drawable.happy)
             }
             "AguaLimon"->{
-                binding.textoProducto.text = "Agua de limon"
-                binding.textoInfo.text = "Muy saludable"
+                binding.textoProducto.text = "Agua de limón"
+                binding.textoInfo.text = "Saludable"
                 imgAlimento.setImageResource(R.drawable.agua_limon)
-                btnSalud.setImageResource(R.drawable.happy)
+                btnSalud.setImageResource(R.drawable.neutral)
             }
             "AguaNaranja"->{
                 binding.textoProducto.text = "Agua de naranja"
-                binding.textoInfo.text = "Muy saludable"
+                binding.textoInfo.text = "Saludable"
                 imgAlimento.setImageResource(R.drawable.agua_naranja)
-                btnSalud.setImageResource(R.drawable.happy)
+                btnSalud.setImageResource(R.drawable.neutral)
             }
             "JugoNaranja"->{
                 binding.textoProducto.text = "Jugo de naranja"
@@ -135,19 +135,19 @@ class BottomSheetAlimentation : BottomSheetDialogFragment() {
             }
             "LecheChocolate"->{
                 binding.textoProducto.text = "Leche con chocolate"
-                binding.textoInfo.text = "No es muy recomendable"
+                binding.textoInfo.text = "No es recomendable"
                 imgAlimento.setImageResource(R.drawable.leche_cafe)
-                btnSalud.setImageResource(R.drawable.neutral)
+                btnSalud.setImageResource(R.drawable.sad)
             }
             "Refresco"->{
                 binding.textoProducto.text = "Refresco"
-                binding.textoInfo.text = "No es muy recomendable"
+                binding.textoInfo.text = "No es recomendable"
                 imgAlimento.setImageResource(R.drawable.refresco)
                 btnSalud.setImageResource(R.drawable.sad)
             }
             "RefrescoCola"->{
                 binding.textoProducto.text = "Refresco de cola"
-                binding.textoInfo.text = "Puedes tomar algo mas sano"
+                binding.textoInfo.text = "No es recomendable"
                 imgAlimento.setImageResource(R.drawable.refresco_cola)
                 btnSalud.setImageResource(R.drawable.sad)
             }
@@ -165,43 +165,43 @@ class BottomSheetAlimentation : BottomSheetDialogFragment() {
             }
             "Huevo2"->{
                 binding.textoProducto.text = "Huevos"
-                binding.textoInfo.text = "No es muy saludable"
+                binding.textoInfo.text = "Saludable"
                 imgAlimento.setImageResource(R.drawable.huevos)
                 btnSalud.setImageResource(R.drawable.neutral)
             }
             "Pescado"->{
-                binding.textoProducto.text = producto
+                binding.textoProducto.text = "Pescado"
                 binding.textoInfo.text = "Muy saludable"
                 imgAlimento.setImageResource(R.drawable.pescado)
                 btnSalud.setImageResource(R.drawable.happy)
             }
             "Pasta"->{
-                binding.textoProducto.text = producto
-                binding.textoInfo.text = "No es muy saludable"
+                binding.textoProducto.text = "Pasta"
+                binding.textoInfo.text = "Saludable"
                 imgAlimento.setImageResource(R.drawable.pasta)
                 btnSalud.setImageResource(R.drawable.neutral)
             }
             "Sandwich"->{
-                binding.textoProducto.text = producto
-                binding.textoInfo.text = "Muy saludable"
+                binding.textoProducto.text = "Sándwich"
+                binding.textoInfo.text = "Saludable"
                 imgAlimento.setImageResource(R.drawable.sandwich)
-                btnSalud.setImageResource(R.drawable.happy)
+                btnSalud.setImageResource(R.drawable.neutral)
             }
             "Pizza"->{
-                binding.textoProducto.text = producto
-                binding.textoInfo.text = "Puedes comer algo mas sano"
+                binding.textoProducto.text = "Rebanada de pizza"
+                binding.textoInfo.text = "No es recomendable"
                 imgAlimento.setImageResource(R.drawable.pizza)
                 btnSalud.setImageResource(R.drawable.sad)
             }
             "Pastel"->{
-                binding.textoProducto.text = producto
-                binding.textoInfo.text = "Puedes comer algo mas sano"
+                binding.textoProducto.text = "Rebanada de pastel"
+                binding.textoInfo.text = "No es recomendable"
                 imgAlimento.setImageResource(R.drawable.pastel)
                 btnSalud.setImageResource(R.drawable.sad)
             }
-            "Galleta2"->{
+            "Galletas2"->{
                 binding.textoProducto.text = "Galletas"
-                binding.textoInfo.text = "Puedes comer algo mas sano"
+                binding.textoInfo.text = "No es recomendable"
                 imgAlimento.setImageResource(R.drawable.galletas)
                 btnSalud.setImageResource(R.drawable.sad)
             }
