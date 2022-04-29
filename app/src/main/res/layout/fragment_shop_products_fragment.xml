@@ -116,6 +116,7 @@
 
                     <!-- Imagen de configuración -->
                     <ImageView
+                        android:id="@+id/instrucciones"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_settings">
@@ -308,6 +309,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/productPapitas"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/tienda_sabritas"/>
@@ -390,6 +392,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/productLeche"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/tienda_leche"/>
@@ -462,6 +465,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/productHuevo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/tienda_huevos"/>
@@ -534,6 +538,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/profuctArroz"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/tienda_arroz"/>
@@ -616,6 +621,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/profuctAgua"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/tienda_agua"/>
@@ -688,6 +694,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/productFruta"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/tienda_fruta"/>
@@ -760,6 +767,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/productVerdura"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/tienda_verdura"/>
@@ -835,6 +843,7 @@
                 android:layout_weight="1">
 
                 <ImageView
+                    android:id="@+id/btnVuelta"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_back"/>

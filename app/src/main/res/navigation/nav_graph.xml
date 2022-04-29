@@ -136,6 +136,12 @@
         <action
             android:id="@+id/action_shop_Products_fragment_to_bottomSheetAlimentation"
             app:destination="@id/bottomSheetAlimentation" />
+        <action
+            android:id="@+id/action_shop_Products_fragment_to_nav_shopFragment"
+            app:destination="@id/nav_shopFragment" />
+        <action
+            android:id="@+id/action_shop_Products_fragment_to_nav_mainScreenFragment"
+            app:destination="@id/nav_mainScreenFragment" />
     </fragment>
     <dialog
         android:id="@+id/bottomSheetSettings"

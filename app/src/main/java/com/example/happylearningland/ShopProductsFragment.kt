@@ -1,5 +1,6 @@
 package com.example.happylearningland
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -32,7 +33,16 @@ class Shop_Products_fragment : Fragment(R.layout.fragment_shop_products_fragment
         db = Firebase.database.reference
 
         getData(db)
-
+        binding.instrucciones.setOnClickListener {
+            mediaPlayer= MediaPlayer.create(context, R.raw.instruccionestienda)
+            mediaPlayer?.start()
+        }
+        binding.btnInicio.setOnClickListener {
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_nav_shopFragment)
+        }
+        binding.btnVuelta.setOnClickListener {
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_nav_mainScreenFragment)
+        }
         binding.productPan.setOnClickListener {
             val producto:String = "pam"
             val bundle = bundleOf("Producto" to "Pan")
@@ -42,6 +52,35 @@ class Shop_Products_fragment : Fragment(R.layout.fragment_shop_products_fragment
                     val bundle = bundleOf("Producto" to "Galleta")
             findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
         }
+        binding.productPapitas.setOnClickListener {
+            val bundle = bundleOf("Producto" to "Papitas")
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+        }
+        binding.productLeche.setOnClickListener {
+            val bundle = bundleOf("Producto" to "Leche")
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+        }
+        binding.productHuevo.setOnClickListener {
+            val bundle = bundleOf("Producto" to "Huevo")
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+        }
+        binding.profuctArroz.setOnClickListener {
+            val bundle = bundleOf("Producto" to "Arroz")
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+        }
+        binding.profuctAgua.setOnClickListener {
+            val bundle = bundleOf("Producto" to "Agua")
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+        }
+        binding.productFruta.setOnClickListener {
+            val bundle = bundleOf("Producto" to "Fruta")
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+        }
+        binding.productVerdura.setOnClickListener {
+            val bundle = bundleOf("Producto" to "Verdura")
+            findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetAlimentation, bundle)
+        }
+
     }
 
     // Función de obtener datos

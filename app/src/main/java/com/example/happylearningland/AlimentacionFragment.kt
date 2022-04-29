@@ -1,10 +1,12 @@
 package com.example.happylearningland
 
 import android.graphics.BitmapFactory
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.example.happylearningland.databinding.FragmentAlimentacionBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -42,6 +44,14 @@ class AlimentacionFragment : Fragment(R.layout.fragment_alimentacion) {
 
         // Recuperación de imagen del personaje que fue seleccionado
         getData(db)
+
+        binding.btnInicio.setOnClickListener {
+            findNavController().navigate(R.id.action_nav_alimentacionFragment_to_nav_mainScreenFragment)
+        }
+        binding.instrucciones.setOnClickListener {
+            mediaPlayer= MediaPlayer.create(context, R.raw.instruccionesalimentacion)
+            mediaPlayer?.start()
+        }
 
     }
 

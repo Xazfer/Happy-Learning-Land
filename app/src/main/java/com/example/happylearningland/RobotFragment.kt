@@ -82,6 +82,10 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
         btnInicio.setOnClickListener {
             findNavController().navigate(R.id.action_nav_robotFragment_to_nav_mainScreenFragment)
         }
+        instrucciones.setOnClickListener {
+            mediaPlayer= MediaPlayer.create(context, R.raw.instruccionesrobot)
+            mediaPlayer?.start()
+        }
         btnPlay.setOnClickListener {
             if (score == 6){
                 score = 0

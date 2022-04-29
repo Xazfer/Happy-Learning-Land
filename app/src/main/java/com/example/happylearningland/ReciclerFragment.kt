@@ -1,5 +1,6 @@
 package com.example.happylearningland
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -37,7 +38,11 @@ class ReciclerFragment : Fragment(R.layout.fragment_recicler) {
 
         binding.btnInicio.setOnClickListener {
             val bundle = bundleOf("texto" to "Pagina Inicio")
-            findNavController().navigate(R.id.action_nav_reciclerFragment_to_reciclerTutorialFragment, bundle)
+            findNavController().navigate(R.id.action_nav_reciclerFragment_to_nav_mainScreenFragment, bundle)
+        }
+        binding.instrucciones.setOnClickListener {
+            mediaPlayer= MediaPlayer.create(context, R.raw.instruccionesreciclaje)
+            mediaPlayer?.start()
         }
         binding.btnTutorial.setOnClickListener {
             val bundle = bundleOf("texto" to "Pagina Tutorial")

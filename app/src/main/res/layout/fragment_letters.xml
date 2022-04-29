@@ -29,6 +29,7 @@
 
                 <!-- Contenedor de Inicio -->
                 <ImageView
+                    android:id="@+id/btnInicio"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_inicio">
@@ -118,6 +119,7 @@
 
                     <!-- Contenedor de configuración -->
                     <ImageView
+                        android:id="@+id/instrucciones"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_settings">
