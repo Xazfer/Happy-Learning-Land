@@ -450,7 +450,6 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
 
             DragEvent.ACTION_DRAG_EXITED -> {
                 if (event.clipDescription.label == receiverView.tag as String) {
-                    receiverView.setColorFilter(Color.YELLOW)
                     v.invalidate()
                 }
                 true
@@ -499,7 +498,6 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
 
             DragEvent.ACTION_DRAG_EXITED -> {
                 if (event.clipDescription.label == receiverView.tag as String) {
-                    receiverView.setColorFilter(Color.YELLOW)
                     v.invalidate()
                 }
                 true
@@ -548,7 +546,6 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
 
             DragEvent.ACTION_DRAG_EXITED -> {
                 if (event.clipDescription.label == receiverView.tag as String) {
-                    receiverView.setColorFilter(Color.YELLOW)
                     v.invalidate()
                 }
                 true
