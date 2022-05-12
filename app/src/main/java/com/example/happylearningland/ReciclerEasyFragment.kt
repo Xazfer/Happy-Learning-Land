@@ -18,7 +18,6 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 
-
 class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
 
     private lateinit var binding: FragmentReciclerEasyBinding

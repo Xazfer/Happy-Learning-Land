@@ -542,5 +542,4 @@ class ReciclerHardFragment : Fragment(R.layout.fragment_recicler_hard) {
         }
     }
 
-
 }

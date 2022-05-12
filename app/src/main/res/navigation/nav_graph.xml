@@ -130,9 +130,9 @@
     </fragment>
     <fragment
         android:id="@+id/shop_Products_fragment"
-        android:name="com.example.happylearningland.Shop_Products_fragment"
+        android:name="com.example.happylearningland.ShopProductsFragment"
         android:label="fragment_shop_products_fragment"
-        tools:layout="@layout/fragment_shop_products_fragment" >
+        tools:layout="@layout/fragment_shop_products_fragment">
         <action
             android:id="@+id/action_shop_Products_fragment_to_nav_shopFragment"
             app:destination="@id/nav_shopFragment" />

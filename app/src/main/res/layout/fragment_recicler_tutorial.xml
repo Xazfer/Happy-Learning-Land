@@ -183,7 +183,7 @@
                             android:textStyle="bold"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:text="0" />
+                            android:text="@string/score" />
 
                     </LinearLayout>
 
@@ -202,7 +202,7 @@
                             android:textStyle="bold"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:text="/" />
+                            android:text="@string/slash" />
 
                     </LinearLayout>
 
@@ -223,7 +223,7 @@
                             android:textSize="20sp"
                             android:textStyle="bold"
                             android:textColor="@color/black"
-                            android:text="0" />
+                            android:text="@string/score" />
 
                     </LinearLayout>
 
@@ -265,7 +265,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:textAlignment="center"
-                    android:text="Basura" />
+                    android:text="@string/trash" />
 
             </LinearLayout>
 

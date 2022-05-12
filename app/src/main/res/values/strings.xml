@@ -6,6 +6,14 @@
     <string name="prefs_file">com.example.happylearningland.PREFERENCE_FILE_KEY</string>
     <string name="webclient_id">114555254837-fp4l71bf19kp6n1g0j7qvu3appgba4r2.apps.googleusercontent.com</string>
 
+    <!-- Texto en Pantallas -->
+    <string name="name">Nombre</string>
+    <string name="correo">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="check_password">Confirmar contraseña</string>
+    <string name="forget_password">¿Olvidaste tu contraseña?</string>
+    <string name="o">O</string>
+    
     <!-- Texto de nav bottom -->
     <string name="game_letters">Letras</string>
     <string name="game_robot">Robot</string>
@@ -37,11 +45,17 @@
     <string name="easy">Fácil</string>
     <string name="hard">Difícil</string>
     <string name="time">Tiempo:</string>
+    <string name="seconds">10</string>
+    <string name="seconds_hard">20</string>
+    <string name="score">0</string>
+    <string name="slash">/</string>
+    <string name="trash">Basura</string>
 
     <!-- Texto del Settings bottom sheet modal -->
     <string name="settings">Configuración de sonido</string>
     <string name="cancelar">Cancelar</string>
     <string name="comer">Comer</string>
+    <string name="comprar">Comprar</string>
     <string name="indicadorSalud">Indicador de Salud:</string>
 
     <!-- Texto de recuperación -->

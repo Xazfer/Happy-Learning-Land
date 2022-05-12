@@ -7,13 +7,11 @@ import com.example.happylearningland.databinding.FragmentLettersBinding
 import android.content.ClipData
 import android.content.ClipDescription
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Point
 import android.media.MediaPlayer
 import android.util.Log
 import android.view.DragEvent
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -25,7 +23,6 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_letters.*
-
 
 class LettersFragment : Fragment(R.layout.fragment_letters) {
     private lateinit var binding: FragmentLettersBinding

@@ -25,7 +25,7 @@
                 android:layout_height="100dp"
                 android:background="@color/blue_topaz"
                 android:gravity="center"
-                android:text="Happy Learning Land"
+                android:text="@string/app_name"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold|normal|italic"
@@ -116,7 +116,7 @@
                             app:boxStrokeWidth="1dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Correo electrónico"
+                            android:hint="@string/correo"
                             android:layout_marginRight="5dp"
                             android:layout_marginLeft="5dp"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">

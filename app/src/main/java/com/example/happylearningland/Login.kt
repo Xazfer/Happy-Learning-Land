@@ -39,9 +39,6 @@ class Login : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var db: DatabaseReference
 
-    // Firebase Analytics
-    private lateinit var firebaseAnalytics: FirebaseAnalytics
-
     // ProgressDialog
     private lateinit var progressDialog:ProgressDialog
     private lateinit var progressDialog2:ProgressDialog
@@ -62,15 +59,6 @@ class Login : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Ocultar barra de navegación y status bar
-        window.decorView.apply {
-            // Hide both the navigation bar and the status bar.
-            // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
-            // a general rule, you should design your app to hide the status bar whenever you
-            // hide the navigation bar.
-            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
-        }
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)

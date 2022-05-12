@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Wario/AndroidStudioProjects/MOVIL/app/src/main/res/layout/fragment_bottom_sheet_products.xml" value="0.358695652173913" />
         <entry key="..\:/Users/vclui/Desktop/proyecto2/Happy-Learning-Land/app/src/main/res/layout/bottomsheet_settings_fragment.xml" value="0.1082427536231884" />
         <entry key="..\:/Users/vclui/Desktop/proyecto2/Happy-Learning-Land/app/src/main/res/layout/fragment_alimentacion.xml" value="0.25" />
         <entry key="..\:/Users/vclui/Desktop/proyecto2/Happy-Learning-Land/app/src/main/res/layout/fragment_bottom_sheet_alimentation.xml" value="0.17" />
@@ -64,6 +63,7 @@
         <entry key="..\:/Users/xazfe/Desktop/Proyecto_Movil/Happy_Learning_Land/app/src/main/res/layout/fragment_alimentacion.xml" value="0.22" />
         <entry key="..\:/Users/xazfe/Desktop/Proyecto_Movil/Happy_Learning_Land/app/src/main/res/layout/fragment_blank.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/xazfe/Desktop/Proyecto_Movil/Happy_Learning_Land/app/src/main/res/layout/fragment_bottom_sheet_alimentation.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/xazfe/Desktop/Proyecto_Movil/Happy_Learning_Land/app/src/main/res/layout/fragment_bottom_sheet_products.xml" value="0.1461499493414387" />
         <entry key="..\:/Users/xazfe/Desktop/Proyecto_Movil/Happy_Learning_Land/app/src/main/res/layout/fragment_letters.xml" value="0.2871376811594203" />
         <entry key="..\:/Users/xazfe/Desktop/Proyecto_Movil/Happy_Learning_Land/app/src/main/res/layout/fragment_main_menu.xml" value="0.25" />
         <entry key="..\:/Users/xazfe/Desktop/Proyecto_Movil/Happy_Learning_Land/app/src/main/res/layout/fragment_main_screen.xml" value="0.2871376811594203" />

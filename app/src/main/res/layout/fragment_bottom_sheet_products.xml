@@ -53,7 +53,7 @@
 
                 </LinearLayout>
 
-                <!-- Imagen de alimento -->
+                <!-- Imagen de producto -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -122,7 +122,7 @@
                         android:id="@+id/btnComer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/comer"
+                        android:text="@string/comprar"
                         android:textSize="18sp"
                         android:textAllCaps="false"
                         android:elevation="15dp"

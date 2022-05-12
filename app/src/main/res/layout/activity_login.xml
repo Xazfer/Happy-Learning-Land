@@ -31,7 +31,7 @@
                     android:layout_height="100dp"
                     android:background="@color/blue_topaz"
                     android:gravity="center"
-                    android:text="Happy Learning Land"
+                    android:text="@string/app_name"
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     android:textStyle="bold|normal|italic"
@@ -130,7 +130,7 @@
                                 app:boxStrokeWidth="1dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Correo electrónico"
+                                android:hint="@string/correo"
                                 android:layout_marginRight="5dp"
                                 android:layout_marginLeft="5dp"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
@@ -154,7 +154,7 @@
                                 app:endIconMode="password_toggle"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:hint="Contraseña"
+                                android:hint="@string/password"
                                 android:layout_marginRight="5dp"
                                 android:layout_marginLeft="5dp"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
@@ -201,7 +201,7 @@
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:textSize="12sp"
-                                            android:text="¿Olvidaste tu contraseña?"
+                                            android:text="@string/forget_password"
                                             android:textAlignment="textEnd"
                                             android:textColor="#616161"
                                             android:textStyle="normal"/>
@@ -231,7 +231,7 @@
                                 app:boxStrokeWidth="1dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:hint="Nombre"
+                                android:hint="@string/name"
                                 android:layout_marginRight="5dp"
                                 android:layout_marginLeft="5dp"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
@@ -253,7 +253,7 @@
                                 app:boxStrokeWidth="1dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:hint="Correo electrónico"
+                                android:hint="@string/correo"
                                 android:layout_marginRight="5dp"
                                 android:layout_marginLeft="5dp"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
@@ -277,7 +277,7 @@
                                 app:endIconMode="password_toggle"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:hint="Contraseña"
+                                android:hint="@string/password"
                                 android:layout_marginRight="5dp"
                                 android:layout_marginLeft="5dp"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
@@ -300,7 +300,7 @@
                                 app:endIconMode="password_toggle"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:hint="Confirmar contraseña"
+                                android:hint="@string/check_password"
                                 android:layout_marginRight="5dp"
                                 android:layout_marginLeft="5dp"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
@@ -337,7 +337,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="O"
+                            android:text="@string/o"
                             android:textSize="18sp"
                             android:layout_marginTop="16dp"
                             android:layout_marginBottom="16dp"

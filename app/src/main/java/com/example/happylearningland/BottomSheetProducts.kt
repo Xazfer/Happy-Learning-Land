@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.happylearningland.databinding.FragmentBottomSheetProductsBinding
-import com.example.happylearningland.databinding.FragmentShopProductsFragmentBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -31,6 +30,7 @@ class BottomSheetProducts : BottomSheetDialogFragment() {
     private lateinit var tasks: List<String>
     private var uid = ""
     var producto:String? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -168,4 +168,5 @@ class BottomSheetProducts : BottomSheetDialogFragment() {
             findNavController().navigate(R.id.action_bottomSheetProducts_to_shop_Products_fragment)
         }
     }
+
 }

@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.happylearningland.databinding.FragmentReciclerTutorialBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -16,7 +15,6 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
-
 
 class ReciclerTutorialFragment : Fragment(R.layout.fragment_recicler_tutorial) {
     private lateinit var binding: FragmentReciclerTutorialBinding
@@ -186,23 +184,5 @@ class ReciclerTutorialFragment : Fragment(R.layout.fragment_recicler_tutorial) {
             6-> binding.trash.setImageResource(R.drawable.cascaradeplatano)
         }
     }
-    /*
-    // Actualización de coins
-    // Función de subir datos DB
-    private fun updateCoins(coins : Int, email: String) {
-        val id = email
-        db.child("player").child(id).get().addOnSuccessListener {
-            if (it.value == null) {
-                Log.w("texto inexistente", "datos no encontrados")
-            } else {
-                db.child("player").child(id).child("coins").setValue(coins)
-                Log.w("texto existente", "datos encontrados ${it.value}")
-            }
-        }.addOnFailureListener {
-            Log.w("texto inexistente", "datos no encontrados")
-        }
-    }
-
-     */
 
 }

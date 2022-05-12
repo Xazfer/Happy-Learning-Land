@@ -17,7 +17,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 
-class Shop_Products_fragment : Fragment(R.layout.fragment_shop_products_fragment) {
+class ShopProductsFragment : Fragment(R.layout.fragment_shop_products_fragment) {
     private lateinit var binding: FragmentShopProductsFragmentBinding
     private lateinit var db: DatabaseReference
     private lateinit var auth: FirebaseAuth
@@ -44,7 +44,6 @@ class Shop_Products_fragment : Fragment(R.layout.fragment_shop_products_fragment
             findNavController().navigate(R.id.action_shop_Products_fragment_to_nav_shopFragment)
         }
         binding.productPan.setOnClickListener {
-            val producto:String = "pam"
             val bundle = bundleOf("Producto" to "Pan")
             findNavController().navigate(R.id.action_shop_Products_fragment_to_bottomSheetProducts, bundle)
         }
@@ -100,28 +99,8 @@ class Shop_Products_fragment : Fragment(R.layout.fragment_shop_products_fragment
                 Log.w("data", "datos no recuperados", error.toException())
             }
 
-
         }
         data.addValueEventListener(listener)
     }
-
-    /*
-    // Actualización de coins
-    // Función de subir datos DB
-    private fun updateCoins(coins : Int, email: String) {
-        val id = email
-        db.child("player").child(id).get().addOnSuccessListener {
-            if (it.value == null) {
-                Log.w("texto inexistente", "datos no encontrados")
-            } else {
-                db.child("player").child(id).child("coins").setValue(coins)
-                Log.w("texto existente", "datos encontrados ${it.value}")
-            }
-        }.addOnFailureListener {
-            Log.w("texto inexistente", "datos no encontrados")
-        }
-    }
-
-     */
 
 }

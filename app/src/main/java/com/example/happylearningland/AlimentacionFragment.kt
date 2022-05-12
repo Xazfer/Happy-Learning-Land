@@ -32,7 +32,6 @@ class AlimentacionFragment : Fragment(R.layout.fragment_alimentacion) {
     private var coins = 0
     private lateinit var tasks: List<String>
 
-    private var nombre:String? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //bindeo de elementos del fragment
@@ -158,22 +157,4 @@ class AlimentacionFragment : Fragment(R.layout.fragment_alimentacion) {
         }
     }
 
-    /*
-    // Actualización de coins
-    // Función de subir datos DB
-    private fun updateCoins(coins : Int, email: String) {
-        val id = email
-        db.child("player").child(id).get().addOnSuccessListener {
-            if (it.value == null) {
-                Log.w("texto inexistente", "datos no encontrados")
-            } else {
-                db.child("player").child(id).child("coins").setValue(coins)
-                Log.w("texto existente", "datos encontrados ${it.value}")
-            }
-        }.addOnFailureListener {
-            Log.w("texto inexistente", "datos no encontrados")
-        }
-    }
-
-     */
 }

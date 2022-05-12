@@ -177,8 +177,6 @@ class MainScreenFragment : Fragment(R.layout.fragment_main_screen) {
             }.addOnFailureListener {
                 Log.w("texto inexistente", "datos no encontrados")
             }
-        }else{
-
         }
     }
 
