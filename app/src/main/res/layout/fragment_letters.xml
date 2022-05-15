@@ -31,7 +31,7 @@
                     android:id="@+id/btnInicio"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_inicio">
+                    android:src="@drawable/ic_homeb">
 
                 </ImageView>
 
@@ -121,7 +121,7 @@
                         android:id="@+id/instrucciones"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_settings" />
+                        android:src="@drawable/ic_infob" />
 
                 </LinearLayout>
 

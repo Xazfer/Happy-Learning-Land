@@ -115,13 +115,14 @@
                     android:orientation="horizontal">
 
                     <!-- Contenedor de configuración -->
+                    <!--
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_settings">
 
                     </ImageView>
-
+                    -->
                 </LinearLayout>
 
             </LinearLayout>

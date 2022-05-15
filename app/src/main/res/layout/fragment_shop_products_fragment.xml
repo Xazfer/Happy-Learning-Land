@@ -119,7 +119,7 @@
                         android:id="@+id/instrucciones"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_settings">
+                        android:src="@drawable/ic_info">
 
                     </ImageView>
 
