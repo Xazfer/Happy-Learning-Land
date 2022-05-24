@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.happylearningland.databinding.FragmentReciclerEasyBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -44,12 +45,19 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
         play()
         imagesTrash()
 
+        binding.btnInicio.setOnClickListener {
+            val bundle = bundleOf("texto" to "Pagina de configuración")
+            findNavController().navigate(R.id.action_reciclerEasyFragment_to_nav_reciclerFragment, bundle)
+        }
+
         binding.btnPlastic.setOnClickListener {
             when(contador){
                 1-> {
                     Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
                     contador += 1
                     correct += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
                     mediaPlayer?.start()
@@ -58,6 +66,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
                     contador += 1
                     correct += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
                     mediaPlayer?.start()
@@ -66,6 +76,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -74,6 +86,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -82,6 +96,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -90,6 +106,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -98,6 +116,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -106,6 +126,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -114,6 +136,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
                     contador += 1
                     correct += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
                     mediaPlayer?.start()
@@ -131,6 +155,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -139,6 +165,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -147,6 +175,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
                     contador += 1
                     correct += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
                     mediaPlayer?.start()
@@ -155,6 +185,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -163,6 +195,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -171,6 +205,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
                     contador += 1
                     correct += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
                     mediaPlayer?.start()
@@ -179,6 +215,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -187,6 +225,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
                     contador += 1
                     correct += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
                     mediaPlayer?.start()
@@ -195,6 +235,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -212,6 +254,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -220,6 +264,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -228,6 +274,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -236,6 +284,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
                     contador += 1
                     correct += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
                     mediaPlayer?.start()
@@ -244,6 +294,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
                     contador += 1
                     correct += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
                     mediaPlayer?.start()
@@ -252,6 +304,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -260,6 +314,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "CORRECTO AUMENTANDO 1")
                     contador += 1
                     correct += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
                     mediaPlayer?.start()
@@ -268,6 +324,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
@@ -276,6 +334,8 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     Log.e("RevisionAnswer", "INCORRECTO AUMENTANDO 1")
                     contador += 1
                     incorrect += 1
+                    binding.counterCorrects.text = correct.toString()
+                    binding.counterQuestion.text = contador.toString()
                     imagesTrash()
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
