@@ -1,4 +1,4 @@
-package com.example.happylearningland
+package com.myapp.happylearningland
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.happylearningland.databinding.FragmentBottomSheetAlimentationBinding
+import com.myapp.happylearningland.databinding.FragmentBottomSheetAlimentationBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.fragment_bottom_sheet_alimentation.*
 

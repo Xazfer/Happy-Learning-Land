@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_mainScreenFragment"
-        android:name="com.example.happylearningland.MainScreenFragment"
+        android:name="com.myapp.happylearningland.MainScreenFragment"
         android:label="fragment_main_screen"
         tools:layout="@layout/fragment_main_screen" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_lettersFragment"
-        android:name="com.example.happylearningland.LettersFragment"
+        android:name="com.myapp.happylearningland.LettersFragment"
         android:label="fragment_letters"
         tools:layout="@layout/fragment_letters" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_robotFragment"
-        android:name="com.example.happylearningland.RobotFragment"
+        android:name="com.myapp.happylearningland.RobotFragment"
         android:label="fragment_robot"
         tools:layout="@layout/fragment_robot" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_reciclerFragment"
-        android:name="com.example.happylearningland.ReciclerFragment"
+        android:name="com.myapp.happylearningland.ReciclerFragment"
         android:label="fragment_recicler"
         tools:layout="@layout/fragment_recicler" >
         <action
@@ -70,7 +70,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_alimentacionFragment"
-        android:name="com.example.happylearningland.AlimentacionFragment"
+        android:name="com.myapp.happylearningland.AlimentacionFragment"
         android:label="fragment_alimentacion"
         tools:layout="@layout/fragment_alimentacion" >
         <action
@@ -82,7 +82,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_shopFragment"
-        android:name="com.example.happylearningland.ShopFragment"
+        android:name="com.myapp.happylearningland.ShopFragment"
         android:label="fragment_shop"
         tools:layout="@layout/fragment_shop" >
         <action
@@ -94,7 +94,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_taskFragment"
-        android:name="com.example.happylearningland.TaskFragment"
+        android:name="com.myapp.happylearningland.TaskFragment"
         android:label="fragment_task"
         tools:layout="@layout/fragment_task" >
         <action
@@ -103,7 +103,7 @@
     </fragment>
     <fragment
         android:id="@+id/reciclerEasyFragment"
-        android:name="com.example.happylearningland.ReciclerEasyFragment"
+        android:name="com.myapp.happylearningland.ReciclerEasyFragment"
         android:label="fragment_recicler_easy"
         tools:layout="@layout/fragment_recicler_easy" >
         <action
@@ -112,7 +112,7 @@
     </fragment>
     <fragment
         android:id="@+id/reciclerHardFragment"
-        android:name="com.example.happylearningland.ReciclerHardFragment"
+        android:name="com.myapp.happylearningland.ReciclerHardFragment"
         android:label="fragment_recicler_hard"
         tools:layout="@layout/fragment_recicler_hard" >
         <action
@@ -121,7 +121,7 @@
     </fragment>
     <fragment
         android:id="@+id/reciclerTutorialFragment"
-        android:name="com.example.happylearningland.ReciclerTutorialFragment"
+        android:name="com.myapp.happylearningland.ReciclerTutorialFragment"
         android:label="fragment_recicler_tutorial"
         tools:layout="@layout/fragment_recicler_tutorial" >
         <action
@@ -130,7 +130,7 @@
     </fragment>
     <fragment
         android:id="@+id/shop_Products_fragment"
-        android:name="com.example.happylearningland.ShopProductsFragment"
+        android:name="com.myapp.happylearningland.ShopProductsFragment"
         android:label="fragment_shop_products_fragment"
         tools:layout="@layout/fragment_shop_products_fragment">
         <action
@@ -145,7 +145,7 @@
     </fragment>
     <dialog
         android:id="@+id/bottomSheetSettings"
-        android:name="com.example.happylearningland.BottomSheetSettings"
+        android:name="com.myapp.happylearningland.BottomSheetSettings"
         android:label="BottomSheetSettings" >
         <action
             android:id="@+id/action_bottomSheetSettings_to_nav_mainScreenFragment"
@@ -153,7 +153,7 @@
     </dialog>
     <dialog
         android:id="@+id/bottomSheetAlimentation"
-        android:name="com.example.happylearningland.BottomSheetAlimentation"
+        android:name="com.myapp.happylearningland.BottomSheetAlimentation"
         android:label="fragment_bottom_sheet_alimentation"
         tools:layout="@layout/fragment_bottom_sheet_alimentation" >
         <action
@@ -162,7 +162,7 @@
     </dialog>
     <dialog
         android:id="@+id/bottomSheetProducts"
-        android:name="com.example.happylearningland.BottomSheetProducts"
+        android:name="com.myapp.happylearningland.BottomSheetProducts"
         android:label="BottomSheetProducts" >
         <action
             android:id="@+id/action_bottomSheetProducts_to_shop_Products_fragment"

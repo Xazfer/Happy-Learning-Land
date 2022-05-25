@@ -1,4 +1,4 @@
-package com.example.happylearningland
+package com.myapp.happylearningland
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

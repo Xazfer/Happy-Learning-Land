@@ -1,4 +1,4 @@
-package com.example.happylearningland
+package com.myapp.happylearningland
 
 import android.graphics.BitmapFactory
 import android.media.MediaPlayer
@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
-import com.example.happylearningland.databinding.FragmentMainScreenBinding
+import com.myapp.happylearningland.databinding.FragmentMainScreenBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.happylearningland">
+    package="com.myapp.happylearningland">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -13,11 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HappyLearningLand">
         <activity
-            android:name=".CapsuleFragment"
+            android:name="com.myapp.happylearningland.CapsuleFragment"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".SplashActivity"
+            android:name="com.myapp.happylearningland.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
@@ -28,22 +28,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Login"
+            android:name="com.myapp.happylearningland.Login"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/LoginTheme" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.myapp.happylearningland.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/CharacterTheme" />
         <activity
-            android:name=".AccountRecoveryActivity"
+            android:name="com.myapp.happylearningland.AccountRecoveryActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/RecoveryTheme" />
         <activity
-            android:name=".CheckEmailActivity"
+            android:name="com.myapp.happylearningland.CheckEmailActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/CheckEmailTheme" />

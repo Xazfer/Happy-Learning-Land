@@ -1,9 +1,9 @@
-package com.example.happylearningland
+package com.myapp.happylearningland
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import com.example.happylearningland.databinding.FragmentRobotBinding
+import com.myapp.happylearningland.databinding.FragmentRobotBinding
 import android.content.ClipData
 import android.content.ClipDescription
 import android.graphics.Canvas

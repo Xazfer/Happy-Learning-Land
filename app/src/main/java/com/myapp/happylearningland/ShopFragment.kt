@@ -1,11 +1,11 @@
-package com.example.happylearningland
+package com.myapp.happylearningland
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
-import com.example.happylearningland.databinding.FragmentShopBinding
+import com.myapp.happylearningland.databinding.FragmentShopBinding
 
 class ShopFragment : Fragment(R.layout.fragment_shop) {
     private lateinit var binding: FragmentShopBinding

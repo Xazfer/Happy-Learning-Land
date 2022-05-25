@@ -1,4 +1,4 @@
-package com.example.happylearningland
+package com.myapp.happylearningland
 
 import android.app.ProgressDialog
 import android.content.ContentValues.TAG
@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import com.example.happylearningland.databinding.ActivityCheckEmailBinding
+import com.myapp.happylearningland.databinding.ActivityCheckEmailBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 

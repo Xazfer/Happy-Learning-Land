@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:114555254837:android:b33a9e55034696eec8997c",
         "android_client_info": {
-          "package_name": "com.example.happylearningland"
+          "package_name": "com.myapp.happylearningland"
         }
       },
       "oauth_client": [

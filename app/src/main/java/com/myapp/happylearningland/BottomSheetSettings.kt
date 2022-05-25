@@ -1,4 +1,4 @@
-package com.example.happylearningland
+package com.myapp.happylearningland
 
 import android.media.MediaPlayer
 import android.os.Bundle
