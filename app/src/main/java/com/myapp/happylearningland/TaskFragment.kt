@@ -89,10 +89,10 @@ class TaskFragment : Fragment(R.layout.fragment_task) {
             if(mediaPlayer?.isPlaying == true){
                 mediaPlayer?.release()
                 mediaPlayer = null
-                mediaPlayer= MediaPlayer.create(context, R.raw.realizartarea)
+                mediaPlayer= MediaPlayer.create(context, R.raw.correcccion)
                 mediaPlayer?.start()
             }else{
-                mediaPlayer= MediaPlayer.create(context, R.raw.realizartarea)
+                mediaPlayer= MediaPlayer.create(context, R.raw.correcccion)
                 mediaPlayer?.start()
             }
         }

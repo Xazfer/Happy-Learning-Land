@@ -36,6 +36,9 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
     var num = 1
     var score = 0
 
+    /*SEGUN YO EL ALERT DIALOG DEBE IR EN LA FUNCION updateScore
+    * en el caso 24*/
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //bindeo de elementos del fragment
@@ -78,6 +81,20 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
 
     }
 
+    /*
+    * SETEO DE LETRAS DE CADA CCASO,
+    * PARA PONERLAS EN ALEATORIO SE SELECCIONA LA LETRA Y SE CAMBIA SU TAG
+    * A UN TAG IGUAL AL TARGET, CUANDO SE REALIZA EL CAMBIO DE LETRA SE DEBE CAMBIAR EL TAG
+    * A UNO DISTINTO DEL TARGET, EJEMPLO:
+    *
+    * drag10ImageView.tag = "figure1" <- en este caso este drag tiene el mismo tag que el target
+    * pero si en la siguiente palabra queremos que sea otro drag el que tenga el mismo tag del target hacemos.
+    *
+    * drag10ImageView.tag = "noOne" <- quitamos el tag para que deje de coincidir con el target
+    *
+    * drag19ImageView.tag = "figure1" <- le asignamos el nuevo tag a otro drag para que coincida con el target
+    *
+    * */
     fun setLetters(){
         when(num){
             1->{
@@ -100,10 +117,12 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
                 imageView.setImageResource(R.drawable.oso)
                 mediaPlayer= MediaPlayer.create(context, R.raw.oso)
                 mediaPlayer?.start()
-                drag10ImageView.setImageResource(R.drawable.abecedarioo)
+                drag10ImageView.setImageResource(R.drawable.abecedariop)
+                drag10ImageView.tag = "noone"
                 drag11ImageView.setImageResource(R.drawable.abecedarios)
                 drag12ImageView.setImageResource(R.drawable.abecedarioo)
-                drag13ImageView.setImageResource(R.drawable.abecedariop)
+                drag13ImageView.setImageResource(R.drawable.abecedarioo)
+                drag13ImageView.tag = "figure1"
                 drag14ImageView.setImageResource(R.drawable.abecedarioz)
                 drag15ImageView.setImageResource(R.drawable.abecedarior)
                 drag16ImageView.setImageResource(R.drawable.abecedarioe)
@@ -116,15 +135,18 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
                 imageView.setImageResource(R.drawable.rey)
                 mediaPlayer= MediaPlayer.create(context, R.raw.rey)
                 mediaPlayer?.start()
-                drag10ImageView.setImageResource(R.drawable.abecedarior)
+                drag10ImageView.setImageResource(R.drawable.abecedarioz)
+                drag10ImageView.tag = "noone"
                 drag11ImageView.setImageResource(R.drawable.abecedarioe)
                 drag12ImageView.setImageResource(R.drawable.abecedarioy)
                 drag13ImageView.setImageResource(R.drawable.abecedarioa)
-                drag14ImageView.setImageResource(R.drawable.abecedarioz)
+                drag13ImageView.tag = "noone"
+                drag14ImageView.setImageResource(R.drawable.abecedarior)
+                drag14ImageView.tag = "figure1"
                 drag15ImageView.setImageResource(R.drawable.abecedariob)
                 drag16ImageView.setImageResource(R.drawable.abecedariou)
                 drag17ImageView.setImageResource(R.drawable.abecedariol)
-                drag18ImageView.setImageResource(R.drawable.abecedarioy)
+                drag18ImageView.setImageResource(R.drawable.abecedarioa)
                 drag19ImageView.setImageResource(R.drawable.abecedariov)
                 drag20ImageView.setImageResource(R.drawable.abecedariop)
             }
@@ -132,12 +154,14 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
                 imageView.setImageResource(R.drawable.pez)
                 mediaPlayer= MediaPlayer.create(context, R.raw.pez)
                 mediaPlayer?.start()
-                drag10ImageView.setImageResource(R.drawable.abecedariop)
+                drag10ImageView.setImageResource(R.drawable.abecedarior)
                 drag11ImageView.setImageResource(R.drawable.abecedarioe)
                 drag12ImageView.setImageResource(R.drawable.abecedarioz)
                 drag13ImageView.setImageResource(R.drawable.abecedarioa)
                 drag14ImageView.setImageResource(R.drawable.abecedarios)
-                drag15ImageView.setImageResource(R.drawable.abecedarior)
+                drag14ImageView.tag = "noone"
+                drag15ImageView.setImageResource(R.drawable.abecedariop)
+                drag15ImageView.tag = "figure1"
                 drag16ImageView.setImageResource(R.drawable.abecedarioi)
                 drag17ImageView.setImageResource(R.drawable.abecedariou)
                 drag18ImageView.setImageResource(R.drawable.abecedarioy)
@@ -148,12 +172,15 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
                 imageView.setImageResource(R.drawable.uva)
                 mediaPlayer= MediaPlayer.create(context, R.raw.uva)
                 mediaPlayer?.start()
-                drag10ImageView.setImageResource(R.drawable.abecedariou)
-                drag11ImageView.setImageResource(R.drawable.abecedariov)
+                drag10ImageView.setImageResource(R.drawable.abecedariov)
+                drag10ImageView.tag = "figure2"
+                drag11ImageView.setImageResource(R.drawable.abecedariou)
+                drag11ImageView.tag = "figure1"
                 drag12ImageView.setImageResource(R.drawable.abecedarioa)
                 drag13ImageView.setImageResource(R.drawable.abecedarior)
                 drag14ImageView.setImageResource(R.drawable.abecedarioi)
                 drag15ImageView.setImageResource(R.drawable.abecedariob)
+                drag15ImageView.tag = "noone"
                 drag16ImageView.setImageResource(R.drawable.abecedariol)
                 drag17ImageView.setImageResource(R.drawable.abecedariol)
                 drag18ImageView.setImageResource(R.drawable.abecedarioy)
@@ -165,15 +192,19 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
                 mediaPlayer= MediaPlayer.create(context, R.raw.rio)
                 mediaPlayer?.start()
                 drag10ImageView.setImageResource(R.drawable.abecedarior)
-                drag11ImageView.setImageResource(R.drawable.abecedarioi)
-                drag12ImageView.setImageResource(R.drawable.abecedarioo)
+                drag10ImageView.tag = "figure1"
+                drag11ImageView.setImageResource(R.drawable.abecedariol)
+                drag11ImageView.tag = "noone"
+                drag12ImageView.setImageResource(R.drawable.abecedariov)
                 drag13ImageView.setImageResource(R.drawable.abecedarioa)
                 drag14ImageView.setImageResource(R.drawable.abecedarioz)
                 drag15ImageView.setImageResource(R.drawable.abecedariob)
                 drag16ImageView.setImageResource(R.drawable.abecedariou)
-                drag17ImageView.setImageResource(R.drawable.abecedariol)
+                drag17ImageView.setImageResource(R.drawable.abecedarioi)
+                drag17ImageView.tag = "figure2"
                 drag18ImageView.setImageResource(R.drawable.abecedarioy)
-                drag19ImageView.setImageResource(R.drawable.abecedariov)
+                drag19ImageView.setImageResource(R.drawable.abecedarioo)
+                drag19ImageView.tag = "figure3"
                 drag20ImageView.setImageResource(R.drawable.abecedariop)
             }
             7->{
@@ -182,14 +213,17 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
                 mediaPlayer?.start()
                 drag10ImageView.setImageResource(R.drawable.abecedarioa)
                 drag11ImageView.setImageResource(R.drawable.abecedariov)
+                drag11ImageView.tag = "figure2"
                 drag12ImageView.setImageResource(R.drawable.abecedarioe)
                 drag13ImageView.setImageResource(R.drawable.abecedarioo)
                 drag14ImageView.setImageResource(R.drawable.abecedarioz)
                 drag15ImageView.setImageResource(R.drawable.abecedariop)
                 drag16ImageView.setImageResource(R.drawable.abecedariob)
                 drag17ImageView.setImageResource(R.drawable.abecedariou)
+                drag17ImageView.tag = "noone"
                 drag18ImageView.setImageResource(R.drawable.abecedarioy)
-                drag19ImageView.setImageResource(R.drawable.abecedariov)
+                drag19ImageView.setImageResource(R.drawable.abecedariou)
+                drag19ImageView.tag = "noone"
                 drag20ImageView.setImageResource(R.drawable.abecedariop)
             }
             8->{
@@ -219,19 +253,19 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
             }
             2->{
                 target10ImageView.setImageResource(R.drawable.abecedarioo)
-                drag10ImageView.isVisible = false
+                drag13ImageView.isVisible = false
             }
             3->{
                 target10ImageView.setImageResource(R.drawable.abecedarior)
-                drag10ImageView.isVisible = false
+                drag14ImageView.isVisible = false
             }
             4->{
                 target10ImageView.setImageResource(R.drawable.abecedariop)
-                drag10ImageView.isVisible = false
+                drag15ImageView.isVisible = false
             }
             5->{
                 target10ImageView.setImageResource(R.drawable.abecedariou)
-                drag10ImageView.isVisible = false
+                drag11ImageView.isVisible = false
             }
             6->{
                 target10ImageView.setImageResource(R.drawable.abecedarior)
@@ -268,11 +302,11 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
             }
             5->{
                 target11ImageView.setImageResource(R.drawable.abecedariov)
-                drag11ImageView.isVisible = false
+                drag10ImageView.isVisible = false
             }
             6->{
                 target11ImageView.setImageResource(R.drawable.abecedarioi)
-                drag11ImageView.isVisible = false
+                drag17ImageView.isVisible = false
             }
             7->{
                 target11ImageView.setImageResource(R.drawable.abecedariov)
@@ -309,7 +343,7 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
             }
             6->{
                 target12ImageView.setImageResource(R.drawable.abecedarioo)
-                drag12ImageView.isVisible = false
+                drag19ImageView.isVisible = false
             }
             7->{
                 target12ImageView.setImageResource(R.drawable.abecedarioe)
@@ -324,6 +358,11 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
 
     fun revelateLetter(){
         drag10ImageView.isVisible = true
+        drag13ImageView.isVisible = true
+        drag14ImageView.isVisible = true
+        drag15ImageView.isVisible = true
+        drag17ImageView.isVisible = true
+        drag19ImageView.isVisible = true
         drag11ImageView.isVisible = true
         drag12ImageView.isVisible = true
     }
