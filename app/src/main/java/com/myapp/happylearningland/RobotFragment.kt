@@ -1,11 +1,13 @@
 package com.myapp.happylearningland
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import com.myapp.happylearningland.databinding.FragmentRobotBinding
 import android.content.ClipData
 import android.content.ClipDescription
+import android.content.DialogInterface
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Point
@@ -92,11 +94,24 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
         btnPlay.setOnClickListener {
             if (score == 6){
                 score = 0
-                val moneda = coins +1
-                updateCoins(moneda)
                 Log.e("CUMPLIMIENTO","SE COMPLETARON 5 PTS")
                 mediaPlayer= MediaPlayer.create(context, R.raw.robotarmado)
                 mediaPlayer?.start()
+                val alertDialog: AlertDialog? = activity?.let {
+                    val builder = AlertDialog.Builder(it)
+                    builder.apply {
+                        setTitle("¡¡Felicidades!!")
+                        setMessage("Ganastes monedas")
+                        setPositiveButton("Aceptar",
+                            DialogInterface.OnClickListener{ dialog, id ->
+                                val monedas = coins +1
+                                updateCoins(monedas)
+                                findNavController().navigate(R.id.action_nav_robotFragment_to_nav_mainScreenFragment)
+                            })
+                    }
+                    builder.create()
+                }
+                alertDialog?.show()
             }else{
                 mediaPlayer= MediaPlayer.create(context, R.raw.errorrobot)
                 mediaPlayer?.start()
@@ -110,6 +125,13 @@ class RobotFragment : Fragment(R.layout.fragment_robot) {
             target4ImageView.setImageResource(R.drawable.basecuatro)
             target5ImageView.setImageResource(R.drawable.basecinco)
             target6ImageView.setImageResource(R.drawable.baseseis)
+
+            target1ImageView.setColorFilter(R.color.black)
+            target2ImageView.setColorFilter(R.color.black)
+            target3ImageView.setColorFilter(R.color.black)
+            target4ImageView.setColorFilter(R.color.black)
+            target5ImageView.setColorFilter(R.color.black)
+            target6ImageView.setColorFilter(R.color.black)
 
             drag1ImageView.isVisible = true
             drag2ImageView.isVisible = true

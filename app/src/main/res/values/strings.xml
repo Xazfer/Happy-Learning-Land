@@ -67,4 +67,6 @@
     <string name="verificacion">Verificación de correo</string>
     <string name="resumeVerificacion">Para completar su registro verifique su correo y después de clic en continuar.</string>
     <string name="continuar">Continuar</string>
+
+    <string name="contraseña">Tu contraseña debe tener 8 caracteres como mínimo, con 1 mayúscula, 1 número y al menos un carácter especial.</string>
 </resources>

@@ -1,5 +1,7 @@
 package com.myapp.happylearningland
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -170,10 +172,21 @@ class ReciclerHardFragment : Fragment(R.layout.fragment_recicler_hard) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
                     if (contador == 13) {
-                        val monedas = coins +4
-                        updateCoins(monedas)
-                        back()
-
+                        val alertDialog: AlertDialog? = activity?.let {
+                            val builder = AlertDialog.Builder(it)
+                            builder.apply {
+                                setTitle("¡¡Felicidades!!")
+                                setMessage("Obtuviste ${correct}/13 aciertos. Tus errores fueron: ${incorrect +1}")
+                                setPositiveButton("Aceptar",
+                                    DialogInterface.OnClickListener{ dialog, id ->
+                                        val monedas = coins +4
+                                        updateCoins(monedas)
+                                        back()
+                                    })
+                            }
+                            builder.create()
+                        }
+                        alertDialog?.show()
                     }
                 }
             }
@@ -300,9 +313,21 @@ class ReciclerHardFragment : Fragment(R.layout.fragment_recicler_hard) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
                     if (contador == 13) {
-                        val monedas = coins +4
-                        updateCoins(monedas)
-                        back()
+                        val alertDialog: AlertDialog? = activity?.let {
+                            val builder = AlertDialog.Builder(it)
+                            builder.apply {
+                                setTitle("¡¡Felicidades!!")
+                                setMessage("Obtuviste ${correct}/13 aciertos. Tus errores fueron: ${incorrect +1}")
+                                setPositiveButton("Aceptar",
+                                    DialogInterface.OnClickListener{ dialog, id ->
+                                        val monedas = coins +4
+                                        updateCoins(monedas)
+                                        back()
+                                    })
+                            }
+                            builder.create()
+                        }
+                        alertDialog?.show()
                     }
                 }
             }
@@ -429,9 +454,21 @@ class ReciclerHardFragment : Fragment(R.layout.fragment_recicler_hard) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
                     mediaPlayer?.start()
                     if (contador == 13) {
-                        val monedas = coins +4
-                        updateCoins(monedas)
-                        back()
+                        val alertDialog: AlertDialog? = activity?.let {
+                            val builder = AlertDialog.Builder(it)
+                            builder.apply {
+                                setTitle("¡¡Felicidades!!")
+                                setMessage("Obtuviste ${correct}/13 aciertos. Tus errores fueron: ${incorrect +1}")
+                                setPositiveButton("Aceptar",
+                                    DialogInterface.OnClickListener{ dialog, id ->
+                                        val monedas = coins +4
+                                        updateCoins(monedas)
+                                        back()
+                                    })
+                            }
+                            builder.create()
+                        }
+                        alertDialog?.show()
                     }
                 }
 
@@ -559,9 +596,21 @@ class ReciclerHardFragment : Fragment(R.layout.fragment_recicler_hard) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
                     if (contador == 13) {
-                        val monedas = coins +4
-                        updateCoins(monedas)
-                        back()
+                        val alertDialog: AlertDialog? = activity?.let {
+                            val builder = AlertDialog.Builder(it)
+                            builder.apply {
+                                setTitle("¡¡Felicidades!!")
+                                setMessage("Obtuviste ${correct}/13 aciertos. Tus errores fueron: ${incorrect +1}")
+                                setPositiveButton("Aceptar",
+                                    DialogInterface.OnClickListener{ dialog, id ->
+                                        val monedas = coins +4
+                                        updateCoins(monedas)
+                                        back()
+                                    })
+                            }
+                            builder.create()
+                        }
+                        alertDialog?.show()
                     }
                 }
             }

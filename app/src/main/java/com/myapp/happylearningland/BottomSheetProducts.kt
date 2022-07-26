@@ -1,6 +1,8 @@
 package com.myapp.happylearningland
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
@@ -156,6 +158,21 @@ class BottomSheetProducts : BottomSheetDialogFragment() {
 
     private fun setButtons(n: Int){
         binding.btnComer.setOnClickListener {
+            if (coins == 0){
+                val alertDialog: AlertDialog? = activity?.let {
+                    val builder = AlertDialog.Builder(it)
+                    builder.apply {
+                        setTitle("¡¡Cuidado!!")
+                        setMessage("Te quedaste sin monedas, juega para conseguir más")
+                        setPositiveButton("Aceptar",
+                            DialogInterface.OnClickListener{ dialog, id ->
+                                findNavController().navigate(R.id.action_bottomSheetProducts_to_shop_Products_fragment)
+                            })
+                    }
+                    builder.create()
+                }
+                alertDialog?.show()
+            }
             if (coins < n){
                 Toast.makeText(context, "No se puede comprar", Toast.LENGTH_SHORT).show()
             }else {

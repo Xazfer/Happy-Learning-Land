@@ -1,6 +1,8 @@
 package com.myapp.happylearningland
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
@@ -186,4 +188,22 @@ class MainActivity : AppCompatActivity() {
         */
     }
 
+    override fun onBackPressed() {
+        val alertDialog: AlertDialog? = this.let {
+            val builder = AlertDialog.Builder(it)
+            builder.apply {
+                setTitle("¡¡Cuidado!!")
+                setMessage("¿Seguro qué quieres salir de la aplicación?")
+                setPositiveButton("Aceptar",
+                    DialogInterface.OnClickListener{ dialog, id ->
+                        System.exit(0)
+                    })
+                setNegativeButton("Cancelar",
+                    DialogInterface.OnClickListener{ dialog, id ->
+                    })
+            }
+            builder.create()
+        }
+        alertDialog?.show()
+    }
 }

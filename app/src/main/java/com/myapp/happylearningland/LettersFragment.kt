@@ -1,11 +1,13 @@
 package com.myapp.happylearningland
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import com.myapp.happylearningland.databinding.FragmentLettersBinding
 import android.content.ClipData
 import android.content.ClipDescription
+import android.content.DialogInterface
 import android.graphics.Canvas
 import android.graphics.Point
 import android.media.MediaPlayer
@@ -432,9 +434,21 @@ class LettersFragment : Fragment(R.layout.fragment_letters) {
                 setLetters()
                 cleanTarget()
                 if(score == 24){
-                    val monedas = coins +8
-                    updateCoins(monedas)
-                    back()
+                    val alertDialog: AlertDialog? = activity?.let {
+                    val builder = AlertDialog.Builder(it)
+                    builder.apply {
+                        setTitle("¡¡Felicidades!!")
+                        setMessage("Ganastes monedas")
+                        setPositiveButton("Aceptar",
+                            DialogInterface.OnClickListener{ dialog, id ->
+                                val monedas = coins +8
+                                updateCoins(monedas)
+                                back()
+                            })
+                    }
+                    builder.create()
+                }
+                    alertDialog?.show()
                 }
             }
         }

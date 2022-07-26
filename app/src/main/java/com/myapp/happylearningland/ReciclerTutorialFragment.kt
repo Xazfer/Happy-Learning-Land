@@ -1,5 +1,7 @@
 package com.myapp.happylearningland
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
@@ -105,7 +107,19 @@ class ReciclerTutorialFragment : Fragment(R.layout.fragment_recicler_tutorial) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
                     if (contador == 7) {
-                        back()
+                        val alertDialog: AlertDialog? = activity?.let {
+                            val builder = AlertDialog.Builder(it)
+                            builder.apply {
+                                setTitle("¡¡Felicidades!!")
+                                setMessage("Obtuviste ${correct}/7 aciertos.")
+                                setPositiveButton("Aceptar",
+                                    DialogInterface.OnClickListener{ dialog, id ->
+                                        back()
+                                    })
+                            }
+                            builder.create()
+                        }
+                        alertDialog?.show()
                     }
                 }
             }
@@ -172,7 +186,19 @@ class ReciclerTutorialFragment : Fragment(R.layout.fragment_recicler_tutorial) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
                     mediaPlayer?.start()
                     if (contador == 7) {
-                        back()
+                        val alertDialog: AlertDialog? = activity?.let {
+                            val builder = AlertDialog.Builder(it)
+                            builder.apply {
+                                setTitle("¡¡Felicidades!!")
+                                setMessage("Obtuviste ${correct}/7 aciertos.")
+                                setPositiveButton("Aceptar",
+                                    DialogInterface.OnClickListener{ dialog, id ->
+                                        back()
+                                    })
+                            }
+                            builder.create()
+                        }
+                        alertDialog?.show()
                     }
                 }
             }

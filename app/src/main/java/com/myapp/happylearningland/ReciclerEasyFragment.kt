@@ -1,5 +1,7 @@
 package com.myapp.happylearningland
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -142,9 +144,21 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.correctanswer)
                     mediaPlayer?.start()
                     if (contador == 10) {
-                        val monedas = coins +2
-                        updateCoins(monedas)
-                        back()
+                        val alertDialog: AlertDialog? = activity?.let {
+                            val builder = AlertDialog.Builder(it)
+                            builder.apply {
+                                setTitle("¡¡Felicidades!!")
+                                setMessage("Obtuviste ${correct}/10 aciertos. Tus errores fueron: ${incorrect +1}")
+                                setPositiveButton("Aceptar",
+                                    DialogInterface.OnClickListener{ dialog, id ->
+                                        val monedas = coins +2
+                                        updateCoins(monedas)
+                                        back()
+                                    })
+                            }
+                            builder.create()
+                        }
+                        alertDialog?.show()
                     }
                 }
             }
@@ -241,9 +255,21 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
                     if (contador == 10) {
-                        val monedas = coins +2
-                        updateCoins(monedas)
-                        back()
+                        val alertDialog: AlertDialog? = activity?.let {
+                            val builder = AlertDialog.Builder(it)
+                            builder.apply {
+                                setTitle("¡¡Felicidades!!")
+                                setMessage("Obtuviste ${correct}/10 aciertos. Tus errores fueron: ${incorrect +1}")
+                                setPositiveButton("Aceptar",
+                                    DialogInterface.OnClickListener{ dialog, id ->
+                                        val monedas = coins +2
+                                        updateCoins(monedas)
+                                        back()
+                                    })
+                            }
+                            builder.create()
+                        }
+                        alertDialog?.show()
                     }
                 }
             }
@@ -340,9 +366,21 @@ class ReciclerEasyFragment : Fragment(R.layout.fragment_recicler_easy) {
                     mediaPlayer= MediaPlayer.create(context, R.raw.wronganswer)
                     mediaPlayer?.start()
                     if (contador == 10) {
-                        val monedas = coins +2
-                        updateCoins(monedas)
-                        back()
+                        val alertDialog: AlertDialog? = activity?.let {
+                            val builder = AlertDialog.Builder(it)
+                            builder.apply {
+                                setTitle("¡¡Felicidades!!")
+                                setMessage("Obtuviste ${correct}/10 aciertos. Tus errores fueron: ${incorrect +1}")
+                                setPositiveButton("Aceptar",
+                                    DialogInterface.OnClickListener{ dialog, id ->
+                                        val monedas = coins +2
+                                        updateCoins(monedas)
+                                        back()
+                                    })
+                            }
+                            builder.create()
+                        }
+                        alertDialog?.show()
                     }
                 }
             }
